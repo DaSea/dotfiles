@@ -10,3 +10,6 @@
 [submodule "mshell/zsh/themes/powerlevel9k"]
 	path = mshell/zsh/themes/powerlevel9k
 	url = https://github.com/bhilburn/powerlevel9k.git
+[submodule "vimrc"]
+	path = vimrc
+	url = git@github.com:DaSea/vimrc.git
