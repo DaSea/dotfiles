@@ -78,11 +78,11 @@ aar() {
 	else
 		read "PACKAGE?Type in the package name to install/upgrade with this ppa [${1##*/}]: "
 	fi
-	
+
 	if [ -z "$PACKAGE" ]; then
 		PACKAGE=${1##*/}
 	fi
-	
+
 	sudo apt-add-repository $1 && sudo apt-get update
 	sudo apt-get install $PACKAGE
 }
@@ -144,3 +144,4 @@ function apt-list-packages {
     sort -n | \
     awk '{print $1" "$2}'
 }
+

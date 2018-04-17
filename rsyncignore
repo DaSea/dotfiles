@@ -12,6 +12,6 @@ backup/
 ssh/id*
 ssh/known_hosts
 gnupg/secring.gpg
-vim/.*
+other/*.kdbx
 vim/backup/*
 

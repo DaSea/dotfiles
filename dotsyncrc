@@ -72,6 +72,7 @@ vim/tools:.vim/tools
 vim/autoload:.vim/autoload
 vim/snippets:snippets
 nvim:.config/nvim
+awesome:.config/awesome
 bash/bashrc
 zsh/zcompdump
 zsh/zsh-update
@@ -82,11 +83,16 @@ oh-my-zsh
 mshell
 # todo
 todo
+goldendict
+yong
+# conky设置
+conky
+conkyrc
 [endfiles]
 
 ## hostname                     type=masterhost, ANY or NONE    files=dotfile:tolink,another:tolink
 [hosts]
-seasea-PC               git=ANY
+seasea-GE62-2QD               git=ANY
 #host2.example.com               git=ANY                                                #git repo, pull from anywhere
 #host3.example.com               git=ANY                                                #git repo, pull from anywhere
 #host4.example.com               git=host5.example.com                                  #git repo, pull from host5

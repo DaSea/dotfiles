@@ -1862,3 +1862,145 @@
 : 1515236363:0;ls
 : 1515236365:0;la
 : 1515236368:0;exit
+: 1515299425:0;cd
+: 1515299426:0;ll
+: 1515299428:0;la
+: 1515299431:0;kla
+: 1515299492:0;cd .icons
+: 1515299493:0;ll
+: 1515299512:0;chmod -R 755 MaterialW
+: 1515299514:0;ll
+: 1515299520:0;chmod -R 755 Pulse-Glass
+: 1515299522:0;ll
+: 1515302007:0;cd /usr/share/icons/Papirus/64x64/apps
+: 1515302010:0;ll nemo
+: 1515302012:0;ll nemo.svg
+: 1515302054:0;pkill dde-l
+: 1515302144:0;pkill dde-dock
+: 1515302416:0;cd /usr/share/applications
+: 1515302433:0;more gcolor2.desktop | grep Icon
+: 1515302441:0;nvim
+: 1515302456:0;cd
+: 1515302480:0;j neovim
+: 1515302482:0;cd ..
+: 1515302482:0;ls
+: 1515302486:0;cd neovim-qt
+: 1515302492:0;sudo make uninstall
+: 1515302506:0;sudo make remove
+: 1515302514:0;sudo make uninstall
+: 1515302571:0;sudo apt remote neovim-qt
+: 1515302589:0;sudo apt remove neovim-qt
+: 1515302600:0;ls 
+: 1515302625:0;whereis neovim-qt
+: 1515302632:0;whereis nvim-qt
+: 1515302644:0;ll /usr/local/bin/nvim
+: 1515302647:0;ll /usr/local/bin/nvim-qt
+: 1515302823:0;pkill dde-lanuncher
+: 1515302829:0;dde-launcher&
+: 1515302933:0;locate neovim
+: 1515302957:0;cd /usr/local
+: 1515302958:0;ls
+: 1515302962:0;cd share/applications
+: 1515302963:0;ls
+: 1515302970:0;nvim
+: 1515303047:0;more deepin.com.qq.office.desktop| grep Icon
+: 1515304186:0;pkill dde-dock
+: 1515372435:0;exit
+: 1515665491:0;la
+: 1515665500:0;ll .yong
+: 1515665513:0;exit
+: 1515745536:0;cd conky
+: 1515745544:0;ll .conky
+: 1515745547:0;cd
+: 1515745550:0;ll .conky
+: 1515745569:0;git clone --depth 1 https://github.com/zagortenay333/Harmattan.git
+: 1515745683:0;cd .conky
+: 1515745684:0;ls
+: 1515745695:0;cd ..
+: 1515745695:0;ls
+: 1515745707:0;la
+: 1515745712:0;cd .dotfiles
+: 1515745713:0;la
+: 1515745737:0;gedit conkyrc
+: 1515745810:0;cd
+: 1515745815:0;cd .config/autostart
+: 1515745815:0;ls
+: 1515745828:0;cp albert.desktop conky.desktop
+: 1515745834:0;nvim conky.desktop
+: 1515745962:0;ls
+: 1515745965:0;cd Harmattan
+: 1515745965:0;s
+: 1515745966:0;ls
+: 1515745968:0;la
+: 1515745980:0;cd .harmattan-assets
+: 1515745981:0;ls
+: 1515745984:0;cd ..
+: 1515746112:0;exit
+: 1515746996:0;ll .conk*
+: 1515747319:0;cd .config/autostart
+: 1515747321:0;cd
+: 1515747324:0;cd .conky
+: 1515747327:0;./start.sh
+: 1515747390:0;pkill conky
+: 1515747660:0;exit
+: 1516683256:0;cd .config
+: 1516683258:0;cd
+: 1516683261:0;cd .config
+: 1516683262:0;ll
+: 1516683268:0;cd
+: 1516683272:0;cd .dotfiles/awesome
+: 1516683554:0;sudo cp /etc/xdg/awesome/rc.lua ./
+: 1516683559:0;ls
+: 1516683847:0;nvim rc.lua
+: 1516684145:0;echo $EDITOR
+: 1516684243:0;sudo apt autoremove
+: 1516684278:0;clear
+: 1516684303:0;deepin-terminal --h
+: 1516684306:0;exit
+: 1521116452:0;ls
+: 1521116454:0;clear
+: 1521116479:0;cd
+: 1521116530:0;sudo apt install git
+: 1521116563:0;ls
+: 1521116575:0;cd åƒ»¾çƒ©ƒ§
+: 1521116577:0;ls
+: 1521116580:0;cd theme
+: 1521116611:0;git clone --depth 1 https://github.com/vinceliuice/Canta-theme.git
+: 1521116897:0;cd Canta-theme
+: 1521117011:0;ls
+: 1521117028:0;sudo apt-get install gtk2-engines-murrine gtk2-engines-pixbuf
+: 1521117036:0;sudo ./install.sh
+: 1521117279:0;vim
+: 1521117284:0;whereis vim
+: 1521117289:0;vim
+: 1521117482:0;sudo rm -f /usr/share/applications/com.canonical.launcher.amazon.desktop
+: 1521117492:0;sudo rm -f /usr/share/applications/ubuntu-amazon-default.desktop
+: 1521118725:0;cd
+: 1521119609:0;sudo dpkg -i sogoupinyin_2.2.0.0102_amd64.deb 
+: 1521119649:0;sudo apt --fix-broken install
+: 1521119756:0;sudo dpkg -i sogoupinyin_2.2.0.0102_amd64.deb 
+: 1521125555:0;sudo apt remove ibus
+: 1521125585:0;sudo apt autoremove
+: 1521125594:0;sudo apt autoclean
+: 1521125666:0;cd /etc
+: 1521125667:0;ls
+: 1521125678:0;python3
+: 1521125703:0;sudo gedit fstab
+: 1521126098:0;compaudit
+: 1521126134:0;cd
+: 1521126146:0;cd åƒ»¾çƒ©ƒ§
+: 1521126156:0;ls
+: 1521126162:0;cd theme
+: 1521126164:0;ls
+: 1521126187:0;git clone https://github.com/mustafaozhan/Breeze-Adapta.git && cd Breeze-Adapta && chmod +x install.sh && sh install.sh
+: 1521126442:0;ntfs-3g
+: 1521126483:0;cd
+: 1521126487:0;fdisk -l
+: 1521126492:0;fdisk -L
+: 1521126497:0;sudo fdisk -l
+: 1521126539:0;mount
+: 1521126756:0;blkid
+: 1521126812:0;sudo blkid
+: 1521127022:0;mount -a
+: 1521127025:0;sudo mount -a
+: 1521127041:0;exit

@@ -1,0 +1,206 @@
+conky.config = {
+
+-------------------------------------
+-- Generic Settings
+-------------------------------------
+background=true,
+update_interval=1,
+double_buffer=true,
+no_buffers=true,
+imlib_cache_size=10,
+
+draw_shades=false,
+draw_outline=false,
+draw_borders=false,
+draw_graph_borders=false,
+default_graph_height=26,
+default_graph_width=80,
+show_graph_scale=false,
+show_graph_range=false,
+
+
+-------------------------------------
+-- Window Specifications
+-------------------------------------
+gap_x=200,
+gap_y=240,
+minimum_height=700,
+minimum_width=268,
+own_window=true,
+own_window_class = 'Conky',
+own_window_type="normal",
+own_window_transparent=false,
+own_window_hints="undecorated,below,sticky,skip_taskbar,skip_pager",
+border_inner_margin=0,
+border_outer_margin=0,
+alignment="top_right",
+own_window_argb_visual=true,
+own_window_argb_value=0,
+
+
+-------------------------------------
+-- Text Settings
+-------------------------------------
+use_xft=true,
+xftalpha=0.8,
+font="Droid Sans:size=8",
+text_buffer_size=256,
+override_utf8_locale=true,
+
+short_units=true,
+short_units=true,
+pad_percents=2,
+top_name_width=7,
+
+
+-------------------------------------
+-- Color Scheme
+-------------------------------------
+default_color="FFFFFF",
+color1="FFFFFF",
+color2="FFFFFF",
+color3="FFFFFF",
+color4="FFFFFF",
+color5="DCDCDC",
+color6="FFFFFF",
+color7="FFFFFF",
+color8="FFFFFF",
+
+
+-------------------------------------
+-- API Key  在这个文件里获取天气，存在异步的问题，拷贝文件的时候，天气文件还没有获取到，所以加到start.sh里面去了
+-------------------------------------
+template6="",
+
+
+-------------------------------------
+-- City ID
+-------------------------------------
+template7="",
+
+
+-------------------------------------
+-- Temp Unit (default, metric, imperial)
+-------------------------------------
+template8="metric",
+
+
+-------------------------------------
+-- Locale (e.g. "es_ES.UTF-8")
+-- Leave empty for default
+-------------------------------------
+template9=""
+
+}
+
+
+---------------------------------------------------
+---------------------------------------------------
+
+
+conky.text = [[
+\
+\
+\
+\
+${image ~/.conky/Harmattan/.harmattan-assets/misc/Metro/God-Mode/fav-color-1.png -p 20,30 -s 228x61}\
+${execi 300 cp -f ~/.conky/Harmattan/.harmattan-assets/photos/smallest/$(jq .weather[0].id ~/.cache/harmattan-conky/weather.json).png ~/.cache/harmattan-conky/weather.png}${image ~/.cache/harmattan-conky/weather.png -p 20,91 -s 228x86}\
+${image ~/.conky/Harmattan/.harmattan-assets/misc/Metro/God-Mode/fav-color-3.png -p 20,177 -s 228x86}\
+${image ~/.conky/Harmattan/.harmattan-assets/misc/Metro/God-Mode/fav-color-4.png -p 20,263 -s 228x105}\
+${image ~/.conky/Harmattan/.harmattan-assets/misc/Metro/God-Mode/fav-color-5.png -p 20,368 -s 228x105}\
+${image ~/.conky/Harmattan/.harmattan-assets/misc/Metro/God-Mode/fav-color-6.png -p 20,473 -s 228x119}\
+${image ~/.conky/Harmattan/.harmattan-assets/misc/Metro/God-Mode/fav-color-7.png -p 20,478 -s 228x14}\
+${image ~/.conky/Harmattan/.harmattan-assets/misc/Metro/God-Mode/border.png -p 20,30 -s 228x562}\
+${image ~/.conky/Harmattan/.harmattan-assets/misc/Metro/God-Mode/border-4.png -p 20,90 -s 228x88}\
+${image ~/.conky/Harmattan/.harmattan-assets/misc/Metro/God-Mode/border-3.png -p 20,478 -s 228x14}\
+${image ~/.conky/Harmattan/.harmattan-assets/misc/Metro/God-Mode/separator-v.png -p 95,185 -s 1x76}\
+${image ~/.conky/Harmattan/.harmattan-assets/misc/Metro/God-Mode/separator-v.png -p 172,185 -s 1x76}\
+${image ~/.conky/Harmattan/.harmattan-assets/misc/Metro/God-Mode/separator-h.png -p 33,369 -s 202x1}\
+${image ~/.conky/Harmattan/.harmattan-assets/misc/Metro/God-Mode/separator-h.png -p 33,269 -s 202x1}\
+\
+\
+\
+\
+${voffset 32}${font Droid Sans Mono :size=22}${alignc}${color2}${time %H:%M}${font}${color}
+${voffset 4}${font Droid Sans :size=10}${alignc}${color6}${execi 300 LANG=${template9} LC_TIME=${template9} date +"%A, %B %-d"}${font}${color}
+\
+\
+\
+\
+${goto 36}${voffset 0}${font Droid Sans :size=36}${color1}${execi 300 jq -r .main.temp ~/.cache/harmattan-conky/weather.json | awk '{print int($1+0.5)}' # round num}°${font}${color}
+${goto 46}${voffset 14}${font Droid Sans :size=12}${color1}${execi 300 jq -r .weather[0].description ~/.cache/harmattan-conky/weather.json | sed "s|\<.|\U&|g"}${font}${color}
+${color1}${alignr 52}${voffset -73}${execi 300 jq -r .main.pressure ~/.cache/harmattan-conky/weather.json | awk '{print int($1+0.5)}' # round num} hPa
+${color1}${alignr 52}${voffset 7}${execi 300 jq -r .main.humidity ~/.cache/harmattan-conky/weather.json | awk '{print int($1+0.5)}' # round num} %${color}
+${color1}${alignr 52}${voffset 7}${execi 300 jq -r .wind.speed ~/.cache/harmattan-conky/weather.json | awk '{print int($1+0.5)}' # round num}${if_match "$template8" == "metric"} m/s${else}${if_match "$template8" == "default"} m/s${else}${if_match "$template8" == "imperial"} mi/h${endif}${endif}${endif}${color}
+\
+\
+\
+\
+${color3}${voffset 24}${alignc 77}${execi 300 LANG=${template9} LC_TIME=${template9} date +%^a}${color}
+${color3}${voffset -15}${alignc}${execi 300 LANG=${template9} LC_TIME=${template9} date -d +1day +%^a}${color}
+${color3}${voffset -15}${alignc -77}${execi 300 LANG=${template9} LC_TIME=${template9} date -d +2day +%^a}${color}
+\
+\
+\
+\
+${color2}${voffset 55}${alignc 77}${execi 300 jq -r .list[0].main.temp_min ~/.cache/harmattan-conky/forecast.json | awk '{print int($1+0.5)}' # round num}°/${execi 300 jq -r .list[0].main.temp_max ~/.cache/harmattan-conky/forecast.json | awk '{print int($1+0.5)}' # round num}°${color}
+${color2}${voffset -15}${alignc}${execi 300 jq -r .list[1].main.temp_min ~/.cache/harmattan-conky/forecast.json | awk '{print int($1+0.5)}' # round num}°/${execi 300 jq -r .list[1].main.temp_max ~/.cache/harmattan-conky/forecast.json | awk '{print int($1+0.5)}' # round num}°${color}
+${color2}${voffset -15}${alignc -77}${execi 300 jq -r .list[2].main.temp_min ~/.cache/harmattan-conky/forecast.json | awk '{print int($1+0.5)}' # round num}°/${execi 300 jq -r .list[2].main.temp_max ~/.cache/harmattan-conky/forecast.json | awk '{print int($1+0.5)}' # round num}°${color}
+\
+\
+\
+\
+${image ~/.conky/Harmattan/.harmattan-assets/misc/Metro/God-Mode/pressure.png -p 224,95 -s 16x16}\
+${image ~/.conky/Harmattan/.harmattan-assets/misc/Metro/God-Mode/humidity.png -p 224,115 -s 16x16}\
+${image ~/.conky/Harmattan/.harmattan-assets/misc/Metro/God-Mode/wind-2.png -p 224,136 -s 16x16}\
+${execi 300 cp -f ~/.conky/Harmattan/.harmattan-assets/icons/#fff__32/$(jq .list[0].weather[0].id ~/.cache/harmattan-conky/forecast.json).png ~/.cache/harmattan-conky/weather-1.png}${image ~/.cache/harmattan-conky/weather-1.png -p 41,207 -s 32x32}\
+${execi 300 cp -f ~/.conky/Harmattan/.harmattan-assets/icons/#fff__32/$(jq .list[1].weather[0].id ~/.cache/harmattan-conky/forecast.json).png ~/.cache/harmattan-conky/weather-2.png}${image ~/.cache/harmattan-conky/weather-2.png -p 119,207 -s 32x32}\
+${execi 300 cp -f ~/.conky/Harmattan/.harmattan-assets/icons/#fff__32/$(jq .list[2].weather[0].id ~/.cache/harmattan-conky/forecast.json).png ~/.cache/harmattan-conky/weather-3.png}${image ~/.cache/harmattan-conky/weather-3.png -p 195,207 -s 32x32}${font}${voffset -120}
+\
+\
+\
+\
+${if_existing /proc/net/route wlp8s0}
+${voffset 100}${goto 40}${color5}Up: ${color2}${upspeed wlp8s0}${color5}${goto 150}Down: ${color2}${downspeed wlp8s0}
+${voffset 10}${goto 40}${upspeedgraph wlp8s0 26,80 FFFFFF FFFFFF}${goto 150}${downspeedgraph wlp8s0 26,80 FFFFFF FFFFFF}
+${voffset 9}${goto 40}${color5}Sent: ${color2}${totalup wlp8s0}${color5}${goto 150}Received: ${color2}${totaldown wlp8s0}
+${else}
+${voffset 1}${goto 40}${color5}Network disconnected${color}
+${image ~/.conky/Harmattan/.harmattan-assets/misc/Metro/God-Mode/offline.png -p 44,284 -s 16x16}
+${endif}
+\
+\
+\
+\
+${voffset -5}${goto 40}${color2}Cpu:s
+${voffset 5}${goto 40}${color2}Mem:${color}
+${voffset 4}${goto 40}${color2}Uptime:${color}
+${voffset -50}${alignc}${color2}${cpubar 5,36}${color}
+${voffset 4}${alignc}${color2}${membar 5,36}${color}
+${voffset -35}${alignr 39}${color2}${cpu cpu0}%${color}
+${voffset 1}${alignr 39}${color2}${memperc}%${color}
+${voffset 4}${alignr 39}${color2}${uptime_short}${color}
+${voffset 13}${goto 40}${loadgraph 26,190 FFFFFF FFFFFF -l}
+\
+\
+\
+\
+${voffset -6}${goto 40}${color1}Proc${color}
+${voffset -15}${alignc}${color1}Mem%${color}
+${voffset -15}${alignr 39}${color1}Mem${color}
+${voffset 4}${goto 40}${color2}${top_mem name 1}${color}
+${voffset 4}${goto 40}${color2}${top_mem name 2}${color}
+${voffset 4}${goto 40}${color2}${top_mem name 3}${color}
+${voffset 4}${goto 40}${color2}${top_mem name 4}${color}
+${voffset 4}${goto 40}${color2}${top_mem name 5}${color}
+${voffset -91}${alignc}${color5}${top_mem mem 1}%${color}
+${voffset 4}${alignc}${color5}${top_mem mem 2}%${color}
+${voffset 4}${alignc}${color5}${top_mem mem 3}%${color}
+${voffset 4}${alignc}${color5}${top_mem mem 4}%${color}
+${voffset 4}${alignc}${color5}${top_mem mem 5}%${color}
+${voffset -91}${alignr 39}${color6}${top_mem mem_res 1}${color}
+${voffset 4}${alignr 39}${color6}${top_mem mem_res 2}${color}
+${voffset 4}${alignr 39}${color6}${top_mem mem_res 3}${color}
+${voffset 4}${alignr 39}${color6}${top_mem mem_res 4}${color}
+${voffset 4}${alignr 39}${color6}${top_mem mem_res 5}${color}
+]]
