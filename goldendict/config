@@ -1,12 +1,12 @@
 <config>
  <paths>
-  <path recursive="1">/home/seasea/.goldendict/dictdd/stardict-langdao-ce-gb-2.4.2-a</path>
-  <path recursive="1">/home/seasea/.goldendict/dictdd/stardict-langdao-ec-gb-2.4.2</path>
-  <path recursive="1">/home/seasea/.goldendict/dictdd/stardict-oxford-gb-formated-2.4.2</path>
-  <path recursive="1">/home/seasea/.goldendict/dictdd/stardict-21shijishuangxiangcidian-2.4.2</path>
+  <path recursive="1">/home/dasea/.goldendict/dictdd/stardict-langdao-ce-gb-2.4.2-a</path>
+  <path recursive="1">/home/dasea/.goldendict/dictdd/stardict-oxford-gb-formated-2.4.2</path>
+  <path recursive="1">/home/dasea/.goldendict/dictdd/stardict-21shijishuangxiangcidian-2.4.2</path>
+  <path recursive="1">/home/dasea/.goldendict/dictdd/stardict-langdao-ec-gb-2.4.2</path>
  </paths>
  <sounddirs>
-  <sounddir name="WyabdcRealPeopleTTS" icon="">/home/seasea/.goldendict/dictdd/WyabdcRealPeopleTTS</sounddir>
+  <sounddir name="WyabdcRealPeopleTTS" icon="">/home/dasea/.goldendict/dictdd/WyabdcRealPeopleTTS</sounddir>
  </sounddirs>
  <dictionaryOrder id="0" name="">
   <dictionary name="Bing">e819fce0b2f1bd36880f38342aea9826</dictionary>
@@ -26,16 +26,12 @@
   <mutedDictionaries/>
  </inactiveDictionaries>
  <groups nextId="2">
-  <group shortcut="Ctrl+Z" id="1" name="myo" icon="cn.png">
+  <group id="1" name="myo" icon="cn.png" shortcut="Ctrl+Z">
    <dictionary name="牛津英汉双解美化版">b2aff9dfc6a3ac25a0c38a9cf2b11e8d</dictionary>
    <dictionary name="WyabdcRealPeopleTTS">00433d43e6a7e9fa7248d884967d3bd2</dictionary>
    <dictionary name="21世纪英汉汉英双向词典">52caf12b696b05e94bcf1bef09ace7f8</dictionary>
    <dictionary name="Bing">e819fce0b2f1bd36880f38342aea9826</dictionary>
-   <mutedDictionaries>
-    <mutedDictionary>3252a35767d3f6e85e3e39069800dd2f</mutedDictionary>
-    <mutedDictionary>94eae5a5aaf5b0a900490f4d6b36aac0</mutedDictionary>
-    <mutedDictionary>1c92fc587a5e5ce40d3cb555ffbe2682</mutedDictionary>
-   </mutedDictionaries>
+   <mutedDictionaries/>
   </group>
  </groups>
  <hunspell dictionariesPath=""/>
@@ -44,12 +40,6 @@
   <enableGermanTransliteration>0</enableGermanTransliteration>
   <enableGreekTransliteration>0</enableGreekTransliteration>
   <enableBelarusianTransliteration>0</enableBelarusianTransliteration>
-  <chinese>
-   <enable>0</enable>
-   <enableSCToTWConversion>1</enableSCToTWConversion>
-   <enableSCToHKConversion>1</enableSCToHKConversion>
-   <enableTCToSCConversion>1</enableTCToSCConversion>
-  </chinese>
   <romaji>
    <enable>1</enable>
    <enableHepburn>1</enableHepburn>
@@ -75,23 +65,23 @@
   <mediawiki enabled="0" id="ed4c3929196afdd93cc08b9a903aad6a" url="http://pt.wiktionary.org/w" name="Portuguese Wiktionary" icon=""/>
  </mediawikis>
  <websites>
-  <website inside_iframe="1" enabled="0" id="b88cb2898e634c6638df618528284c2d" url="http://www.google.com/dictionary?aq=f&amp;langpair=en|en&amp;q=%GDWORD%&amp;hl=en" name="Google En-En (Oxford)" icon=""/>
-  <website inside_iframe="1" enabled="0" id="f376365a0de651fd7505e7e5e683aa45" url="http://www.urbandictionary.com/define.php?term=%GDWORD%" name="Urban Dictionary" icon=""/>
-  <website inside_iframe="1" enabled="0" id="324ca0306187df7511b26d3847f4b07c" url="http://multitran.ru/c/m.exe?CL=1&amp;l1=1&amp;s=%GD1251%" name="Multitran (En)" icon=""/>
-  <website inside_iframe="1" enabled="0" id="924db471b105299c82892067c0f10787" url="http://lingvopro.abbyyonline.com/en/Search/en-ru/%GDWORD%" name="Lingvo (En-Ru)" icon=""/>
-  <website inside_iframe="1" enabled="0" id="087a6d65615fb047f4c80eef0a9465db" url="http://michaelis.uol.com.br/moderno/ingles/index.php?lingua=portugues-ingles&amp;palavra=%GDISO1%" name="Michaelis (Pt-En)" icon=""/>
-  <website inside_iframe="1" enabled="1" id="e819fce0b2f1bd36880f38342aea9826" url="http://cn.bing.com/dict/search?q=%GDWORD%&amp;go=%E6%8F%90%E4%BA%A4&amp;qs=n&amp;form=CM&amp;pq=%GDWORD%&amp;sc=5-6&amp;sp=-1&amp;sk=" name="Bing" icon=""/>
-  <website inside_iframe="1" enabled="0" id="d95fb0ad83563917c8f3a0381f979d98" url="http://www.iciba.com/%GDWORD%/" name="Iciba" icon=""/>
-  <website inside_iframe="1" enabled="0" id="03e6695886dd2e01d5568353efc84fc7" url="http://dict.youdao.com/search?q=%GDWORD%&amp;ue=utf8&amp;keyfrom=web.index" name="Youdao" icon=""/>
-  <website inside_iframe="1" enabled="1" id="1c92fc587a5e5ce40d3cb555ffbe2682" url="http://zh.forvo.com/search/%GDWORD%" name="Forvo" icon=""/>
+  <website enabled="0" id="b88cb2898e634c6638df618528284c2d" url="http://www.google.com/dictionary?aq=f&amp;langpair=en|en&amp;q=%GDWORD%&amp;hl=en" name="Google En-En (Oxford)" icon=""/>
+  <website enabled="0" id="f376365a0de651fd7505e7e5e683aa45" url="http://www.urbandictionary.com/define.php?term=%GDWORD%" name="Urban Dictionary" icon=""/>
+  <website enabled="0" id="324ca0306187df7511b26d3847f4b07c" url="http://multitran.ru/c/m.exe?CL=1&amp;l1=1&amp;s=%GD1251%" name="Multitran (En)" icon=""/>
+  <website enabled="0" id="924db471b105299c82892067c0f10787" url="http://lingvopro.abbyyonline.com/en/Search/en-ru/%GDWORD%" name="Lingvo (En-Ru)" icon=""/>
+  <website enabled="0" id="087a6d65615fb047f4c80eef0a9465db" url="http://michaelis.uol.com.br/moderno/ingles/index.php?lingua=portugues-ingles&amp;palavra=%GDISO1%" name="Michaelis (Pt-En)" icon=""/>
+  <website enabled="1" id="e819fce0b2f1bd36880f38342aea9826" url="http://cn.bing.com/dict/search?q=%GDWORD%&amp;go=%E6%8F%90%E4%BA%A4&amp;qs=n&amp;form=CM&amp;pq=%GDWORD%&amp;sc=5-6&amp;sp=-1&amp;sk=" name="Bing" icon=""/>
+  <website enabled="0" id="d95fb0ad83563917c8f3a0381f979d98" url="http://www.iciba.com/%GDWORD%/" name="Iciba" icon=""/>
+  <website enabled="0" id="03e6695886dd2e01d5568353efc84fc7" url="http://dict.youdao.com/search?q=%GDWORD%&amp;ue=utf8&amp;keyfrom=web.index" name="Youdao" icon=""/>
+  <website enabled="1" id="1c92fc587a5e5ce40d3cb555ffbe2682" url="http://zh.forvo.com/search/%GDWORD%" name="Forvo" icon=""/>
  </websites>
  <dictservers/>
  <programs/>
  <voiceEngines/>
  <mutedDictionaries>
-  <mutedDictionary>1c92fc587a5e5ce40d3cb555ffbe2682</mutedDictionary>
   <mutedDictionary>13f0f5243c943ec5826f25d35b4f7477</mutedDictionary>
   <mutedDictionary>c3f14ec30c4d3a96e14f41ed8bfee9d3</mutedDictionary>
+  <mutedDictionary>e819fce0b2f1bd36880f38342aea9826</mutedDictionary>
  </mutedDictionaries>
  <popupMutedDictionaries/>
  <preferences>
@@ -124,7 +114,6 @@
   <scanPopupAltMode>0</scanPopupAltMode>
   <scanPopupAltModeSecs>2</scanPopupAltModeSecs>
   <scanToMainWindow>0</scanToMainWindow>
-  <showScanFlag>0</showScanFlag>
   <scanPopupUseUIAutomation>1</scanPopupUseUIAutomation>
   <scanPopupUseIAccessibleEx>1</scanPopupUseIAccessibleEx>
   <scanPopupUseGDMessage>1</scanPopupUseGDMessage>
@@ -136,9 +125,7 @@
   <alwaysOnTop>0</alwaysOnTop>
   <searchInDock>1</searchInDock>
   <historyStoreInterval>0</historyStoreInterval>
-  <favoritesStoreInterval>0</favoritesStoreInterval>
-  <confirmFavoritesDeletion>1</confirmFavoritesDeletion>
-  <proxyserver useSystemProxy="0" enabled="0">
+  <proxyserver enabled="0" useSystemProxy="0">
    <type>0</type>
    <host></host>
    <port>3128</port>
@@ -159,7 +146,6 @@
   <articleSizeLimit>2000</articleSizeLimit>
   <maxDictionaryRefsInContextMenu>20</maxDictionaryRefsInContextMenu>
   <trackClipboardChanges>0</trackClipboardChanges>
-  <synonymSearchEnabled>1</synonymSearchEnabled>
   <fullTextSearch>
    <searchMode>0</searchMode>
    <matchCase>0</matchCase>
@@ -170,18 +156,16 @@
    <dialogGeometry></dialogGeometry>
    <disabledTypes></disabledTypes>
    <enabled>1</enabled>
-   <ignoreWordsOrder>0</ignoreWordsOrder>
    <maxDictionarySize>0</maxDictionarySize>
   </fullTextSearch>
  </preferences>
  <lastMainGroupId>1</lastMainGroupId>
  <lastPopupGroupId>1</lastPopupGroupId>
  <popupWindowState>AAAA/wAAAAH9AAAAAAAAA0AAAAIEAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAQAAAAEAAAAaAGQAaQBjAHQAaQBvAG4AYQByAHkAQgBhAHIDAAAAAP////8AAAAAAAAAAA==</popupWindowState>
- <popupWindowGeometry>AdnQywACAAAAAAKPAAABMAAABe4AAAMzAAACjwAAATAAAAXuAAADMwAAAAAAAAAAB4A=</popupWindowGeometry>
+ <popupWindowGeometry>AdnQywACAAAAAAGbAAAAtQAABPoAAAK4AAABmwAAALUAAAT6AAACuAAAAAAAAAAAB4A=</popupWindowGeometry>
  <pinPopupWindow>0</pinPopupWindow>
- <popupWindowAlwaysOnTop>0</popupWindowAlwaysOnTop>
- <mainWindowState>AAAA/wAAAAH9AAAAAgAAAAAAAADMAAACefwCAAAAAfsAAAAUAHMAZQBhAHIAYwBoAFAAYQBuAGUBAAAAJgAAAnkAAACVAP///wAAAAEAAACIAAACefwCAAAAA/sAAAASAGQAaQBjAHQAcwBQAGEAbgBlAAAAADcAAAEOAAAAaQD////7AAAAFgBoAGkAcwB0AG8AcgB5AFAAYQBuAGUBAAAAJgAAAcoAAABpAP////sAAAAaAGYAYQB2AG8AcgBpAHQAZQBzAFAAYQBuAGUBAAAB8QAAAK4AAABpAP///wAAA0YAAAJ5AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAIAAAAUAG4AYQB2AFQAbwBvAGwAYgBhAHIBAAAAAP////8AAAAAAAAAAAAAABoAZABpAGMAdABpAG8AbgBhAHIAeQBCAGEAcgEAAADz/////wAAAAAAAAAA</mainWindowState>
- <mainWindowGeometry>AdnQywACAAAAAAErAAAAmgAABcYAAANUAAABKwAAALYAAAXGAAADVAAAAAAAAAAAB4A=</mainWindowGeometry>
+ <mainWindowState>AAAA/wAAAAH9AAAAAgAAAAAAAADMAAACd/wCAAAAAfsAAAAUAHMAZQBhAHIAYwBoAFAAYQBuAGUBAAAAKAAAAncAAACZAP///wAAAAEAAACIAAACd/wCAAAAA/sAAAASAGQAaQBjAHQAcwBQAGEAbgBlAAAAADcAAAEOAAAAawD////7AAAAFgBoAGkAcwB0AG8AcgB5AFAAYQBuAGUBAAAAKAAAAncAAABrAP////sAAAAaAGYAYQB2AG8AcgBpAHQAZQBzAFAAYQBuAGUBAAAB8QAAAK4AAAAAAAAAAAAAA0YAAAJ3AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAIAAAAUAG4AYQB2AFQAbwBvAGwAYgBhAHIBAAAAAP////8AAAAAAAAAAAAAABoAZABpAGMAdABpAG8AbgBhAHIAeQBCAGEAcgEAAADZ/////wAAAAAAAAAA</mainWindowState>
+ <mainWindowGeometry>AdnQywACAAAAAAGpAAAAlAAABkQAAANPAAABqQAAALEAAAZEAAADTwAAAAAAAAAAB4A=</mainWindowGeometry>
  <helpWindowGeometry></helpWindowGeometry>
  <helpSplitterState></helpSplitterState>
  <dictInfoGeometry></dictInfoGeometry>

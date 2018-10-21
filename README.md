@@ -5,7 +5,7 @@
 ## use
 ```bash
 $git clone https://github.com/DaSea/dotfiles.git .dotfiles
-$git submodule --init update
-$cp .dotfiles/dotsyncrc ~/.dotsyncrc
+$git submodule update --init --recursive
+$ln -s .dotfiles/dotsyncrc ~/.dotsyncrc
 $./.dotfiles/dotsync/bin/dotsync -L
 ```
