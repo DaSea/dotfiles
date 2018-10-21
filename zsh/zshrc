@@ -10,16 +10,19 @@ export LC_ALL="zh_CN.UTF-8"
 # cheat setting
 export CHEATCOLORS=true
 
-DEFAULT_USER="seasea"
+DEFAULT_USER="dasea"
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 # ZSH_THEME="robbyrussell"
 # ZSH_THEME="mgnzh"
-# ZSH_THEME="agnoster"
+# ZSH_THEME="magnoster"
 ZSH_THEME="powerlevel9k/powerlevel9k"
 # ZSH_THEME="amuse"
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "crunch" "amuse" )
+# ZSH_THEME="crunch"
+# 如果你需要随机主题，请将下面俩行取消注释
+# ZSH_THEME=random
+# ZSH_THEME_RANDOM_CANDIDATES=( "crunch" "agnoster" "amuse" )
 if [[ "$ZSH_THEME" == "powerlevel9k/powerlevel9k" ]]; then
     source $HOME/.powerlevel9k.zshrc
 fi
@@ -80,7 +83,8 @@ ZSH_CUSTOM=$HOME/.mshell/zsh
 # )
 plugins=(
   git sudo autojump fast-syntax-highlighting
-  exa zsh-history-substring-search dirhistory
+  exa history-substring-search dirhistory
+  history
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -91,9 +95,9 @@ source $ZSH/oh-my-zsh.sh
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='nvim'
+  export EDITOR='vim --noplugin'
 else
-  export EDITOR='gedit'
+  export EDITOR='vim --noplugin'
 fi
 
 # Compilation flags
@@ -122,21 +126,21 @@ autoload -U compinit && compinit
 # export SDKMAN_DIR="/home/seasea/.sdkman"
 # [[ -s "/home/seasea/.sdkman/bin/sdkman-init.sh" ]] && source "/home/seasea/.sdkman/bin/sdkman-init.sh"
 
-export NVM_DIR="$HOME/.nvm"
-export PATH=${NVM_DIR}/versions/node/v8.9.3/bin:$PATH
+# export NVM_DIR="$HOME/.nvm"
+# export PATH=${NVM_DIR}/versions/node/v8.9.3/bin:$PATH
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" &  # This loads nvm
 # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-PATH="/home/seasea/perl5/bin${PATH:+:${PATH}}"; export PATH;
-PERL5LIB="/home/seasea/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
-PERL_LOCAL_LIB_ROOT="/home/seasea/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
-PERL_MB_OPT="--install_base \"/home/seasea/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=/home/seasea/perl5"; export PERL_MM_OPT;
+# PATH="/home/seasea/perl5/bin${PATH:+:${PATH}}"; export PATH;
+# PERL5LIB="/home/seasea/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+# PERL_LOCAL_LIB_ROOT="/home/seasea/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+# PERL_MB_OPT="--install_base \"/home/seasea/perl5\""; export PERL_MB_OPT;
+# PERL_MM_OPT="INSTALL_BASE=/home/seasea/perl5"; export PERL_MM_OPT;
 
 #alias for cnpm
-alias cnpm="npm --registry=https://registry.npm.taobao.org \
-  --cache=$HOME/.npm/.cache/cnpm \
-  --disturl=https://npm.taobao.org/dist \
-  --userconfig=$HOME/.cnpmrc"
+# alias cnpm="npm --registry=https://registry.npm.taobao.org \
+  # --cache=$HOME/.npm/.cache/cnpm \
+  # --disturl=https://npm.taobao.org/dist \
+  # --userconfig=$HOME/.cnpmrc"
