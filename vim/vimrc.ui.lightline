@@ -1,0 +1,214 @@
+Plug 'itchyny/lightline.vim'
+" lightline 状态栏{{{
+" ---------------------------------------------------
+set noshowmode
+set showtabline=2
+" set shortmess+=c
+let g:lightline = {}
+
+let g:plug_fttoname = {
+            \ "nerdtree": "[NERDTREE]",
+            \ "qf": "[QuickFix]",
+            \ "ctrlsf": "[CtrlSF]"
+            \ }
+
+" lightline.vim配置{{{
+function! IsPlugType()
+    return has_key(g:plug_fttoname, &ft)
+endfunction
+
+function! LightLineFugitive()
+    if winwidth(0) > 70
+        if exists('*fugitive#head')
+            let githead = fugitive#head()
+            return strlen(githead) ? ''.'['.githead.']': ''
+        endif
+    endif
+    return ''
+endfunction
+
+function! LightLineFilename()
+    let fname=""
+    if winwidth(0) > 84
+        let fname = expand('%:p:.')
+    elseif winwidth(0) > 56
+        " 取后面a/b/name.cpp
+        let fname = expand("%:t")
+    else
+        let fname = expand('%:t')
+    endif
+
+    let fname = expand('%:t')
+    return ('' != fname ? fname : '[No Name]')
+endfunction
+
+function! LightLineMode()
+    " return  winwidth(0) > 60 ? lightline#mode() : ''
+    if IsPlugType()
+        return ''
+    endif
+
+    return  lightline#mode()
+endfunction
+
+function! LightLineModified()
+    if &filetype == "help"
+        return ""
+    elseif &modified
+        return "*"
+    elseif &modifiable
+        return "+"
+    else
+        return "?"
+    endif
+endfunction
+
+function! LightLineFileformat()
+    if exists("*WebDevIconsGetFileFormatSymbol")
+        return winwidth(0) > 56 ? WebDevIconsGetFileFormatSymbol() : ''
+    else
+        return winwidth(0) > 56 ? &fileformat : ''
+    endif
+endfunction
+
+function! LightLineFiletype()
+    if exists("*WebDevIconsGetFileTypeSymbol")
+        return winwidth(0) > 50 ? (strlen(&filetype) ? WebDevIconsGetFileTypeSymbol() : 'Unknown') : ''
+    else
+        return winwidth(0) > 50 ? (strlen(&filetype) ? &filetype : 'Unkown') : ''
+    endif
+endfunction
+
+function! LightLineFileencoding()
+    if IsPlugType()
+        return ''
+    endif
+
+    let mbomb = &l:bomb ? '[B]' : ''
+    let encod = strlen(&fenc) ? &fenc : &enc
+    return encod . '' . mbomb
+endfunction
+
+function! LightLinePath()
+    return (winwidth(0) >= 100)?(expand('%:p:.:h')):''
+endfunction
+
+function! LightLineInactivePath()
+    return expand('%:p:.:h')
+endfunction
+
+function! LightLineCurrTag()
+    if IsPlugType()
+        return ''
+    endif
+
+    if exists("*tagbar#currenttag")
+        return tagbar#currenttag("%s", "[UnknownFun]")
+    elseif exists(":Tagbar")
+        return tagbar#currenttag("%s", "[UnknownFun]")
+    endif
+
+    return "[UnknownFun]"
+endfunction
+let g:buffer_winnr_map = {
+            \ 0: "\uf8a0", 1: "\uf8a3", 2: "\uf8a6", 3: "\uf8a9", 4: "\uf8ac",
+            \ 5: "\uf8af", 6: "\uf8b2", 7: "\uf8b5", 8: "\uf8b8", 9: "\uf8bb"}
+function! LightLineCurWinnr() abort "   {{{
+    let curnr = bufwinnr(bufnr())
+    if curnr <= 9
+        return g:buffer_winnr_map[curnr]
+    endif
+
+    return curnr
+endfunction " }}}
+
+let g:lightline = {
+            \ 'colorscheme': g:setting.lightline_color,
+            \ 'component':{
+            \ 'readonly': '%{&readonly?"":""}',
+            \ 'lineinfo': '%l:%L%v',
+            \ },
+            \ 'active': {
+            \ 'left': [ ['mode'], ['filename', 'fileencoding', 'fileformat'], ['currtag', 'lineinfo'] ],
+            \ 'right': [ [ 'relativepath' ] ]
+            \ },
+            \ 'inactive': {
+            \ 'left': [['curwinnr', 'filename']],
+            \ 'right': [['currpath']]
+            \},
+            \ 'component_function': {
+            \   'mode' : 'LightLineMode',
+            \   'modified': 'LightLineModified',
+            \   'fugitive': 'LightLineFugitive',
+            \   'filename': 'LightLineFilename',
+            \   'filetype': 'LightLineFiletype',
+            \   'fileencoding': 'LightLineFileencoding',
+            \   'fileformat': 'LightLineFileformat',
+            \   'relativepath': 'LightLinePath',
+            \   'currpath': 'LightLineInactivePath',
+            \   'currtag': 'LightLineCurrTag',
+            \   'curwinnr': 'LightLineCurWinnr'
+            \ },
+            \ 'separator': {'left': g:setting.left_separator, 'right': g:setting.right_separator},
+            \ 'subseparator': {'left': g:setting.left_sub_separator, 'right': g:setting.right_sub_separator},
+            \ 'tabline_separator': {'left': g:setting.tab_left_separator, 'right': g:setting.tab_right_separator},
+            \ 'tabline_subseparator': {'left': g:setting.tab_left_sub_separator, 'right': g:setting.tab_right_sub_separator}
+            \ }
+
+let g:lightline.mode_map = {
+            \ 'n' : 'N',
+            \ 'i' : 'I',
+            \ 'R' : 'R',
+            \ 'v' : 'V',
+            \ 'V' : 'VL',
+            \ "\<C-v>": 'VB',
+            \ 'c' : 'C',
+            \ 's' : 'S',
+            \ 'S' : 'SL',
+            \ "\<C-s>": 'SB',
+            \ 't': 'TERM',
+            \ }
+
+" }}}
+
+Plug 'mengelbrecht/lightline-bufferline'
+let g:lightline.tabline          = {'left': [['buffers']], 'right': [['close']]}
+let g:lightline.component_expand = {'buffers': 'lightline#bufferline#buffers'}
+let g:lightline.component_type   = {'buffers': 'tabsel'}
+let g:lightline#bufferline#filename_modifier=":t"
+let g:lightline#bufferline#show_number=2
+" buffer 索引显示的一个样式
+let s:buffer_num_idx=0
+if 1 == s:buffer_num_idx
+    let g:lightline#bufferline#number_map = {
+                \ 0: "\uf8a2", 1: "\uf8a5", 2: "\uf8a8", 3: "\uf8ab", 4: "\uf8ae",
+                \ 5: "\uf8b1", 6: "\uf8b4", 7: "\uf8b7", 8: "\uf8ba", 9: "\uf8bd"}
+elseif 2 == s:buffer_num_idx
+    let g:lightline#bufferline#number_map = {
+                \ 0: "\uf8a0", 1: "\uf8a3", 2: "\uf8a6", 3: "\uf8a9", 4: "\uf8ac",
+                \ 5: "\uf8af", 6: "\uf8b2", 7: "\uf8b5", 8: "\uf8b8", 9: "\uf8bb"}
+else
+    let g:lightline#bufferline#number_map = {
+                \ 0: '⁰', 1: '¹', 2: '²', 3: '³', 4: '⁴',
+                \ 5: '⁵', 6: '⁶', 7: '⁷', 8: '⁸', 9: '⁹'}
+endif
+" \uf814 f813 \uf6da
+let g:lightline#bufferline#more_buffers="\uf8bf"
+let g:lightline#bufferline#enable_devicons=1
+let g:lightline#bufferline#unicode_symbols=1
+let g:lightline#bufferline#right_aligned=0
+let g:lightline#bufferline#shorten_path=0
+" let g:lightline#bufferline#reverse_buffers=1
+nmap ,1 <Plug>lightline#bufferline#go(1)
+nmap ,2 <Plug>lightline#bufferline#go(2)
+nmap ,3 <Plug>lightline#bufferline#go(3)
+nmap ,4 <Plug>lightline#bufferline#go(4)
+nmap ,5 <Plug>lightline#bufferline#go(5)
+nmap ,6 <Plug>lightline#bufferline#go(6)
+nmap ,7 <Plug>lightline#bufferline#go(7)
+nmap ,8 <Plug>lightline#bufferline#go(8)
+" nmap ,9 <Plug>lightline#bufferline#go(9)
+" nmap ,0 <Plug>lightline#bufferline#go(10)
+" }}}
+
+" vim:ts=4:sw=4:sts=4 et fdm=marker:

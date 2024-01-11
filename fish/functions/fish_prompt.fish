@@ -1,0 +1,1 @@
+/home/dasea/.local/share/omf/themes/mzish/fish_prompt.fish

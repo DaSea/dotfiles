@@ -1,0 +1,17 @@
+#
+# dotsync : https://github.com/dotphiles/dotsync
+#
+# Ignore these files when rsyncing to remote machines
+#
+# Authors:
+#   Ben O'Hara <bohara@gmail.com>
+#
+
+.git/
+backup/
+ssh/id*
+ssh/known_hosts
+gnupg/secring.gpg
+other/*.kdbx
+vim/backup/*
+

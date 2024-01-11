@@ -1,0 +1,120 @@
+#
+# dotsync : https://github.com/dotphiles/dotsync
+#
+# Config for dotsync
+#
+# Authors:
+#   Ben O'Hara <bohara@gmail.com>
+#
+
+# Location of your dotfiles in $HOME
+# DOTFILES=.dotfiles
+
+# dotfiles to symlink
+#
+# srcfile:dstfile
+# dstfile will be '.$srcfile' by default (with path removed)
+#
+[files]
+dotsyncrc
+#cheat:.cheat
+dotsync/bin:bin
+#ack/ackrc
+#aptitude
+#bin:bin
+#ctags/ctags
+#cmus
+#curl/curlrc
+#git/gitconfig
+#git/gitignore
+#git/gitattributes
+#git/tigrc
+#git/gitk
+#gnupg
+#grc
+#input/editrc
+#input/inputrc
+#irssi
+#mercurial/hgrc
+#mercurial/hgignore
+#mutt
+#mutt/muttrc
+#mutt/offlineimaprc
+#python/pythonrc
+#python/pylintrc
+#rpm/rpmmacros
+#ruby/irbrc
+#ruby/pryrc
+#ruby/gemrc
+#ruby/railsrc
+#ruby/rdebugrc
+#ruby/aprc
+#ruby/caprc
+#screen/screenrc
+#ssh
+#subversion
+#task/task
+#task/taskrc
+#tmux/tmux.conf
+#tmux/tmuxinator
+#vim/dotvim:.vim
+vim/vimrc.version:.vim/vimrc.version
+vim/vimrc.ui.mstatusline:.vim/vimrc.ui.mstatusline
+vim/vimrc.ui.lightline:.vim/vimrc.ui.lightline
+vim/vimrc.ui.airline:.vim/vimrc.ui.airline
+vim/vimrc.ui.luabufferline:.vim/vimrc.ui.luabufferline
+vim/vimrc.ui:.vim/vimrc.ui
+vim/vimrc.other:.vim/vimrc.other
+vim/vimrc.os:.vim/vimrc.os
+vim/vimrc
+vim/vimrc.mexplug:.vim/vimrc.mexplug
+vim/vimrc.vimplug:.vim/vimrc.vimplug
+vim/vimrc.language:.vim/vimrc.language
+vim/vimrc.finder.unite:.vim/vimrc.finder.unite
+vim/vimrc.finder.leaderf:.vim/vimrc.finder.leaderf
+vim/vimrc.finder.ctrlp:.vim/vimrc.finder.ctrlp
+vim/vimrc.finder.denite:.vim/vimrc.finder.denite
+vim/vimrc.finder:.vim/vimrc.finder
+vim/vimrc.edit:.vim/vimrc.edit
+vim/vimrc.doc:.vim/vimrc.doc
+vim/vimrc.complete:.vim/vimrc.complete
+# vim/ftdetect:.vim/ftdetect
+vim/tools:.vim/tools
+vim/autoload:.vim/autoload
+vim/snippets:.vim/snippets
+nvim:.config/nvim
+#wezterm:.config/wezterm
+#awesome:.config/awesome
+#starship/starship.toml:.config/starship.toml
+#bash/bashrc
+#zsh/zcompdump
+#zsh/zsh-update
+#zsh/zsh_history
+#zsh/zshrc
+#zsh/powerlevel9k.zshrc
+#oh-my-zsh
+#mshell
+# fish setting
+#fish:.config/fish
+#mbin:mbin
+# neofetch
+#neofetch/config.conf:.config/neofetch/config.conf
+#goldendict
+# yong
+# conky设置
+# conky
+# conkyrc
+[endfiles]
+
+## hostname                     type=masterhost, ANY or NONE    files=dotfile:tolink,another:tolink
+[hosts]
+ding-82dm               git=ANY
+#host2.example.com               git=ANY                                                #git repo, pull from anywhere
+#host3.example.com               git=ANY                                                #git repo, pull from anywhere
+#host4.example.com               git=host5.example.com                                  #git repo, pull from host5
+#host5.example.com               git=NONE                                               #git repo, local only
+#host6.example.net               rsync=host1.example.com                                #rsync mirror, push from host1
+#host7.example.net               rsync=host2.example.com                                #rsync mirror, push from host2
+#host8.example.net               rsync=host2.example.com                                #rsync mirror, push from host2
+#host9.example.net               rsync=host2.example.com                                #rsync mirror, push from host2
+[endhosts]

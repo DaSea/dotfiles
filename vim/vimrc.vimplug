@@ -1,0 +1,52 @@
+" vim-plug插件管理器使用的配置文件 {{{
+" man.vim: invoked by :Man {name}
+source $VIMRUNTIME/ftplugin/man.vim
+
+function! g:LoadConfig(vimcfg) abort " load vimrc.<subfile> {{{
+    let s:vim_cfg = g:vim_plugin_path . '/' . a:vimcfg
+    " echo s:vim_cfg
+    if filereadable(expand(s:vim_cfg))
+        exec 'source ' . fnameescape(s:vim_cfg)
+    endif
+endfunction " }}}
+
+"git, svn等控制显示{{{
+call LoadConfig("vimrc.version")
+"}}}
+
+" ex系列插件 {{{
+" call LoadConfig("vimrc.explug")
+" 自己修改的一些explug的插件
+call LoadConfig("vimrc.mexplug")
+" }}}
+
+" finder(leaderf, ctrlp)及文件管理器{{{
+call LoadConfig("vimrc.finder")
+"}}}
+
+" 界面显示相关 (colortheme, statusline, starty, devicons){{{
+call LoadConfig("vimrc.ui")
+"}}}
+
+" 主要是识别文件的编码，grep，多光标等{{{
+call LoadConfig("vimrc.edit")
+"}}}
+
+" 文档相关 {{{
+call LoadConfig("vimrc.doc")
+"}}}
+
+" 补全相关插件, 语言无关 {{{
+call LoadConfig("vimrc.complete")
+"}}}
+
+" 加载语言相关插件, syntax {{{
+call LoadConfig("vimrc.language")
+" }}}
+
+" os and other {{{
+call LoadConfig('vimrc.os')
+call LoadConfig("vimrc.other")
+" }}}
+
+" vim:ts=4:sw=4:sts=4 et fdm=marker:

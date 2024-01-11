@@ -1,0 +1,2089 @@
+: 1512835149:0;cd Downloads
+: 1512835149:0;sudo tar -jxf Firefox-latest-x86_64.tar.bz2 -C /opt/
+: 1512835149:0;cd /opt/firefox
+: 1512835149:0;./run-mozilla.sh
+: 1512835149:0;cd /usr/share/applications
+: 1512835149:0;cp google-chrome.desktop firefox.desktop
+: 1512835149:0;sudo cp google-chrome.desktop firefox.desktop
+: 1512835149:0;sudo vim firefox.desktop
+: 1512835149:0;ln /opt/firefox/firefox /usr/bin/firefox
+: 1512835149:0;ln -s /opt/firefox/firefox /usr/bin/firefox
+: 1512835149:0;sudo ln -s /opt/firefox/firefox /usr/bin/firefox
+: 1512835149:0;sudo apt install albert
+: 1512835149:0;chsh -s /bin/zsh
+: 1512835149:0;cd
+: 1512835149:0;git clone --depth https://github.com/robbyrussell/oh-my-zsh.git .oh-my-zsh
+: 1512835149:0;git clone --depth https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+: 1512835149:0;git clone --depth 1 https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+: 1512835149:0;ls
+: 1512835149:0;la
+: 1512835149:0;ls -a
+: 1512835149:0;more .zshrc
+: 1512835149:0;rm .zshrc
+: 1512835149:0;cp .oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
+: 1512835149:0;exit
+: 1512835147:0;ls
+: 1512835149:0;exit
+: 1512835460:0;sudo apt install cmus
+: 1512867983:0;df -h
+: 1512871993:0;ls
+: 1512874226:0;sudo apt install pip3
+: 1512874260:0;sudo apt install python3-pip
+: 1512874290:0;ll
+: 1512874317:0;pip3
+: 1512874325:0;cd gitsrc/n_vim/neovim
+: 1512874326:0;ll
+: 1512874328:0;cd ..
+: 1512874329:0;ll
+: 1512874334:0;cd
+: 1512874335:0;ll
+: 1512874588:0;chmod -R 755 gitsrc
+: 1512874592:0;cd gitsrc
+: 1512874594:0;ls
+: 1512874595:0;ll
+: 1512874621:0;cd n_vim
+: 1512874622:0;ls
+: 1512874625:0;cd neovim
+: 1512874625:0;ls
+: 1512874645:0;rm -rf buidl
+: 1512874649:0;rm -rf build
+: 1512874650:0;ls
+: 1512874659:0;make clean
+: 1512874818:0;cd .deps
+: 1512874818:0;ls
+: 1512874820:0;ll
+: 1512874824:0;ccd ..
+: 1512874826:0;cd
+: 1512874829:0;cd gitsrc/n_vim
+: 1512874830:0;ls
+: 1512874832:0;cd neovim
+: 1512874834:0;git pull
+: 1512875038:0;git status
+: 1512875052:0;git checkout -- unicode/ third-party/ test/ runtime/
+: 1512875054:0;git status
+: 1512875062:0;git checkout -- src
+: 1512875068:0;git status
+: 1512875098:0;git checkout -- scripts/ man contrib CONTRIBUTING.md cmake codecov.yml config/ 
+: 1512875102:0;git status
+: 1512875133:0;git checkout -- ci busted/ README.md appveyor.yml LICENSE Makefile ISSUE_TEMPLATE.md CMakeLists.txt BACKERS.md BSDmakefile .travis.yml .gitignore .editorconfig
+: 1512875136:0;git status
+: 1512875139:0;git pull
+: 1512875284:0;cd .deps
+: 1512875289:0;git status
+: 1512875301:0;cmake ../third-party
+: 1512875306:0;sudo apt install cmake
+: 1512875320:0;cmake ../third-party
+: 1512875325:0;make
+: 1512875880:0;apt-cache policy libtool
+: 1512875888:0;sudo apt install libtool
+: 1512875922:0;make
+: 1512875934:0;libtool
+: 1512875940:0;sudo apt install libtool-bin
+: 1512875945:0;make
+: 1512876009:0;sudo apt install m4
+: 1512876016:0;make
+: 1512876042:0;sudo apt install aclocal
+: 1512879380:0;sudo apt install automake
+: 1512879397:0;make
+: 1512880354:0;cd ..
+: 1512880365:0;mkdir build
+: 1512880370:0;cd build
+: 1512880382:0;cmake .. -DMIN_LOG_LEVEL=0 -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr/local
+: 1512880406:0;sudo apt-get install libtool libtool-bin autoconf automake cmake g++ pkg-config unzip
+: 1512880414:0;make
+: 1512880489:0;sudo make install
+: 1512880494:0;nvim
+: 1512880603:0;cd
+: 1512880742:0;cd gitsrc
+: 1512880743:0;ls
+: 1512880748:0;cd vimrc
+: 1512880748:0;ls
+: 1512880754:0;git pull
+: 1512880802:0;git diff snippets/cpp.snip
+: 1512880812:0;git checkout -- .vimrc.*
+: 1512880825:0;git checkout -- .zshrc README.md .gitconfig denite_menu.vim snippets/
+: 1512880827:0;gst
+: 1512880851:0;git checkout -- .bashrc .bashrc_me .mshell/ .tmux.conf cb_color.conf
+: 1512880853:0;gst
+: 1512880857:0;git puull
+: 1512880861:0;gp
+: 1512880867:0;git pull
+: 1512880881:0;cd ..
+: 1512880881:0;ls
+: 1512880886:0;cd github
+: 1512880886:0;ls
+: 1512880889:0;cd ..
+: 1512880892:0;cd mcode
+: 1512880893:0;ls
+: 1512880897:0;cd ..
+: 1512880916:0;git clone --depth 1 https://github.com/exvim/main.git exvim
+: 1512880920:0;ls
+: 1512880922:0;cd exvim
+: 1512880922:0;ls
+: 1512880925:0;cd unix
+: 1512880926:0;ls
+: 1512880934:0;./replace-my-vim.sh
+: 1512880939:0;ll
+: 1512880946:0;chmod +x replace-my-vim.sh
+: 1512880949:0;./replace-my-vim.sh
+: 1512880957:0;cd ..
+: 1512880970:0;nvim ./unix/replace-my-vim.sh
+: 1512880983:0;ll
+: 1512880986:0;ls -a
+: 1512880992:0;./unix/replace-my-vim.sh
+: 1512880994:0;cd
+: 1512880997:0;cd .vim
+: 1512880998:0;ls
+: 1512881000:0;la
+: 1512881194:0;cd
+: 1512881195:0;curl -fLo ~/.vim/autoload/plug.vim --create-dirs \\
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+: 1512881205:0;sudo apt install curl
+: 1512881229:0;curl -fLo ~/.vim/autoload/plug.vim --create-dirs \\
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+: 1512881236:0;cd .vim
+: 1512881237:0;ls
+: 1512881247:0;mkdir plugged
+: 1512881263:0;cd
+: 1512881270:0;la
+: 1512881279:0;rm .vimrc*
+: 1512881280:0;ls
+: 1512881281:0;la
+: 1512881297:0;cd gitsrc/vimrc
+: 1512881298:0;ls
+: 1512881300:0;la
+: 1512881312:0;cp .vimrc* ~
+: 1512881318:0;cp -r snippets ~/
+: 1512881323:0;cd
+: 1512881323:0;la
+: 1512881326:0;nvim
+: 1512881332:0;vim
+: 1512881406:0;nvim
+: 1512881586:0;mkdir .config/nvim && cd .config/nvim && vim init.vim
+: 1512881598:0;nvim
+: 1512881683:0;cd
+: 1512881686:0;cd .vim/plugged
+: 1512881686:0;ls
+: 1512882024:0;cd ex-matchit
+: 1512882025:0;ls
+: 1512882029:0;cd 
+: 1512882292:0;nvim
+: 1512882303:0;sudo pip3 install neovim
+: 1512882333:0;nvim
+: 1512882357:0;cd
+: 1512882374:0;nvim
+: 1512882442:0;sudo apt install xsel
+: 1512882459:0;nvim
+: 1512882525:0;clear
+: 1512882735:0;nvim .zshrc
+: 1512883343:0;ls
+: 1512883367:0;cd gitsrc/ls
+: 1512883369:0;cd gitsrc/
+: 1512883370:0;ls
+: 1512883372:0;cd vimrc
+: 1512883373:0;ls
+: 1512883376:0;la
+: 1512883388:0;cp -r .mshell ~/
+: 1512883389:0;cd
+: 1512883396:0;cd .mshell
+: 1512883397:0;ls
+: 1512883399:0;cd zsh
+: 1512883399:0;ls
+: 1512883446:0;cd 
+: 1512883449:0;cd .oh-my-zsh
+: 1512883450:0;ls
+: 1512883452:0;cd plugins
+: 1512883453:0;ls
+: 1512883640:0;cd
+: 1512883643:0;cd Downloads
+: 1512883643:0;ls
+: 1512883652:0;cd
+: 1512883659:0;mkdir mtools
+: 1512883667:0;mkdir mtools/bin
+: 1512883670:0;cd Downloads
+: 1512883685:0;mv exa-linux-x86_64 ../mtools/bin/exa
+: 1512884014:0;ll
+: 1512884020:0;exa
+: 1512952137:0;exit
+: 1512997566:0;df -h
+: 1513000794:0;sudo update-grub2
+: 1513000946:0;exa -l
+: 1513000971:0;nvim .zshrc
+: 1513000993:0;sudo apt update && sudo apt dist-upgrade
+: 1513001052:0;ls
+: 1513001276:0;sudo pip3 install autojump
+: 1513001290:0;apt-cache policy autojump
+: 1513001342:0;ls
+: 1513001342:0;cd
+: 1513001484:0;exit
+: 1513001493:0;ls
+: 1513001650:0;cd gitsrc
+: 1513001651:0;ls
+: 1513001921:0;cd
+: 1513001931:0;cd .mshell/zsh
+: 1513001932:0;ls
+: 1513001936:0;more git.zsh
+: 1513001940:0;rm git.zsh
+: 1513001944:0;mkdir themes
+: 1513001954:0;ls
+: 1513001955:0;clear
+: 1513001956:0;cd themes
+: 1513001957:0;ls
+: 1513001977:0;touch mgnzh.zsh
+: 1513002110:0;ls
+: 1513002124:0;mv mgnzh.zsh mgnzh.zsh-theme
+: 1513002127:0;exit
+: 1513002274:0;ls
+: 1513002291:0;exit
+: 1513002424:0;hs -i
+: 1513002429:0;history
+: 1513002554:0;sudo apt install autojump
+: 1513002575:0;whereis autojump
+: 1513002675:0;echo $LANG
+: 1513003069:0;mount
+: 1513003145:0;df -a
+: 1513003469:0;sudo blkid
+: 1513003793:0;lsblk -l
+: 1513003940:0;sudo mount -a
+: 1513004032:0;exit
+: 1513004391:0;nvim
+: 1513004496:0;sudo mount -a
+: 1513004502:0;ls
+: 1513004510:0;cd /media
+: 1513004511:0;ls
+: 1513004514:0;cd seasea
+: 1513004515:0;ls
+: 1513004517:0;cd ..
+: 1513004541:0;mkdir work download entertainment
+: 1513004544:0;sudo mkdir work download entertainment
+: 1513004549:0;sudo mount -a
+: 1513004787:0;cd
+: 1513004791:0;cd .config
+: 1513004793:0;ls
+: 1513004831:0;touch redshift.conf
+: 1513004970:0;cd
+: 1513004975:0;cd .mshell/zsh
+: 1513004976:0;ls
+: 1513005009:0;mkdir plugins
+: 1513005010:0;cd plugins
+: 1513005030:0;git clone https://github.com/zdharma/fast-syntax-highlighting.git fast-syn-hi
+: 1513005037:0;ls
+: 1513005041:0;cd fast-syn-hi
+: 1513005041:0;ls
+: 1513005047:0;cd ..
+: 1513005071:0;mv fast-syn-hi fast-syntax-hightlighting
+: 1513005093:0;cd ..
+: 1513005095:0;cd plugins
+: 1513005096:0;ls
+: 1513005102:0;mkdir exa
+: 1513005106:0;cd exa
+: 1513005115:0;touch exa.plugin.zsh
+: 1513005137:0;cd
+: 1513005278:0;alias k='exa'
+: 1513005279:0;ks
+: 1513005283:0;k -l
+: 1513005422:0;k -G
+: 1513005435:0;exa --grid
+: 1513005440:0;exa --online
+: 1513005447:0;exa --oneline
+: 1513005520:0;exa -R
+: 1513005544:0;exa -T
+: 1513005575:0;exa -x
+: 1513005605:0;exa -la
+: 1513005756:0;k -lh
+: 1513005850:0;exit
+: 1513005857:0;ls
+: 1513005861:0;ka
+: 1513005864:0;kl
+: 1513005873:0;clear
+: 1513005902:0;sudo apt install neofetch
+: 1513005916:0;neoftch
+: 1513005920:0;neofetch
+: 1513005929:0;clear
+: 1513005940:0;echo $HOME
+: 1513005945:0;nvim .zsh
+: 1513006004:0;cd .mshell/zsh/plugins
+: 1513006005:0;ls
+: 1513006030:0;exit
+: 1513006036:0;echo "d\
+"
+: 1513006049:0;cd .mshell/zsh/plugins
+: 1513006050:0;ls
+: 1513006063:0;cd fast-syntax-hightlighting
+: 1513006064:0;ls
+: 1513006072:0;cd ..
+: 1513006094:0;mv fast-syntax-hightlighting fast-syntax-highlighting
+: 1513006103:0;exit
+: 1513006121:0;j plugins
+: 1513006123:0;ls
+: 1513006136:0;mkdir deepin
+: 1513006138:0;cd deepin
+: 1513006147:0;touch deepin.plugin.zsh
+: 1513006149:0;cd ..
+: 1513006156:0;k -T
+: 1513006697:0;cd ..
+: 1513006697:0;ls
+: 1513006700:0;cd themes
+: 1513006720:0;git clone https://github.com/bhilburn/powerlevel9k.git powerlevel9k
+: 1513006731:0;git clone --depth 1 https://github.com/bhilburn/powerlevel9k.git powerlevel9k
+: 1513006754:0;cd powerlevel9k
+: 1513006755:0;ls
+: 1513006852:0;exit
+: 1513006856:0;ls
+: 1513007251:0;exit
+: 1513007281:0;ls
+: 1513007326:0;exit
+: 1513007328:0;cd
+: 1513007718:0;exit
+: 1513340727:0;sudo apt update && sudo apt dist-upgrade
+: 1513340926:0;sudo apt-get update
+: 1513341616:0;sudo apt-get dist-upgrade
+: 1513341949:0;cd .mshell/zsh
+: 1513341950:0;ls
+: 1513341952:0;cd themes
+: 1513341953:0;ls
+: 1513341954:0;cd powerlevel9k
+: 1513341955:0;ls
+: 1513342087:0;nvim
+: 1513342133:0;sudo apt install conky-all
+: 1513342162:0;sudo apt autoclean
+: 1513342169:0;sudo apt autoremove
+: 1513342474:0;echo $OS_ICON
+: 1513342696:0;cd
+: 1513342703:0;cd .oh-my-zsh
+: 1513342706:0;git pull
+: 1513342716:0;nvim
+: 1513342793:0;sudo apt install ripgrep
+: 1513342797:0;rg
+: 1513342800:0;ag
+: 1513343013:0;echo $POWERLEVEL9K_DIR_PATH_SEPARATOR
+: 1513343072:0;echo $OS_ICON
+: 1513343113:0;exit
+: 1513343261:0;cd plugins/
+: 1513343262:0;kla
+: 1513343270:0;cd vim-interaction
+: 1513343271:0;ls
+: 1513343277:0;more vim-interaction.plugin.zsh
+: 1513343660:0;ls
+: 1513343820:0;cd
+: 1513343986:0;ls
+: 1513343989:0;l
+: 1513343993:0;clear
+: 1513343994:0;ka
+: 1513344155:0;ls
+: 1513344215:0;cd
+: 1513344223:0;exit
+: 1513344255:0;sudo -s
+: 1513344290:0;exit
+: 1513344307:0;cd
+: 1513344311:0;j kqobjects
+: 1513344315:0;j 05_gi
+: 1513344322:0;j neovim
+: 1513344329:0;cd gitsrc/n_vim/neovim
+: 1513344331:0;ls
+: 1513344558:0;cd
+: 1513344729:0;clear
+: 1513344769:0;exit
+: 1513344956:0;cd
+: 1513344960:0;exit
+: 1513344972:0;cd
+: 1513345712:0;sudo apt install dirmngr
+: 1513345734:0;cd /etc
+: 1513345745:0;cd apt/sources.list.d
+: 1513345760:0;sudo nvim deepin-topbar
+: 1513345848:0;sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 3BBF73EE77F2FB2A
+: 1513345893:0;sudo apt update
+: 1513345904:0;ls
+: 1513345927:0;sudo mv deepin-topbar deepin-topbar.list
+: 1513345930:0;sudo apt update
+: 1513345944:0;sudo apt install deepin-topbar
+: 1513346077:0;pkill deepin-topbar
+: 1513346081:0;clear
+: 1513346083:0;exit
+: 1513347052:0;cd /media
+: 1513347738:0;exit
+: 1513347739:0;cd
+: 1513347759:0;sudo apt install silversearcher-ag
+: 1513347773:0;df -h
+: 1513348246:0;ls
+: 1513348712:0;j neovim
+: 1513348716:0;git pull
+: 1513348735:0;exit
+: 1513348767:0;sudo apt update&& sudo apt upgrade
+: 1513348788:0;cd build
+: 1513348792:0;sudo make install
+: 1513348817:0;sudo apt install gettext
+: 1513348840:0;sudo make install
+: 1513348876:0;exit
+: 1513348993:0;pkill deepin-topbar
+: 1513349005:0;sudo apt remove deepin-topbar
+: 1513349023:0;cd /etc/apt/sources.list.d
+: 1513349024:0;ls
+: 1513349029:0;rm deepin-topbar.list
+: 1513349040:0;ls
+: 1513349053:0;sudo rm deepin-topbar.list
+: 1513349058:0;cd
+: 1513349062:0;sudo apt update
+: 1513349069:0;exit
+: 1513349232:0;uname -a
+: 1513349277:0;nvim
+: 1513349566:0;cd .config
+: 1513349567:0;ls
+: 1513349569:0;cd autostart
+: 1513349569:0;ls
+: 1513349596:0;sudo cp /usr/share/applications/albert.desktop ./
+: 1513349600:0;ls
+: 1513349864:0;sudo apt install uncrustify
+: 1513349966:0;apt-cache policy qt5-default
+: 1513349978:0;apt-cache policy todotxt-cl
+: 1513349982:0;apt-cache policy todotxt-cli
+: 1513349996:0;conky
+: 1513350055:0;apt-cache policy conky-manager
+: 1513350064:0;sudo apt install conky-manager
+: 1513350435:0;sudo apt remove conky-all
+: 1513350445:0;sudo apt autoremove
+: 1513350454:0;clear
+: 1513350465:0;sudo apt install zeal
+: 1513350980:0;nvim
+: 1513351045:0;exit
+: 1513384702:0;sudo apt update&& sudo apt dist-upgrade
+: 1513385560:0;curl -s "https://get.sdkman.io" | zsh
+: 1513385587:0;source "$HOME/.sdkman/bin/sdkman-init.sh"
+: 1513385592:0;sdk version
+: 1513385605:0;sdk list java
+: 1513386067:0;sdk install java 8u151-oracle /opt/java/8u151
+: 1513386845:0;cd /media/work/Company
+: 1513386850:0;cd 06_KQPlateform/KQObjects
+: 1513386851:0;ls
+: 1513386852:0;ka
+: 1513386859:0;nvim kqobjects.exvim
+: 1513386884:0;sudo apt install id-utils
+: 1513387009:0;clear
+: 1513387147:0;nvim kqobjects.exvim
+: 1513387426:0;sdk list java
+: 1513387617:0;sdk current
+: 1513387773:0;j 05
+: 1513387785:0;cd /media/work/Self/05_gitsrc
+: 1513387786:0;ka
+: 1513387789:0;kl
+: 1513387793:0;kk
+: 1513387794:0;k
+: 1513387827:0;git clone --depth 1 https://github.com/universal-ctags/ctags.git
+: 1513387833:0;cd ctags/ls
+: 1513387834:0;cd ctags/
+: 1513387838:0;k
+: 1513387842:0;git remote -v
+: 1513387846:0;git pull
+: 1513387924:0;./autogen.sh
+: 1513387950:0;sudo apt install gettext-base
+: 1513388117:0;cd ..
+: 1513388158:0;apt-cache policy gettext
+: 1513388447:0;apt-cache policy clang
+: 1513388458:0;sudo apt install clang
+: 1513388513:0;java
+: 1513388522:0;java -version
+: 1513388551:0;echo $JAVA_HOME
+: 1513388631:0;j 05
+: 1513388636:0;cd gettext-0.19.8.1
+: 1513388641:0;./configure
+: 1513388795:0;make
+: 1513388936:0;cd ctags
+: 1513388937:0;ls
+: 1513389024:0;make install
+: 1513389032:0;sudo make install
+: 1513389063:0;df -h
+: 1513389087:0;cd ..
+: 1513389091:0;cd ctags
+: 1513389095:0;./autogen.sh
+: 1513389163:0;./configure
+: 1513389196:0;iconv
+: 1513389233:0;sudo make install
+: 1513389301:0;exit
+: 1513389307:0;sudo apt autoremove
+: 1513389311:0;sudo apt autoclean
+: 1513389314:0;exit
+: 1513415000:0;j kqobjects
+: 1513415002:0;ls
+: 1513415005:0;ka
+: 1513415099:0;nvim kqobjects.exvim
+: 1513415140:0;cd
+: 1513415287:0;df -h
+: 1513415364:0;export NVM_DIR="/opt/nvm" | curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | zsh
+: 1513415472:0;nvm
+: 1513415919:0;command -v nvm
+: 1513415922:0;nvm
+: 1513415926:0;exit
+: 1513415929:0;cd
+: 1513415930:0;nvm
+: 1513415951:0;nvm ls-remote
+: 1513415980:0;cd .oh-my-zsh
+: 1513415981:0;ls
+: 1513415986:0;cd plugins/nvm
+: 1513415986:0;ls
+: 1513415993:0;more nvm.plugin.zsh
+: 1513416123:0;nvm install 8.9.3
+: 1513416208:0;nvm current
+: 1513416565:0;apt-cache policy youdao-dict
+: 1513416580:0;apt-cache policy youdao-dict-dbgsym
+: 1513416722:0;cd
+: 1513416728:0;j 05__
+: 1513416730:0;cd ..
+: 1513416731:0;ls
+: 1513416734:0;k
+: 1513416751:0;cd 07_qtprj
+: 1513416751:0;ls
+: 1513416754:0;k
+: 1513416797:0;cd textFieldExpression
+: 1513416798:0;ls
+: 1513416802:0;cd build
+: 1513416803:0;ls
+: 1513416806:0;cd ..
+: 1513416807:0;nvim
+: 1513416910:0;kg
+: 1513416914:0;la
+: 1513416917:0;ka
+: 1513417024:0;cd
+: 1513417091:0;exit
+: 1513417422:0;cd build
+: 1513417423:0;ls
+: 1513417426:0;make
+: 1513417429:0;cmake ..
+: 1513417437:0;cd ..
+: 1513417438:0;ls
+: 1513417446:0;rm -rf build
+: 1513417450:0;mkdir build
+: 1513417452:0;cd build
+: 1513417455:0;make ..
+: 1513417457:0;make
+: 1513417460:0;ls
+: 1513417467:0;cmake ..
+: 1513417470:0;make
+: 1513417476:0;./textFieldExpression
+: 1513417587:0;make
+: 1513417593:0;./textFieldExpression
+: 1513417733:0;exit
+: 1513417741:0;cd build
+: 1513417743:0;make
+: 1513417755:0;./textFieldExpression
+: 1513417780:0;make
+: 1513417786:0;./textFieldExpression
+: 1513417793:0;make
+: 1513417797:0;./textFieldExpression
+: 1513418663:0;make
+: 1513418668:0;./textFieldExpression
+: 1513418682:0;make
+: 1513418688:0;./textFieldExpression
+: 1513418691:0;exit
+: 1513418700:0;clear
+: 1513418702:0;exit
+: 1513424297:0;j 05__
+: 1513424323:0;git clone --depth 1 https://github.com/todotxt/todo.txt-cli.git
+: 1513424328:0;cd todo.txt-cli
+: 1513424329:0;ls
+: 1513424358:0;make
+: 1513424368:0;sudo make install
+: 1513424377:0;make test
+: 1513424428:0;cd tests
+: 1513424430:0;ls
+: 1513424436:0;nvim t8010-listaddons.sh
+: 1513424487:0;cd
+: 1513424527:0;todo.sh
+: 1513424540:0;todo.sh ls
+: 1513424612:0;ls
+: 1513424620:0;j todo.txt
+: 1513424621:0;ls
+: 1513424632:0;cd
+: 1513424659:0;more todo.cfg
+: 1513424689:0;cd /usr/local
+: 1513424690:0;ls
+: 1513424693:0;cd bin
+: 1513424695:0;ls
+: 1513424770:0;sudo make install CONFIG_DIR=/home/seasea/.config
+: 1513424792:0;cd
+: 1513424796:0;cd .config
+: 1513424797:0;ls
+: 1513424807:0;todo.sh 
+: 1513424841:0;cd ..
+: 1513424848:0;rm -rf .conky
+: 1513424862:0;mkdir .todo
+: 1513424865:0;ls
+: 1513424877:0;cp todo.cfg ~/.todo
+: 1513424880:0;ls
+: 1513424886:0;nvim .zshrc
+: 1513425453:0;ls
+: 1513425638:0;cd Do
+: 1513425643:0;cd Downloads
+: 1513426728:0;td ls
+: 1513426739:0;cd 
+: 1513426742:0;cd .todo
+: 1513426742:0;ls
+: 1513426747:0;mv todo.cfg config
+: 1513426751:0;td ls
+: 1513426966:0;td add "Add android develop env @deveop"
+: 1513426971:0;td ls
+: 1513427007:0;td add "Create markdown to write linux env @develop"
+: 1513427034:0;cd
+: 1513427040:0;cd .oh-my-zsh/plugins
+: 1513427041:0;ls
+: 1513427531:0;echo $BLACK
+: 1513427542:0;echo $RED
+: 1513427554:0;td ls
+: 1513462447:0;j 05
+: 1513462449:0;ls
+: 1513462469:0;exit
+: 1513462472:0;clear
+: 1513462475:0;cd .vim
+: 1513462477:0;cd
+: 1513462484:0;cd .vim/plugged/
+: 1513462616:0;git clone --depth 1 https://github.com/itchyny/lightline.vim.git
+: 1513462623:0;cd lightline.vim
+: 1513462625:0;nvim
+: 1513462943:0;git clone --depth 1 https://github.com/be5invis/Sarasa-Gothic.git
+: 1513463395:0;cd Sarasa-Gothic
+: 1513463399:0;npm install
+: 1513463434:0;ls
+: 1513463708:0;cd ..
+: 1513463715:0;git clone --depth 1 https://github.com/bling/vim-bufferline.git
+: 1513463720:0;nvim
+: 1513464404:0;npm install
+: 1513464411:0;nvim
+: 1513464931:0;vim
+: 1513465201:0;nvim
+: 1513466297:0;j plugged
+: 1513466329:0;git clone --depth 1 https://github.com/taohex/lightline-buffer.git
+: 1513466425:0;nvim
+: 1513467102:0;clear
+: 1513467107:0;td ls
+: 1513467113:0;nvim
+: 1513469037:0;clear
+: 1513469053:0;apt-cache policy p7zip
+: 1513469210:0;7za x sarasa-gothic-ttf-0.3.0.7z -r -o./sarasa-gothic
+: 1513469242:0;exit
+: 1513469856:0;nvim
+: 1513471715:0;sudo fc-cache
+: 1513471742:0;sudo fc-cache -fv
+: 1513472460:0;nvim
+: 1513483749:0;clear
+: 1513483769:0;sudo apt update && sudo apt dist-upgrade
+: 1513484403:0;nvim
+: 1513485030:0;clear
+: 1513485073:0;nvim
+: 1513485391:0;clear
+: 1513487352:0;exit
+: 1513487391:0;cd
+: 1513487496:0;j vimrc
+: 1513487502:0;cd gitsrc/vimrc
+: 1513487506:0;git status
+: 1513487625:0;cd
+: 1513487628:0;git status
+: 1513487673:0;git config --global user.name "DaSea"
+: 1513487691:0;git config --global user.email "dhf0214@126.com"
+: 1513487710:0;ssh-keygen -t rsa -C "dhf0214@126.com"
+: 1513487760:0;git config --global color.ui true
+: 1513487798:0;git config ‚ÄÉ≥global merge.tool meld
+: 1513487807:0;git config ‚ÄÉ≥-global merge.tool meld
+: 1513487821:0;git config --global merge.tool meld
+: 1513487838:0;cd .ssh
+: 1513487839:0;ls
+: 1513487847:0;more id_rsa
+: 1513487928:0;more id_rsa.pub
+: 1513487974:0;cd
+: 1513487974:0;ls
+: 1513487976:0;ka
+: 1513487977:0;la
+: 1513487988:0;git status
+: 1513488005:0;git rm cb_color.conf
+: 1513488021:0;git add .vimrc*
+: 1513488042:0;git add .zshrc .powerlevel9k.zshrc
+: 1513488094:0;git status
+: 1513488113:0;git rm .mshell/zsh/git.zsh
+: 1513488126:0;more .gitconfig
+: 1513488150:0;git add .gitconfig .bashrc
+: 1513488184:0;git commit -m "Ê∑ªÂÉ™ÉÄÂÉ®É¶ÈÉ∫É¥Á¨¶"
+: 1513488192:0;git push origin master
+: 1513488223:0;git remote -v
+: 1513488228:0;cd .git
+: 1513488229:0;ls
+: 1513488235:0;more config
+: 1513488248:0;nvim config
+: 1513490856:0;clear
+: 1513490859:0;exit
+: 1513490873:0;nvim
+: 1513506560:0;xsel
+: 1513506666:0;nvim
+: 1513512420:0;pkill pdftohtml
+: 1513512433:0;cd Downloads
+: 1513512434:0;ls
+: 1513512499:0;pkill pdftohtml
+: 1513512634:0;exit
+: 1513514201:0;whereis pdftohtml
+: 1513514214:0;sudo apt autoremove
+: 1513514222:0;sudo apt autoclean
+: 1513514239:0;cd Downloads
+: 1513514284:0;sudo dpkg -i bookworm_0.6-0\~42\~ubuntu17.10.1_amd64.deb
+: 1513514301:0;sudo dpkg -p bookworm
+: 1513514349:0;sudo dpkg -P bookworm
+: 1513514356:0;clear
+: 1513514925:0;j gitsrc
+: 1513514927:0;cd
+: 1513514935:0;cd gitsrc/n_vim/vim
+: 1513514942:0;git status
+: 1513514965:0;git checkout -- src tools uninstal.txt vimtutor.bat
+: 1513514968:0;git status
+: 1513515003:0;git checkout -- runtime/ appveyor.yml farsi/ CONTRIBUTING.md Filelist Makefile nsis/ pixmaps/ README
+: 1513515005:0;git status
+: 1513515013:0;git checkout -- runtime/
+: 1513515016:0;git status
+: 1513515026:0;git checkout -- pixmaps/
+: 1513515027:0;git status
+: 1513515042:0;git checkout -- nsis/ farsi/ READMEdir/
+: 1513515044:0;git status
+: 1513515066:0;git checkout -- appveyor.yml README.md README.txt Makefile Filelist .travis.yml .gitignore
+: 1513515068:0;git status
+: 1513515075:0;git checkout -- CONTRIBUTING.md
+: 1513515081:0;git pull
+: 1513515101:0;clear
+: 1513515105:0;git checkout -- CONTRIBUTING.md
+: 1513515108:0;git status
+: 1513515114:0;more description-pak
+: 1513515123:0;nvim compile_vim.sh
+: 1513515281:0;apt-cache policy python3-dev
+: 1513515294:0;apt-cache policy python-dev
+: 1513515341:0;sudo apt install lua lua-dev luajit libluajit
+: 1513515372:0;apt-cache policy lua
+: 1513515385:0;apt-cache policy lua5.3
+: 1513515407:0;apt-cache policy lua-dev
+: 1513515435:0;apt-cache policy lua5.3 luajit
+: 1513515513:0;apt-cache policy libluajit-5.1-dev
+: 1513515531:0;apt-cache policy luajit 
+: 1513515891:0;sudo apt install lua5.1 libluajit-5.1-2 liblua5.1-0-dev luajit python-dev
+: 1513516012:0;clear
+: 1513516025:0;./compile_vim.sh
+: 1513516165:0;cd /usr/lib/x86_64-linux-gnu
+: 1513516170:0;ll libluajit-5.1.so.2
+: 1513516210:0;sudo ln -s libluajit-5.1.so.2.0.4 libluajit-5.1.so
+: 1513516227:0;./compile_vim.sh
+: 1513516266:0;sudo apt install libncurses5-dev
+: 1513516280:0;apt-cache policy libncurses5
+: 1513516283:0;./compile_vim.sh
+: 1513516316:0;apt-cache policy libgtk2.0-dev
+: 1513516321:0;apt-cache policy libgtk2.0
+: 1513516373:0;apt-cache policy libgtk2.0-dev
+: 1513516383:0;sudo apt install libgtk2.0-dev
+: 1513516504:0;./compile_vim.sh
+: 1513516657:0;sudo apt remove vim vim-common vim-runtime
+: 1513516759:0;make VIMRUNTIMEDIR=/usr/local/share/vim/vim80
+: 1513516882:0;sudo make install
+: 1513516885:0;vim
+: 1513517054:0;gvim
+: 1513517850:0;cp compile_vim.sh ~/
+: 1513517852:0;cd
+: 1513517854:0;t
+: 1513517857:0;exit
+: 1513517860:0;ls
+: 1513517878:0;git status --help
+: 1513517916:0;git status -v n
+: 1513517942:0;git status -s
+: 1513517954:0;git status -su
+: 1513517980:0;git add compile_vim.sh
+: 1513518005:0;git status --help
+: 1513518029:0;git status -uno
+: 1513518050:0;git add .vimrc
+: 1513518088:0;git commit -m "add compile vim script; add tabline for lightline"
+: 1513518095:0;git push origin master
+: 1513518143:0;cd .vim/plugged/ex-vimentry
+: 1513518146:0;ls
+: 1513518151:0;git remote -v
+: 1513518159:0;nvim
+: 1513518295:0;cd ..
+: 1513518300:0;cd ex-config
+: 1513518306:0;git remote -v
+: 1513519959:0;cd
+: 1513519965:0;cd .config/bookworm
+: 1513519966:0;ls
+: 1513519969:0;cd covers
+: 1513519970:0;ls
+: 1513519973:0;cd ..
+: 1513519976:0;cd books
+: 1513519977:0;ls
+: 1513519982:0;ll
+: 1513519994:0;cd ..
+: 1513520000:0;rm -rf bookworm
+: 1513520026:0;exit
+: 1513520033:0;j neovim
+: 1513520036:0;git pull
+: 1513557490:0;j neovim
+: 1513557493:0;git pull
+: 1513557504:0;cd build
+: 1513557508:0;sudo make install
+: 1513557595:0;nvim
+: 1513558947:0;clear
+: 1513558955:0;cd
+: 1513558958:0;j kqobjects
+: 1513558960:0;ls
+: 1513558966:0;nvim kqobjects.exvim
+: 1513561637:0;sudo apt install subversion
+: 1513561742:0;sudo apt-get update
+: 1513561827:0;j kqobj__
+: 1513561840:0;svn info
+: 1513562078:0;mkdir KqGisDesktopSrc
+: 1513562085:0;cd KqGisDesktopSrc
+: 1513562099:0;svn co http://172.16.1.118/projects/KqGis_Desktop/KqMap --username=huangwenlin --password=gishuangwenlin\
+
+: 1513562152:0;svn help cleanup
+: 1513562160:0;svn co http://172.16.1.118/projects/KqGis_Desktop/KqMap --username=huangwenlin --password=gishuangwenlin
+: 1513562170:0;svn leanup
+: 1513562175:0;svn cleanup
+: 1513562180:0;ls
+: 1513562187:0;rm -r KqMap
+: 1513562190:0;svn co http://172.16.1.118/projects/KqGis_Desktop/KqMap --username=huangwenlin --password=gishuangwenlin
+: 1513562227:0;t
+: 1513562230:0;exit
+: 1513562249:0;nvim kqobjects.exvim
+: 1513562749:0;cd
+: 1513562773:0;cd .vim/plugged/vim-airline
+: 1513562774:0;ls
+: 1513562780:0;nvim
+: 1513562998:0;clear
+: 1513563032:0;j kqob__
+: 1513563035:0;cd ..
+: 1513563059:0;ls
+: 1513563062:0;cd 01_WinProject
+: 1513564459:0;cd
+: 1513564470:0;sudo apt update && sudo apt dist-upgrade
+: 1513568796:0;nvim
+: 1513576133:0;exit
+: 1513576195:0;git status -v
+: 1513576198:0;git status -s
+: 1513576237:0;git add .vimrc .vimrc.language .vimrc.statusline .vimrc.vimplug
+: 1513576284:0;git commit -m "Ê∑ªÂÉ™ÉÄÂø´ÈÄÉøÂÉ®ÉßÊÉ≠ÉÇbufferÁÉ∫É§Âø´ÊÉ≠∑ÈÉ¥Æ(lightline)"
+: 1513576289:0;git push origin master
+: 1513576299:0;exit
+: 1513943455:0;sudo apt update && sudo apt upgrade
+: 1513943477:0;sudo apt update
+: 1513943598:0;sudo dpkg --configure -a
+: 1513943603:0;sudo apt update
+: 1513943644:0;ps -aux | grep apt
+: 1513943651:0;ps -aux | grep apt-get
+: 1513943675:0;sudo apt update
+: 1513943689:0;apt list --upgradable
+: 1513943711:0;sudo apt dist-upgrade
+: 1513943737:0;exit
+: 1513947716:0;sudo apt update && sudo apt dist-upgrade
+: 1513948066:0;sudo apt autoclean
+: 1513948073:0;sudo apt autoremove
+: 1513948093:0;sudo apt install gnome
+: 1513948143:0;clear
+: 1513948163:0;ls
+: 1513948892:0;nvim
+: 1513949584:0;cd Downloads
+: 1513949585:0;ls
+: 1513949592:0;chmod +x qt-opensource-linux-x64-5.7.1.run
+: 1513949603:0;sudo ./qt-opensource-linux-x64-5.7.1.run
+: 1513949848:0;cd
+: 1513949852:0;cd .icons
+: 1513949853:0;ls
+: 1513949870:0;git clone --depth 1 https://github.com/mustafaozhan/Breeze-Adapta-Cursor.git
+: 1513949922:0;cd Breeze-Adapta-Cursor
+: 1513949923:0;ls
+: 1513949939:0;chmod +x index.sh
+: 1513949945:0;chmod +x install.sh
+: 1513949949:0;sudo ./install.sh
+: 1513949962:0;cd ..
+: 1513949965:0;rm Breeze-Adapta-Cursor
+: 1513949974:0;rm -r Breeze-Adapta-Cursor
+: 1513949983:0;rm -rf Breeze-Adapta-Cursor
+: 1513950034:0;j 05__
+: 1513950041:0;git clone --depth 1 https://github.com/KaizIqbal/Bibata_Cursor.git
+: 1513950309:0;sudo apt install gdb
+: 1513950329:0;exit
+: 1513950337:0;cd Bibata_Cursor
+: 1513950338:0;ls
+: 1513950339:0;clear
+: 1513950368:0;sudo chmod +x $ ./build.sh
+: 1513950420:0;chmod +x build.sh
+: 1513950423:0;./build.sh
+: 1513950689:0;cd
+: 1513950697:0;cd Downloads/%E8%8B%B9%E9%BB%91
+: 1513950698:0;ls
+: 1513950700:0;cd ..
+: 1513950721:0;mv Pulse-Glass ~/.icons/
+: 1513950926:0;clear
+: 1513951140:0;j neovim
+: 1513951143:0;git pull
+: 1513951199:0;nvim
+: 1513951462:0;apt-cache policy numix-gtk-theme numix-icon-theme
+: 1513951482:0;sudo apt install numix-gtk-theme numix-icon-theme
+: 1513951622:0;sudo apt remove numix-gtk-theme numix-icon-theme
+: 1513951635:0;clear
+: 1513981931:0;uname -a
+: 1513981960:0;git pull
+: 1513981999:0;git branch
+: 1513982113:0;cd build
+: 1513982118:0;sudo make install
+: 1513983993:0;cd
+: 1513983996:0;cd Downloads
+: 1513984009:0;sudo dpkg -i numix-*.deb
+: 1513984847:0;git status
+: 1513984870:0;git diff .vimrc
+: 1513984914:0;git diff .vimrc.complete
+: 1513984982:0;git diff .vimrc.statusline
+: 1513985000:0;git diff .vimrc.vimplug
+: 1513985013:0;nvim
+: 1513985098:0;git diff snippets/ultisnips/cpp.snippets
+: 1513985115:0;exit
+: 1513985124:0;clear
+: 1513985125:0;cd
+: 1513985129:0;nvim
+: 1513985798:0;cd
+: 1513985800:0;cd Downloads
+: 1513985801:0;ls
+: 1513985816:0;sudo mv ArcMPD* /usr/share/themes
+: 1513985857:0;exit
+: 1513986092:0;sudo rm -rf /usr/share/themes/ArcMPD*
+: 1513986119:0;clear
+: 1513986189:0;sudo apt install linux-image-4.11.0-2-amd64 linux-headers-4.11.0-2-amd64 
+: 1513986282:0;uname -a
+: 1513986313:0;exit
+: 1513986402:0;uname -a
+: 1513986423:0;sudo apt update && sudo apt dist-upgrade
+: 1513986433:0;df -h
+: 1513986485:0;clear
+: 1513986659:0;cd /media/work/Self/01_mywiki
+: 1513986660:0;ls
+: 1513986663:0;cd dasea.github.io
+: 1513986664:0;ls
+: 1513986677:0;hexo s
+: 1513986694:0;npm install hexo-cli -g
+: 1513986775:0;hexo s
+: 1513986844:0;npm install hexo-cli -g --save
+: 1513986861:0;hexo s
+: 1513986869:0;ls
+: 1513986878:0;hexo
+: 1513986886:0;exit
+: 1513986896:0;j dasea.gi
+: 1513986899:0;hexo
+: 1513986941:0;la
+: 1513986946:0;ka
+: 1513986953:0;more .gitignore
+: 1513986959:0;cd node_modules
+: 1513986959:0;ls
+: 1513986964:0;cd ..
+: 1513986999:0;hexo seaver
+: 1513987006:0;npm install hexo --save
+: 1513987028:0;hexo server
+: 1513987053:0;clear
+: 1513987212:0;nvm
+: 1513987221:0;nvim list
+: 1513987229:0;nvm list
+: 1514074224:0;cd
+: 1514074237:0;sudo apt update && sudo apt dist-upgrade
+: 1514074249:0;nvim .zshrc
+: 1514074932:0;history | grep -i apt
+: 1514075199:0;echo $terminfo
+: 1514075206:0;r
+: 1514075206:0;echo $terminfo
+: 1514075219:0;clear
+: 1514075220:0;ls
+: 1514075450:0;exit
+: 1514162684:0;sudo apt update && sudo apt dist-upgrade
+: 1514163109:0;exit
+: 1514373593:0;sudo apt update && sudo apt dist-upgrade
+: 1514376539:0;apt-cache policy komorebi
+: 1514376558:0;sudo apt install komorebi
+: 1514465281:0;clear
+: 1514465286:0;j neovim
+: 1514465292:0;git pull
+: 1514465327:0;cd build
+: 1514465335:0;sudo make install
+: 1514465432:0;nvim
+: 1514465475:0;cd
+: 1514465478:0;cd .vim
+: 1514465481:0;cd plugged
+: 1514465491:0;cd ex-easyhl
+: 1514465492:0;ls
+: 1514465498:0;git remote -v
+: 1514465507:0;cd ..
+: 1514465515:0;rm -rf ex-easyhl
+: 1514465553:0;git clone --depth 1 https://github.com/DaSea/ex-easyhl.git
+: 1514465573:0;cd
+: 1514465576:0;nvim .zshrc
+: 1514465608:0;exit
+: 1514465721:0;sudo apt update && sudo apt dist-upgrade
+: 1514854311:0;systemd-analyze
+: 1514854327:0;systemd-analyze blame
+: 1514854687:0;cd /lib/systemd/system
+: 1514854688:0;ls
+: 1514854704:0;vim NetworkManager-wait-online.service
+: 1514854918:0;vim --version
+: 1514854927:0;exit
+: 1514971935:0;sudo apt remove komorebi
+: 1514972080:0;nvim .zshrc
+: 1514972256:0;ls
+: 1514972306:0;exit
+: 1514972358:0;ls
+: 1514972363:0;sudo apt update && sudo apt dist-upgrade
+: 1514972375:0;sudo apt autoremove
+: 1514972380:0;exit
+: 1514972920:0;ls
+: 1514973206:0;exit
+: 1514973776:0;apt-cache policy fontconfig
+: 1514973803:0;cd /etc/apt/sources.list.d
+: 1514973804:0;ls
+: 1514973807:0;cd ..
+: 1514973807:0;ls
+: 1514973870:0;uname -a
+: 1514973876:0;neofetch
+: 1514974097:0;cd 
+: 1514974099:0;cd Downloads
+: 1514974100:0;ls
+: 1514974113:0;sudo dpkg -i fontconfig-infinality_20130104-0ubuntu0ppa1_all.deb
+: 1514974205:0;sudo apt remove konsole
+: 1514974227:0;sudo apt autoremove
+: 1514974468:0;sudo bash /etc/fonts/infinality/infctl.sh setstyle
+: 1514974491:0;cd /etc/fonts/infinality
+: 1514974492:0;ls
+: 1514974519:0;cd ..
+: 1514974528:0;cd profile.d/
+: 1514974529:0;ls
+: 1514974543:0;sudo nano infinality-settings.sh
+: 1514974557:0;sudo vim infinality-settings.sh
+: 1514974809:0;exit
+: 1514974875:0;sudo apt -f
+: 1514974885:0;sudo apt-get -f
+: 1514974898:0;sudo dpkg -f
+: 1514975239:0;sudo fc-cache -fv
+: 1514975298:0;exit
+: 1514975343:0;cd /etc
+: 1514975344:0;ls
+: 1514975355:0;sudo nvim profile
+: 1514975434:0;cd
+: 1514975439:0;cd .sdkman
+: 1514975440:0;ls
+: 1514975442:0;cd bin
+: 1514975443:0;ls
+: 1514975446:0;cd ..
+: 1514975448:0;cd archives
+: 1514975449:0;ls
+: 1514975451:0;cd ..
+: 1514975454:0;cd candidates
+: 1514975454:0;l
+: 1514975458:0;cd java
+: 1514975459:0;ls
+: 1514975463:0;cd 8u151-oracle
+: 1514975464:0;ls
+: 1514975478:0;pwd
+: 1514975515:0;exit
+: 1514980511:0;ls
+: 1514980526:0;man cp
+: 1514980552:0;sudo cp -r ndk /opt/
+: 1514981620:0;sudo cp -r adt-bundle /opt/
+: 1514981910:0;sudo cp -r android-studio /opt/
+: 1514982454:0;git pull
+: 1514982621:0;cd
+: 1514982626:0;cd /
+: 1514982635:0;ls
+: 1514982640:0;cd opt
+: 1514982641:0;ls
+: 1514982644:0;ll libluajit-5.1.so.2
+: 1514982645:0;ll
+: 1514983081:0;ls
+: 1514983100:0;sudo cp -r Android /opt
+: 1514983302:0;cd /opt
+: 1514983304:0;ls
+: 1514983333:0;sudo mv Android AndroidSDK
+: 1514983335:0;ls
+: 1514983341:0;cd
+: 1514983343:0;cd /etc
+: 1514983344:0;ls
+: 1514983348:0;nvim fstab
+: 1514983364:0;exit
+: 1515019200:0;java --veersion
+: 1515019208:0;java --ve1rsion
+: 1515019214:0;java --version
+: 1515019218:0;java -version
+: 1515019300:0;nvim
+: 1515019456:0;cd /opt
+: 1515020048:0;cd /usr/share/applications
+: 1515020049:0;ls
+: 1515020085:0;touch Android Studio.desktop
+: 1515020088:0;sudo touch Android Studio.desktop
+: 1515020104:0;sudo touch eclipse.desktop
+: 1515020125:0;ls
+: 1515020265:0;sudo touch AndroidStudio.desktop
+: 1515020333:0;ls
+: 1515020338:0;sudo rm Android
+: 1515020344:0;sudo rm Studio.desktop
+: 1515020518:0;cd /usr/share/icons
+: 1515020519:0;ls
+: 1515020522:0;cd Papirus
+: 1515020523:0;ls
+: 1515020531:0;cd 64x64
+: 1515020532:0;ls
+: 1515020534:0;cd apps
+: 1515020535:0;ls
+: 1515020613:0;exit
+: 1515020615:0;ls androidexit
+: 1515020617:0;exit
+: 1515026137:0;cd /opt/adt-bundle
+: 1515026138:0;ls
+: 1515026139:0;cd eclipse
+: 1515026140:0;ls
+: 1515026141:0;ll
+: 1515026155:0;./eclipse
+: 1515026470:0;cd /usr/share/applications
+: 1515026470:0;ls
+: 1515026485:0;ll
+: 1515026531:0;sudo gedit AndroidStudio.desktop eclipse.desktop
+: 1515026909:0;j 2.0
+: 1515026914:0;cd 
+: 1515026919:0;cd /media/work
+: 1515026920:0;ls
+: 1515026922:0;cd Company
+: 1515026922:0;ls
+: 1515026933:0;cd 04_Android/sdk/KqGISAndroidv2.0
+: 1515026939:0;ls
+: 1515026945:0;cd obj
+: 1515026946:0;ls
+: 1515026948:0;cd local
+: 1515026949:0;l
+: 1515026951:0;ls
+: 1515026966:0;clear
+: 1515026968:0;ls
+: 1515026975:0;mv armeabi-v7a armeabi-v7a-win
+: 1515026977:0;cd ..
+: 1515026979:0;ls
+: 1515026983:0;ndk-build
+: 1515027660:0;cd libs
+: 1515027660:0;ls
+: 1515027666:0;cd armeabi
+: 1515027667:0;ls
+: 1515027668:0;cd ..
+: 1515027672:0;rm -rf armeabi
+: 1515027678:0;cd armeabi-v7a
+: 1515027679:0;ls
+: 1515027681:0;la
+: 1515027707:0;cd ..
+: 1515027715:0;cd obj
+: 1515027716:0;ls
+: 1515027721:0;cd local
+: 1515027722:0;ls
+: 1515027725:0;cd armeabi-v7a
+: 1515027725:0;ls
+: 1515027728:0;cd objs
+: 1515027728:0;ls
+: 1515027730:0;cd ..
+: 1515027734:0;ls
+: 1515027740:0;rm -rf armeabi-v7a
+: 1515028786:0;cd /opt
+: 1515028786:0;ls
+: 1515028788:0;cd ndk
+: 1515028789:0;ls
+: 1515028794:0;rm -rf android-ndk-r10
+: 1515028800:0;sudo rm -rf android-ndk-r10
+: 1515028878:0;ls
+: 1515028925:0;sudo tar -jxf android-ndk32-r10-linux-x86.tar.bz2 -C /opt/ndk/
+: 1515029056:0;cd ..
+: 1515029059:0;ls
+: 1515029062:0;ndk-build
+: 1515029084:0;exit
+: 1515029223:0;j nvim
+: 1515029224:0;ls
+: 1515029226:0;git pull
+: 1515029333:0;cd build
+: 1515029337:0;sudo make install
+: 1515029351:0;cd 
+: 1515029353:0;cd Downloads
+: 1515029354:0;ls
+: 1515029403:0;sudo tar -jxf firefox-57.0.3.tar.bz2 -C /opt
+: 1515029541:0;ls
+: 1515029545:0;nvim kqgis2.exvim
+: 1515030296:0;clear
+: 1515031199:0;cd
+: 1515031208:0;sudo pip3 install cheat
+: 1515031383:0;cheat tar
+: 1515031399:0;clear
+: 1515031671:0;cat /proc/cpuinfo| grep "physical id"| sort| uniq| wc -l
+: 1515031682:0;cat /proc/cpuinfo| grep "cpu cores"| uniq
+: 1515031689:0;cat /proc/cpuinfo| grep "processor"| wc -l
+: 1515031699:0;cat /proc/cpuinfo | grep name | cut -f2 -d: | uniq -c
+: 1515031706:0;clear
+: 1515031883:0;sudo apt update && sudo apt dist-upgrade
+: 1515031920:0;cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_governors
+: 1515031958:0;cat /sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_max_frep
+: 1515031984:0;cat /sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_max_freq
+: 1515032050:0;cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+: 1515032060:0;cat /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor
+: 1515032122:0;cat /etc/default/grub
+: 1515032264:0;apt-cache policy thermald
+: 1515032282:0;exit
+: 1515032897:0;cd /opt/adt-bundle
+: 1515032898:0;ls
+: 1515032915:0;sudo chmod 777 -R sdk
+: 1515033675:0;cd
+: 1515033716:0;clear
+: 1515033719:0;j v2.0
+: 1515033720:0;ls
+: 1515033763:0;cd
+: 1515033764:0;ls
+: 1515033767:0;cd .config
+: 1515033768:0;ls
+: 1515033773:0;cd co
+: 1515033776:0;cd Code
+: 1515033776:0;ls
+: 1515033785:0;cd User
+: 1515033786:0;ls
+: 1515033792:0;more projects.json
+: 1515033814:0;nvim projects.json
+: 1515033952:0;pwd
+: 1515034543:0;nvim projects.json
+: 1515034713:0;clear
+: 1515034724:0;exit
+: 1515034789:0;apt-cache policy neovim-qt
+: 1515034938:0;j neovim
+: 1515034940:0;cd ..
+: 1515034940:0;ls
+: 1515034948:0;git clone --depth 1 https://github.com/equalsraf/neovim-qt.git
+: 1515034995:0;cd neovim
+: 1515034998:0;cd ..
+: 1515035001:0;cd neovim-qt
+: 1515035001:0;ls
+: 1515035005:0;mkdir build
+: 1515035007:0;cd build
+: 1515035045:0;cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr/local ..
+: 1515035133:0;qmake
+: 1515035149:0;qtchooser
+: 1515035155:0;qtchooser -l
+: 1515035458:0;cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr/local -DCMAKE_PREFIX_PATH=/opt/Qt5.7.1/5.7/gcc_64 ..
+: 1515035524:0;sudo apt-get install libgl1-mesa-dev libglu1-mesa-de
+: 1515035539:0;sudo apt-get install libgl1-mesa-dev
+: 1515035753:0;sudo ln -s /usr/lib/x86_64-linux-gnu/libGL.so.1.2.0  /usr/lib/libGL.so
+: 1515035758:0;cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr/local -DCMAKE_PREFIX_PATH=/opt/Qt5.7.1/5.7/gcc_64 ..
+: 1515035846:0;sudo apt-get install libgl1-mesa-dev libglu1-mesa-dev freeglut3-dev
+: 1515036006:0;cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr/local -DCMAKE_PREFIX_PATH=/opt/Qt5.7.1/5.7/gcc_64 ..
+: 1515036059:0;nvim kqgis2.exvim
+: 1515036303:0;cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr/local -DCMAKE_PREFIX_PATH=/opt/Qt5.7.1/5.7/gcc_64 ..
+: 1515036529:0;make
+: 1515036643:0;sudo make install
+: 1515036876:0;nvim-qt
+: 1515036920:0;apt-cache policy qt5-default
+: 1515036923:0;clear
+: 1515037433:0;apt-cache policy nemo
+: 1515037477:0;apt-cache policy dolphin
+: 1515037760:0;sudo apt install dolphin
+: 1515037780:0;sudo apt install nemo
+: 1515037804:0;sudo apt install nautilus
+: 1515037956:0;sudo apt install nemo
+: 1515038328:0;nvim-qt
+: 1515038359:0;ndk-build
+: 1515038519:0;sudo vim /usr/lib/x86_64-linux-gnu/qt-default/qtchooser/default.conf
+: 1515038581:0;nvim /usr/lib/x86_64-linux-gnu/qt-default/qtchooser/default.conf
+: 1515038768:0;nvim-qt
+: 1515038784:0;exit
+: 1515038789:0;cd
+: 1515038792:0;nvim-qt
+: 1515038835:0;qmake
+: 1515038852:0;qtchooser
+: 1515038855:0;qtchooser -l
+: 1515038861:0;qtchooser -l qt5
+: 1515038897:0;qtchooser -qt=Qt_5.7
+: 1515039283:0;echo $LD_LIBRARY_PATH
+: 1515039375:0;nvim-qt
+: 1515039389:0;exit
+: 1515039479:0;nvim-qt
+: 1515040412:0;cd /usr/share
+: 1515040416:0;cd applications
+: 1515040417:0;ls
+: 1515040434:0;smore nemo.desktop
+: 1515040439:0;more nemo.desktop
+: 1515040448:0;more nemo.desktop | grep Icon
+: 1515040585:0;sudo nvim nemo.desktop
+: 1515040694:0;pkill dde-launcher
+: 1515040701:0;dde-launcher&
+: 1515041325:0;clear
+: 1515041326:0;cd
+: 1515041328:0;nvim
+: 1515041493:0;clear
+: 1515045928:0;j v2.0
+: 1515045959:0;nvim kqgis2.exvim
+: 1515046999:0;ndk-build
+: 1515047338:0;cd jni
+: 1515047345:0;svn status
+: 1515047745:0;svn commit -m "aeaÊÉ™ÉµÂΩ±ÈÉ∑ÆÈÉÇÉ∏" Coord/proj4/pj_list.h
+: 1515047803:0;svn update
+: 1515047826:0;svn update --username=dinghaifeng --password=dinghaifeng
+: 1515047830:0;svn commit -m "aeaÊÉ™ÉµÂΩ±ÈÉ∑ÆÈÉÇÉ∏" Coord/proj4/pj_list.h
+: 1515048123:0;cheat svn
+: 1515050862:0;cd
+: 1515050865:0;cd /media/download/download/04_system/fonts/nerd-fonts
+: 1515050902:0;git pull
+: 1515052782:0;cd
+: 1515052817:0;uname -a
+: 1515054636:0;clang --version
+: 1515055144:0;cd /usr/lib/llvm-3.8/lib
+: 1515055146:0;ll
+: 1515055237:0;sudo ln -s libclang.so /usr/lib/x86_64-linux-gnu/libclang-3.8.so.1
+: 1515055257:0;sudo ln -s /usr/lib/x86_64-linux-gnu/libclang-3.8.so.1 libclang.so
+: 1515055268:0;pwd
+: 1515055291:0;j .vim
+: 1515055295:0;cd ..
+: 1515055296:0;ls
+: 1515055308:0;git clone --depth 1 https://github.com/arakashic/chromatica.nvim.git
+: 1515055354:0;clear
+: 1515055361:0;nvim kqgis2.exvim
+: 1515056427:0;clear
+: 1515060275:0;exit
+: 1515060346:0;sudo apt update && sudo apt dist-upgrade
+: 1515113723:0;ls
+: 1515113725:0;clear
+: 1515115183:0;sudo apt update && sudo apt dist-upgrade
+: 1515115203:0;j v2.0
+: 1515115208:0;nvim kqgis2.exvim
+: 1515116059:0;nvim
+: 1515116369:0;nvim kqgis2.exvim
+: 1515116373:0;cd
+: 1515116982:0;nvim
+: 1515117192:0;apt-cache policy i3
+: 1515117243:0;clear
+: 1515117266:0;nvim kqgis2.exvim
+: 1515118431:0;ndk-build
+: 1515119331:0;clear
+: 1515121633:0;ndk-build
+: 1515123070:0;exit
+: 1515123259:0;cd jni
+: 1515123266:0;svn status
+: 1515123789:0;cd ..
+: 1515123792:0;svn update
+: 1515128102:0;sudo apt update && sudo apt dist-upgrade
+: 1515136712:0;cd /opt
+: 1515136729:0;cd AndroidSDK
+: 1515136730:0;ls
+: 1515136731:0;ll
+: 1515136754:0;sudo chmod -R 777 Sdk/
+: 1515139339:0;ndk-build
+: 1515143025:0;cd
+: 1515143027:0;clear
+: 1515143028:0;ps
+: 1515143031:0;top
+: 1515143802:0;pstree
+: 1515143863:0;man pstree
+: 1515144008:0;ctop
+: 1515144029:0;sudo pip3 install ctop
+: 1515144053:0;ctop -tree
+: 1515144067:0;ctop -h
+: 1515144072:0;ctop
+: 1515144093:0;ctop --tree
+: 1515144148:0;ctop --tree --fold=/user.slice
+: 1515144276:0;clear
+: 1515147585:0;ndk-build
+: 1515148406:0;exit
+: 1515199535:0;sudo apt update && sudo apt dist-upgrade
+: 1515201595:0;clear
+: 1515201612:0;cd .vim/plugged/SimpleMusicCtrl.vim
+: 1515201614:0;nvim
+: 1515201778:0;pgrep netease-cloud-m
+: 1515201794:0;nvim
+: 1515202470:0;gst
+: 1515202478:0;git add plugin/smusicctrl.vim
+: 1515202512:0;git commit -m "‰øÆÊÉ¥πÁΩÉ±ÊÉ∏É≥‰∫É±ÈÉø≥‰πÉ∞ÊÉª¥ÊÉ∂∞ÂÉ∞ÉÆ‰∏É≠ËÉ£ΩËØÉ¶ÂÉ®´ÁÉ∫É§ÈÉ∑ÆÈÉÇÉ∏"
+: 1515202519:0;git push origin master
+: 1515221182:0;cd
+: 1515221183:0;ls
+: 1515221787:0;cd /usr/share/man
+: 1515221788:0;ls
+: 1515221805:0;cd fi
+: 1515221806:0;ls
+: 1515221808:0;cd ..
+: 1515221814:0;cd zh_CN
+: 1515221815:0;ls
+: 1515221816:0;cd ..
+: 1515221921:0;apt-cache policy tig
+: 1515221950:0;cmus
+: 1515222165:0;clear
+: 1515222170:0;cheat sheets
+: 1515222189:0;man cheat
+: 1515222203:0;man 7 undocumented
+: 1515222231:0;cheat man
+: 1515222243:0;cheat zip
+: 1515222262:0;cheat recent
+: 1515222506:0;cd
+: 1515222508:0;la
+: 1515222511:0;ls -a
+: 1515222522:0;cd .cheat
+: 1515222522:0;ls
+: 1515223801:0;apt-cache policy markup
+: 1515223891:0;sudo pip3 install mackup
+: 1515223900:0;apt-cache policy mackup
+: 1515223903:0;sudo pip3 install mackup
+: 1515223912:0;cd
+: 1515224100:0;mackup -h
+: 1515224118:0;mackup list
+: 1515224185:0;sudo pip3 un1install mackup
+: 1515224193:0;sudo pip3 uninstall mackup
+: 1515224200:0;clear
+: 1515224351:0;cd
+: 1515224362:0;ls -a
+: 1515224465:0;mkdir dotfiles
+: 1515224496:0;cd dotfiles
+: 1515224511:0;git init
+: 1515224528:0;git submodule add git@github.com:dotphiles/dotsync.git
+: 1515224548:0;git submodule init update
+: 1515224790:0;ls
+: 1515224792:0;cd dotsync
+: 1515224793:0;ls
+: 1515224797:0;cd templates
+: 1515224798:0;ls
+: 1515224802:0;more dotsyncrc
+: 1515225071:0;apt-cache policy hub
+: 1515225350:0;cd
+: 1515225352:0;la
+: 1515225355:0;ls -a
+: 1515225370:0;cd .config
+: 1515225370:0;ls
+: 1515225375:0;cd cmus
+: 1515225375:0;ls
+: 1515225377:0;cd ..
+: 1515225897:0;mv dotfiles dotfiles_old
+: 1515225903:0;git clone git@github.com:DaSea/dotfiles.git
+: 1515225961:0;cd dotfiles
+: 1515225978:0;git submodule add git@github.com:dotphiles/dotsync.git
+: 1515226000:0;git submodule --init update
+: 1515226073:0;git status
+: 1515226106:0;l
+: 1515226118:0;git add .gitmodules
+: 1515226125:0;git push origin master
+: 1515226147:0;git commit -m "Ê∑ªÂÉ™ÉÄÂ≠É∞Ê®ÉÅÂÉΩÉ∑"
+: 1515226154:0;git push origin master
+: 1515226188:0;cd
+: 1515226201:0;rm -rf dotfiles
+: 1515226221:0;rm -rf dotfiles_old
+: 1515226229:0;git clone git@github.com:DaSea/dotfiles.git
+: 1515226244:0;cd dotfiles
+: 1515226244:0;ls
+: 1515226247:0;cd dotsync
+: 1515226248:0;ls
+: 1515226250:0;cd ..
+: 1515226259:0;git submodule --init update
+: 1515226266:0;cd
+: 1515226267:0;nvim
+: 1515226323:0;git submodule update
+: 1515226329:0;git submodule init update
+: 1515226333:0;git submodule init
+: 1515226339:0;git submodule update
+: 1515226354:0;tree
+: 1515226363:0;sudo apt install tree
+: 1515226373:0;tree .
+: 1515226404:0;cd dotsync/templates
+: 1515226405:0;ls
+: 1515226409:0;cp * ../../
+: 1515226415:0;cd ../../
+: 1515226417:0;ls
+: 1515226625:0;cd
+: 1515226626:0;ls
+: 1515226628:0;la
+: 1515226631:0;ls -a
+: 1515226647:0;cp .cheat dotfiles/cheat
+: 1515226656:0;cp -r .cheat dotfiles/cheat
+: 1515226662:0;rm .cheat
+: 1515226666:0;rm -r .cheat
+: 1515226669:0;ls
+: 1515226674:0;cd cheat
+: 1515226675:0;ls
+: 1515226677:0;cd ..
+: 1515226723:0;./dotsync/bin/dotsync -L
+: 1515226785:0;ls
+: 1515226809:0;ln -s dotsyncrc ~/.dotsyncrc
+: 1515226812:0;./dotsync/bin/dotsync -L
+: 1515226879:0;ls -a
+: 1515226886:0;more .dotsyncrc
+: 1515226893:0;ll
+: 1515226896:0;ls -a
+: 1515226902:0;ls -la
+: 1515226914:0;more .dotsyncrc
+: 1515226943:0;rm .dotsyncrc
+: 1515226946:0;ls
+: 1515226992:0;./dotsync/bin/dotsync -L
+: 1515227020:0;cp dotsyncrc ~/.dotsyncrc
+: 1515227025:0;la
+: 1515227027:0;ls -a
+: 1515227032:0;./dotsync/bin/dotsync -L
+: 1515227083:0;cd
+: 1515227090:0;mv dotfiles .dotfiles
+: 1515227094:0;cd .dotfiles
+: 1515227095:0;ls
+: 1515227101:0;./dotsync/bin/dotsync -L
+: 1515227162:0;echo $DSHOST
+: 1515227214:0;echo $HOST
+: 1515227256:0;ls -a
+: 1515227355:0;./dotsync/bin/dotsync -I
+: 1515227362:0;./dotsync/bin/dotsync -I -H seasea-C
+: 1515227369:0;./dotsync/bin/dotsync -I -H seasea-PC
+: 1515227434:0;./dotsync/bin/dotsync -L
+: 1515227656:0;ll
+: 1515227738:0;./dotsync/bin/dotsync -L
+: 1515227747:0;ls
+: 1515227749:0;la
+: 1515227751:0;ls -a
+: 1515227757:0;ls -ll
+: 1515227759:0;ls -la
+: 1515227887:0;./dotsync/bin/dotsync -L
+: 1515227894:0;ls -ll
+: 1515227897:0;ls -la
+: 1515227941:0;cheat -e mtar
+: 1515227996:0;cheat mtar
+: 1515228004:0;cd .cheat
+: 1515228005:0;ls
+: 1515228007:0;ll
+: 1515228009:0;cd 
+: 1515228012:0;ll .cheat
+: 1515228016:0;cd cheat
+: 1515228017:0;ls
+: 1515228020:0;cd ..
+: 1515228044:0;la
+: 1515228122:0;ls -a
+: 1515228128:0;git status
+: 1515228166:0;ls
+: 1515228169:0;cd
+: 1515228170:0;la
+: 1515228174:0;ls -a
+: 1515228177:0;ll
+: 1515228181:0;exa
+: 1515228184:0;exa -a
+: 1515228189:0;la
+: 1515228227:0;ka
+: 1515228294:0;mkdir zsh
+: 1515228465:0;cp .zshrc .dotfiles/zsh/zshrc
+: 1515228485:0;cp .zsh_history .dotfiles/zsh/zsh_history
+: 1515228843:0;la
+: 1515228845:0;ll
+: 1515228855:0;cd bin
+: 1515228857:0;ls
+: 1515228859:0;cd ..
+: 1515228863:0;la
+: 1515228865:0;ll
+: 1515228868:0;ls -a
+: 1515228872:0;ls -la
+: 1515228933:0;git submodule add https://github.com/robbyrussell/oh-my-zsh.git
+: 1515229097:0;ls
+: 1515229134:0;exit
+: 1515229217:0;ls -la
+: 1515229232:0;la
+: 1515229236:0;ka
+: 1515229240:0;kla
+: 1515229269:0;cd mtools
+: 1515229270:0;ls
+: 1515229272:0;cd bin
+: 1515229273:0;ls
+: 1515229296:0;cd
+: 1515229299:0;cd .mshell
+: 1515229300:0;ls
+: 1515229305:0;tree .
+: 1515229396:0;mkdir mshell
+: 1515229399:0;ls
+: 1515229421:0;mv -r bash ~/.dotfiles/mshell
+: 1515229426:0;mv -r bash ~/.dotfiles/mshell/
+: 1515229434:0;mv bash ~/.dotfiles/mshell/
+: 1515229439:0;cd mshell
+: 1515229440:0;ls
+: 1515229450:0;mkdir zsh
+: 1515229463:0;cd zsh
+: 1515229464:0;ls
+: 1515229467:0;cd plugins
+: 1515229468:0;ls
+: 1515229477:0;rm zsh
+: 1515229485:0;rm -rf zsh
+: 1515229489:0;ls
+: 1515229492:0;cd ..
+: 1515229508:0;mv zsh ~/.dotfiles/mshell/
+: 1515229510:0;ls
+: 1515229528:0;cd zsh
+: 1515229539:0;cd
+: 1515229544:0;rm -rf .mshell
+: 1515229552:0;./dotsync/bin/dotsync -L
+: 1515229561:0;cd ../..
+: 1515229563:0;./dotsync/bin/dotsync -L
+: 1515229582:0;kla
+: 1515229594:0;cd zsh
+: 1515229595:0;ls
+: 1515229601:0;cd ..
+: 1515229602:0;ls
+: 1515229604:0;cd mshell
+: 1515229605:0;ls
+: 1515229609:0;cd zsh/plugins
+: 1515229609:0;ls
+: 1515229629:0;cd fast-syntax-highlighting
+: 1515229632:0;git remote -v
+: 1515229635:0;cd ..
+: 1515229664:0;git submodule add https://github.com/zdharma/fast-syntax-highlighting.git
+: 1515229672:0;cd ..
+: 1515229675:0;cd themes
+: 1515229675:0;ls
+: 1515229687:0;cd powerlevel9k
+: 1515229690:0;git remote -v
+: 1515229692:0;cd ..
+: 1515229720:0;git submodule add https://github.com/zdharma/fast-syntax-highlighting.git
+: 1515229728:0;ls
+: 1515229746:0;git submodule add https://github.com/bhilburn/powerlevel9k.git
+: 1515229750:0;cd ..
+: 1515229758:0;cd
+: 1515229763:0;cd ..
+: 1515229820:0;./dotsync/bin/dotsync -L
+: 1515229828:0;kla
+: 1515229891:0;la
+: 1515229895:0;ls -a
+: 1515229911:0;cd mshell
+: 1515229912:0;ls
+: 1515229914:0;tree
+: 1515229989:0;la
+: 1515229989:0;cd
+: 1515229991:0;la
+: 1515230014:0;mkdir bin
+: 1515230016:0;ls
+: 1515230029:0;alias ls='ls'
+: 1515230030:0;ls
+: 1515230036:0;cd .backup
+: 1515230037:0;ls
+: 1515230046:0;alias ls='ls'
+: 1515230047:0;ls
+: 1515230050:0;ls -a
+: 1515230055:0;cd .dotfiles
+: 1515230056:0;ls
+: 1515230059:0;cd bin
+: 1515230059:0;ls
+: 1515230083:0;mv exa ~/.dotfiles/mshell/bin
+: 1515230093:0;tree bin
+: 1515230156:0;ls
+: 1515230166:0;dotsync -L
+: 1515230169:0;cd
+: 1515230172:0;ls -a
+: 1515230178:0;la
+: 1515230180:0;ll
+: 1515230190:0;lla
+: 1515230192:0;kla
+: 1515230215:0;cd ..
+: 1515230257:0;exit
+: 1515230574:0;exit
+: 1515230643:0;cd .dotfiles
+: 1515230644:0;ls
+: 1515230653:0;dotsync -P
+: 1515230681:0;git add cheat/ dotsyncrc mshell/ rsyncignore zsh
+: 1515230702:0;git commit -m "‰∏É™‰ºÉÄzshÁ≠É©"
+: 1515230708:0;git push origin master
+: 1515231051:0;ls
+: 1515231196:0;mkdir vim
+: 1515231232:0;mkdir nvim
+: 1515231238:0;cd nvim
+: 1515231243:0;cd
+: 1515231245:0;cd .config
+: 1515231246:0;ls
+: 1515231248:0;cd nvim
+: 1515231249:0;ls
+: 1515231251:0;more init.vim
+: 1515231358:0;cp init.vim ~/.dotfiles/nvim
+: 1515231405:0;cd ..
+: 1515231410:0;tree nvim
+: 1515231415:0;dotsync -L
+: 1515231424:0;cd ..
+: 1515231425:0;la
+: 1515231426:0;ll
+: 1515231437:0;cd nvim
+: 1515231438:0;ls
+: 1515231440:0;cd ..
+: 1515231475:0;nvim
+: 1515231491:0;cd
+: 1515231493:0;ls
+: 1515231502:0;la
+: 1515231526:0;cp .vimrc* .dotfiles/vim
+: 1515231577:0;cd vim
+: 1515231578:0;ls
+: 1515231585:0;la
+: 1515231601:0;mv .vimrc vimrc
+: 1515231619:0;mv .vimrc.complete vimrc.complete
+: 1515231626:0;mv .vimrc.complete vimrc.ctrlp
+: 1515231633:0;mv .vimrc.ctrlp vimrc.ctrlp
+: 1515231644:0;mv .vimrc.discard vimrc.discard
+: 1515231657:0;mv .vimrc.explug vimrc.explug
+: 1515231669:0;mv .vimrc.language vimrc.language
+: 1515231683:0;mv .vimrc.statusline vimrc.statusline
+: 1515231699:0;mv .vimrc.unitvim vimrc.unitvim
+: 1515231711:0;mv .vimrc.vimplug vimrc.vimplug
+: 1515231713:0;la
+: 1515231734:0;cd vim
+: 1515231734:0;ls
+: 1515231847:0;dotsync -L
+: 1515231851:0;nvim
+: 1515231857:0;cd
+: 1515231859:0;la
+: 1515231862:0;ll
+: 1515231866:0;kla
+: 1515231876:0;git status
+: 1515231902:0;cd .vim
+: 1515231903:0;ls
+: 1515231907:0;cd tools
+: 1515231910:0;la
+: 1515231919:0;cd ..
+: 1515231921:0;la
+: 1515231931:0;cd autoload
+: 1515231932:0;ls
+: 1515231934:0;cd ..
+: 1515233483:0;cd .dotfiles/vim
+: 1515233484:0;ls
+: 1515233579:0;mkdir ftdetect
+: 1515233619:0;dotsync -L
+: 1515233623:0;ls
+: 1515233625:0;ll
+: 1515233657:0;mv tools ~/.dotfiles/vim
+: 1515233668:0;ls
+: 1515233700:0;mv autoload ~/.dotfiles/vim
+: 1515233718:0;dotsync -L
+: 1515233727:0;ls
+: 1515233736:0;ll
+: 1515233750:0;vim
+: 1515233755:0;nvim
+: 1515233895:0;cd
+: 1515233899:0;cd .backup
+: 1515233899:0;ls
+: 1515233901:0;la
+: 1515233916:0;rm -rf .dotfiles
+: 1515233923:0;cd
+: 1515233925:0;ls
+: 1515233930:0;git status
+: 1515233943:0;cd .dotfiles
+: 1515233944:0;ls
+: 1515233948:0;gst
+: 1515233978:0;rm -rf .git
+: 1515233981:0;ls
+: 1515233984:0;cd ..
+: 1515233985:0;rm -rf .git
+: 1515233998:0;rm README.md
+: 1515234000:0;ls
+: 1515234003:0;kla
+: 1515234025:0;mv compile_vim.sh .dotfiles/vim
+: 1515234035:0;cd .todo
+: 1515234036:0;ls
+: 1515234043:0;cd ..
+: 1515234064:0;mv .todo .dotfiles/todo
+: 1515234120:0;dotsync -L
+: 1515234141:0;cd .vim
+: 1515234142:0;ls
+: 1515234154:0;rm vimdetect
+: 1515234156:0;ls
+: 1515234157:0;ll
+: 1515234176:0;cd
+: 1515234176:0;la
+: 1515234188:0;kla
+: 1515234253:0;cd mtools
+: 1515234253:0;ls
+: 1515234255:0;cd bin
+: 1515234256:0;ls
+: 1515234264:0;cd ..
+: 1515234289:0;rm -rf mtools
+: 1515234312:0;clear
+: 1515234314:0;cd .dotfiles
+: 1515234315:0;ls
+: 1515234319:0;gst
+: 1515234327:0;exit
+: 1515235192:0;cd .vim
+: 1515235195:0;cd
+: 1515235196:0;cd .vim
+: 1515235197:0;ls
+: 1515235198:0;ll
+: 1515235207:0;rm ftdetect
+: 1515235211:0;dotsync -L
+: 1515235214:0;ll
+: 1515235228:0;rm ftdetect
+: 1515235232:0;dotsync -L
+: 1515235234:0;ls
+: 1515235235:0;ll
+: 1515235238:0;cd
+: 1515235242:0;kla
+: 1515235250:0;rm nnippt
+: 1515235283:0;mv snippets .dotfiles/vim/
+: 1515235305:0;dotsync -L
+: 1515235309:0;kla
+: 1515235343:0;rm .bashrc_me
+: 1515235389:0;cd .dotfiles
+: 1515235389:0;ls
+: 1515235393:0;mkdir bash
+: 1515235399:0;mv .bashrc .dotfiles/bash/bashrc
+: 1515235402:0;cd bash
+: 1515235403:0;ls
+: 1515235428:0;cd mmm
+: 1515235429:0;ls
+: 1515235441:0;ll
+: 1515235450:0;more config
+: 1515235458:0;cd ..
+: 1515235462:0;rm -rf mmm
+: 1515235578:0;clear
+: 1515235609:0;cd ..
+: 1515235611:0;cd vim
+: 1515235612:0;ls
+: 1515235623:0;touch README.MD
+: 1515235629:0;mv README.MD README.md
+: 1515235803:0;cd ..
+: 1515235804:0;ls
+: 1515235870:0;cd gitsrc/vimrc
+: 1515235871:0;ls
+: 1515235877:0;gst
+: 1515235884:0;ls
+: 1515235886:0;la
+: 1515235917:0;git rm .bashrc .bashrc_re .tmux.conf cb_color.conf
+: 1515235923:0;git rm .bashrc .bashrc_me .tmux.conf cb_color.conf
+: 1515235943:0;git checkout -- .bashrc
+: 1515235947:0;git rm .bashrc
+: 1515235977:0;git rm .bashrc .bashrc_me .tmux.conf cb_color.conf
+: 1515235980:0;gst
+: 1515235991:0;la
+: 1515236009:0;git rm .mshell/
+: 1515236014:0;git rm -r .mshell/
+: 1515236023:0;git pull
+: 1515236040:0;git push origin master
+: 1515236060:0;cd ..
+: 1515236072:0;git pull
+: 1515236077:0;cd vimrc
+: 1515236080:0;git pull
+: 1515236099:0;git checkout -- .bashrc
+: 1515236103:0;git pull
+: 1515236119:0;git commit -m "ÂÉ®ÉÄÈÉπ§"
+: 1515236123:0;git pull
+: 1515236132:0;git push origin master
+: 1515236154:0;cd ..
+: 1515236165:0;rm -rm vimrc
+: 1515236172:0;rm -rf vimrc
+: 1515236185:0;git clone --depth 1 git@github.com:DaSea/vimrc.git
+: 1515236218:0;cd vimrc
+: 1515236219:0;ls
+: 1515236221:0;la
+: 1515236281:0;git rm -r .mshell/
+: 1515236291:0;git rm .powerlevel9k.zshrc .tmux.conf .bashrc*
+: 1515236300:0;git rm .zshrc
+: 1515236339:0;git commit -m "ÂÉ®ÉÄÈÉπ§Â§É∫‰ΩÉπÈÉÅπÔºÉ¨ÁßªÂÉ™®ÂÉ®∞dotfiles"
+: 1515236343:0;git push origin master
+: 1515236363:0;ls
+: 1515236365:0;la
+: 1515236368:0;exit
+: 1515299425:0;cd
+: 1515299426:0;ll
+: 1515299428:0;la
+: 1515299431:0;kla
+: 1515299492:0;cd .icons
+: 1515299493:0;ll
+: 1515299512:0;chmod -R 755 MaterialW
+: 1515299514:0;ll
+: 1515299520:0;chmod -R 755 Pulse-Glass
+: 1515299522:0;ll
+: 1515302007:0;cd /usr/share/icons/Papirus/64x64/apps
+: 1515302010:0;ll nemo
+: 1515302012:0;ll nemo.svg
+: 1515302054:0;pkill dde-l
+: 1515302144:0;pkill dde-dock
+: 1515302416:0;cd /usr/share/applications
+: 1515302433:0;more gcolor2.desktop | grep Icon
+: 1515302441:0;nvim
+: 1515302456:0;cd
+: 1515302480:0;j neovim
+: 1515302482:0;cd ..
+: 1515302482:0;ls
+: 1515302486:0;cd neovim-qt
+: 1515302492:0;sudo make uninstall
+: 1515302506:0;sudo make remove
+: 1515302514:0;sudo make uninstall
+: 1515302571:0;sudo apt remote neovim-qt
+: 1515302589:0;sudo apt remove neovim-qt
+: 1515302600:0;ls 
+: 1515302625:0;whereis neovim-qt
+: 1515302632:0;whereis nvim-qt
+: 1515302644:0;ll /usr/local/bin/nvim
+: 1515302647:0;ll /usr/local/bin/nvim-qt
+: 1515302823:0;pkill dde-lanuncher
+: 1515302829:0;dde-launcher&
+: 1515302933:0;locate neovim
+: 1515302957:0;cd /usr/local
+: 1515302958:0;ls
+: 1515302962:0;cd share/applications
+: 1515302963:0;ls
+: 1515302970:0;nvim
+: 1515303047:0;more deepin.com.qq.office.desktop| grep Icon
+: 1515304186:0;pkill dde-dock
+: 1515372435:0;exit
+: 1515665491:0;la
+: 1515665500:0;ll .yong
+: 1515665513:0;exit
+: 1515745536:0;cd conky
+: 1515745544:0;ll .conky
+: 1515745547:0;cd
+: 1515745550:0;ll .conky
+: 1515745569:0;git clone --depth 1 https://github.com/zagortenay333/Harmattan.git
+: 1515745683:0;cd .conky
+: 1515745684:0;ls
+: 1515745695:0;cd ..
+: 1515745695:0;ls
+: 1515745707:0;la
+: 1515745712:0;cd .dotfiles
+: 1515745713:0;la
+: 1515745737:0;gedit conkyrc
+: 1515745810:0;cd
+: 1515745815:0;cd .config/autostart
+: 1515745815:0;ls
+: 1515745828:0;cp albert.desktop conky.desktop
+: 1515745834:0;nvim conky.desktop
+: 1515745962:0;ls
+: 1515745965:0;cd Harmattan
+: 1515745965:0;s
+: 1515745966:0;ls
+: 1515745968:0;la
+: 1515745980:0;cd .harmattan-assets
+: 1515745981:0;ls
+: 1515745984:0;cd ..
+: 1515746112:0;exit
+: 1515746996:0;ll .conk*
+: 1515747319:0;cd .config/autostart
+: 1515747321:0;cd
+: 1515747324:0;cd .conky
+: 1515747327:0;./start.sh
+: 1515747390:0;pkill conky
+: 1515747660:0;exit
+: 1516683256:0;cd .config
+: 1516683258:0;cd
+: 1516683261:0;cd .config
+: 1516683262:0;ll
+: 1516683268:0;cd
+: 1516683272:0;cd .dotfiles/awesome
+: 1516683554:0;sudo cp /etc/xdg/awesome/rc.lua ./
+: 1516683559:0;ls
+: 1516683847:0;nvim rc.lua
+: 1516684145:0;echo $EDITOR
+: 1516684243:0;sudo apt autoremove
+: 1516684278:0;clear
+: 1516684303:0;deepin-terminal --h
+: 1516684306:0;exit
+: 1521116452:0;ls
+: 1521116454:0;clear
+: 1521116479:0;cd
+: 1521116530:0;sudo apt install git
+: 1521116563:0;ls
+: 1521116575:0;cd ÂÉªæÁÉ©Éß
+: 1521116577:0;ls
+: 1521116580:0;cd theme
+: 1521116611:0;git clone --depth 1 https://github.com/vinceliuice/Canta-theme.git
+: 1521116897:0;cd Canta-theme
+: 1521117011:0;ls
+: 1521117028:0;sudo apt-get install gtk2-engines-murrine gtk2-engines-pixbuf
+: 1521117036:0;sudo ./install.sh
+: 1521117279:0;vim
+: 1521117284:0;whereis vim
+: 1521117289:0;vim
+: 1521117482:0;sudo rm -f /usr/share/applications/com.canonical.launcher.amazon.desktop
+: 1521117492:0;sudo rm -f /usr/share/applications/ubuntu-amazon-default.desktop
+: 1521118725:0;cd
+: 1521119609:0;sudo dpkg -i sogoupinyin_2.2.0.0102_amd64.deb 
+: 1521119649:0;sudo apt --fix-broken install
+: 1521119756:0;sudo dpkg -i sogoupinyin_2.2.0.0102_amd64.deb 
+: 1521125555:0;sudo apt remove ibus
+: 1521125585:0;sudo apt autoremove
+: 1521125594:0;sudo apt autoclean
+: 1521125666:0;cd /etc
+: 1521125667:0;ls
+: 1521125678:0;python3
+: 1521125703:0;sudo gedit fstab
+: 1521126098:0;compaudit
+: 1521126134:0;cd
+: 1521126146:0;cd ÂÉªæÁÉ©Éß
+: 1521126156:0;ls
+: 1521126162:0;cd theme
+: 1521126164:0;ls
+: 1521126187:0;git clone https://github.com/mustafaozhan/Breeze-Adapta.git && cd Breeze-Adapta && chmod +x install.sh && sh install.sh
+: 1521126442:0;ntfs-3g
+: 1521126483:0;cd
+: 1521126487:0;fdisk -l
+: 1521126492:0;fdisk -L
+: 1521126497:0;sudo fdisk -l
+: 1521126539:0;mount
+: 1521126756:0;blkid
+: 1521126812:0;sudo blkid
+: 1521127022:0;mount -a
+: 1521127025:0;sudo mount -a
+: 1521127041:0;exit
+: 1526828903:0;git status
+: 1526828910:0;cd vim
+: 1526828914:0;git status
+: 1526828918:0;cd ..
+: 1526830305:0;python --version
+: 1526830392:0;whereis python
+: 1526831156:0;echo $DISPLAY
+: 1526831161:0;xsel
+: 1526831187:0;sudo pacman -S xsel
+: 1526831279:0;pbcopy
+: 1526831325:0;cd
+: 1526831329:0;cd .vim/plugged
+: 1526831338:0;ls
+: 1526831351:0;cd deoplete.nvim
+: 1526831353:0;git pull
+: 1526831362:0;nvim
+: 1526831532:0;pip3 list
+: 1526831685:0;nvim
+: 1526831868:0;exit
+: 1535982372:0;clear
+: 1535982677:0;nvim
+: 1535983929:0;cd docsets.vim
+: 1535983931:0;ls
+: 1535983934:0;cd autoload/docsets
+: 1535983935:0;ls
+: 1535983939:0;mv docsetmgr.py ../
+: 1535983940:0;ls
+: 1535983942:0;cd ..
+: 1535983944:0;nvim
+: 1535984518:0;clear
+: 1535984634:0;nvim
+: 1535986331:0;cd ..
+: 1535986334:0;cd autoload
+: 1535986335:0;ls
+: 1535986339:0;rm __pycache__
+: 1535986345:0;rm -rf __pycache__
+: 1535986346:0;ls
+: 1535986349:0;nvim
+: 1535986417:0;ls
+: 1535986426:0;rm -rf __pycache__
+: 1535986428:0;ls
+: 1535986447:0;rf -r docset
+: 1535986452:0;rf -r docsets
+: 1535986452:0;ls
+: 1535986466:0;rm -rf docsets
+: 1535986467:0;ls
+: 1535986473:0;rf
+: 1535986486:0;cd .dotfiles/mshell/zsh
+: 1535986488:0;ls
+: 1535986493:0;cd plugins
+: 1535986494:0;ls
+: 1535986501:0;cd ..
+: 1535986509:0;nvim
+: 1536020800:0;exit
+: 1540089214:0;cd .config
+: 1540089215:0;ls
+: 1540089221:0;ls fish
+: 1540089224:0;ll fish
+: 1540089228:0;cd fish
+: 1540089229:0;ls
+: 1540089232:0;cd ..
+: 1540089244:0;cd fish/functions
+: 1540089245:0;ls
+: 1540089247:0;cd ..
+: 1540089254:0;rm -rf fish
+: 1540089267:0;cd
+: 1540089273:0;dotsync -L
+: 1540089280:0;cd .config
+: 1540089283:0;ll fish
+: 1540089290:0;rm -rf fish_old
+: 1540089292:0;cd 
+: 1540089295:0;cd .backup
+: 1540089295:0;ls
+: 1540089297:0;la
+: 1540089300:0;cd .dotfiles
+: 1540089300:0;ls
+: 1540089304:0;cd fish
+: 1540089305:0;ls
+: 1540089307:0;cd ..
+: 1540089309:0;exit
+: 1663298282:0;mhwd-kernel -li
+: 1663298321:0;sudo mhwd-kernel -i linux518 rmc
+: 1665457486:0;exit

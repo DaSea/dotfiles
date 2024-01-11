@@ -1,0 +1,233 @@
+# Header
+snippet h_header
+abbr include_header
+    /*
+     * Copyright (C) `strftime("%Y-%m-%d")` Dasea
+     *
+     * Description: ${1:#:You will get it!}
+     */
+    ${0}
+
+snippet c_header
+abbr source_header
+    /*
+     * Copyright (C) `strftime("%Y-%m-%d")` Dasea
+     *
+     * Description: ${1:#:You will get it!}
+     */
+    #include "${2}.h"
+    ${0}
+
+
+snippet inc
+abbr #include <>
+alias   #inc, #include
+    #include <${1:stdio}>${0}
+
+
+snippet inc2
+abbr #include ""
+alias   #inc2, #include2
+    #include "${1}.h"${0}
+
+snippet     if
+abbr        if(){}
+    if (${1:#:condition}) {
+        ${0:TARGET}
+    }
+
+snippet else
+    else {
+        ${0:TARGET}
+    }
+
+snippet elseif
+    else if (${1:#:condition}) {
+        ${0:TARGET}
+    }
+
+snippet     ifelse
+abbr        if(){}else{}
+    if (${1:#:condition}) {
+        ${2:TARGET}
+    } else {
+        ${3}
+    }
+
+snippet     for
+abbr        for(){}
+    for (${1:int} ${2:i} = ${3:0}; $2 < ${4}; ++$2) {
+        ${0:TARGET}
+    }
+
+snippet     while
+abbr        while () {}
+    while (${1:#:condition}) {
+        ${0:TARGET}
+    }
+
+snippet     do_while
+alias       do
+    do {
+        ${0:TARGET:code}
+    } while (${1:#:condition});
+
+snippet     switch
+abbr        switch() {}
+    switch(${1:#:var}) {
+    case ${2:#:val}: {
+        ${0:TARGET}
+    }
+    break;
+    default:
+    // No select
+    break;
+    }
+
+# Declare function
+snippet     func_dcr
+abbr        func();
+    ${1:void} ${2:func_name}(${3:void});${0}
+
+# Declare function
+snippet     static_func_dcr
+abbr        func();
+    static ${1:void} ${2:func_name}(${3:void});${0}
+
+# Implement function
+snippet     func_ipt
+abbr        func() {}
+    ${1:void} ${2:func_name}(${3:void}) {
+        ${0:TARGET}
+    }
+
+snippet     struct
+abbr        struct {}
+    struct ${1:name} {
+        ${0:TARGET:data}
+    };
+
+# Typedef struct
+snippet struct_typedef
+    typedef struct ${1:name} {
+        ${0:TARGET:data}
+    };
+
+snippet     union
+abbr        union {}
+    union {
+        ${0:TARGET:data}
+    } u;
+
+snippet     enum
+abbr        enum {}
+    enum ${1:NAME} {
+        ${0:TARGET}
+    };
+
+# hard-tab is necessary; C indent doesn't support this.
+snippet cmain
+    #include <stdio.h>
+    int main(int argc, char const* argv[])
+    {
+    ${0:TARGET}
+    return 0;
+    }
+
+
+snippet ifndef
+alias   #ifndef
+abbr #ifndef ... #define ... #endif
+    #ifndef $1
+    #define ${1:#:SYMBOL}
+    #endif${0} // $1
+
+snippet def
+alias   #def, #define
+    #define
+
+# Include-Guard
+snippet once
+abbr include-guard
+    #ifndef ${1:SYMBOL}
+    #define $1
+
+        ${0:TARGET}
+
+    #endif /* $1 */
+
+# Ternary conditional operator
+snippet conditional
+    (${1:#:condition}) ? ${2:#:a} : ${3:#:b}
+
+snippet typedef
+    typedef ${1:#:base_type} ${2:#:custom_type};
+
+snippet printf
+abbr    printf("...\n", ...);
+    printf("${1}\n", ${2});
+
+snippet fprintf
+abbr    fprintf(..., "...\n", ...);
+    fprintf(${1:stderr}, "${2}\n"${3});
+
+snippet comment
+alias /**/
+    /* ${1:#:comment} */
+    ${0}
+
+snippet comment_l
+alias //
+    // ${1:#:comment}
+    ${0}
+
+snippet sizeof
+alias size
+    sizeof(${0:TARGET})
+
+snippet fopen_rc
+abbr fopen("...", "...");
+    FILE* ${1:file} = fopen("${1:PATH}", "r${2:#:b+}");
+    ${0:TARGET}
+    fclose(${1});
+
+snippet fopen_wc
+abbr fopen("...", "...");
+    FILE* ${1:file} = fopen("${1:PATH}", "w${2:#:b+}");
+    ${0:TARGET}
+    fclose(${1});
+
+snippet fopen_ac
+abbr fopen("...", "...");
+    FILE* ${1:file} = fopen("${1:PATH}", "a${2:#:b+}");
+    ${0:TARGET}
+    fclose(${1});
+
+snippet fgets
+abbr fgets(row, length, file);
+    fgets(${0:ROW}, ${1:LENGTH}, ${2:FILE});
+
+snippet     var_int
+abbr        int a = 0;
+options     head
+    int ${1:var} = ${2:0.0};${0}
+
+snippet     var_double
+abbr        double a = 0.0;
+options     head
+    double ${1:var} = ${2:0.0};${0}
+
+snippet     var_float
+abbr        float a = 0;
+options     head
+    float ${1:var} = ${2:0.0};${0}
+
+snippet     var_long
+abbr        long var=0
+options     head
+    long ${1:var} = ${2:0};${0}
+
+snippet     var_unsigned_long
+abbr        unsigned long var=0
+options     head
+    unsigned long ${1:var} = ${2:0};${0}

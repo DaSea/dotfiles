@@ -1,0 +1,6 @@
+tar -zxf test1.tar.gz -C /opt # 解压到某个文件夹
+tar -jxvf xx.tar.bz2
+# 解压7z文件:注意-o后面每空格
+7za x test.7z -r -o./
+# 压缩文件:a代表添加文件；-r 递归；-t:压缩类型也可以gz,bz2
+7za a -t7z -r Mytest.7z /opt/testfolder/*

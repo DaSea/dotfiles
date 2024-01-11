@@ -1,0 +1,44 @@
+QWidget, QTabWidget::pane, QTabWidget::tab-bar {
+/*     background-color: rgb(39, 46, 59); */
+    background-color: transparent;
+}
+QTabBar::tab {
+    /*color: rgb(147, 161, 161);*/
+    color: #fbc02d;
+    /*rgb(0, 229, 255, 100);*/
+    background-color: transparent;
+    /*background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #b7d332, stop: 0.01 #b7d332, stop: 0.10 rgb(44, 62, 80));*/
+    /*background-color: rgb(213, 0, 249);*/
+    background:qlineargradient(spread:pad,x1:0, y1:0, x2:1, y2:0,stop:0 #57ca85,stop:0.5 #184e68 ,stop:1 #57ca85);
+    font-size: 16px;
+    height: 24px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-bottom: 0px;
+    border-top:2px;
+    /*border-color: rgb(250, 61, 118);*/
+    border-color: rgb(213, 0, 249);
+}
+QTabBar::tab:selected {
+    /*background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #dc18ff, stop: 0.08 #dc4010, stop: 0.15 rgb(44, 62, 80));*/
+    /*background:qlineargradient(spread:pad,x1:0, y1:0, x2:1, y2:0,stop:0 #030303,stop:0.5 #030303 ,stop:1 #2E8B57);*/
+    /*linear-gradient(135deg,#fccf31,#f55555)*/
+    /*linear-gradient(135deg,#0b486b,#f56217)*/
+    /*background-color: rgba(40, 44, 52, 120);*/
+    background:qlineargradient(spread:pad,x1:0, y1:0, x2:1, y2:0,stop:0 #f56217,stop:0.5 #184e68 ,stop:1 #f56217);
+    color: #f54ea2;
+    /*#fbc02d;*/
+    /*#07ebc5;*/
+}
+
+QTabBar::tab:hover {
+    /*linear-gradient(135deg,#f54ea2,#ff7676)*/
+    /*linear-gradient(135deg,#184e68,#57ca85)*/
+    background:qlineargradient(spread:pad,x1:0, y1:0, x2:1, y2:0,stop:0 #f54ea2,stop:0.5 #184e68 ,stop:1 #f54ea2);
+    /*background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #f54ea2, stop: 1 #ff7676);*/
+    color: #fb8c00;
+}

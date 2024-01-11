@@ -1,0 +1,30 @@
+## svn huangwenlin gishuangwenlin
+### svn checkout
+1. svn co url --username=name --password=密码
+### svn add
+1.添加你新文件到版本库；
+### svn commit
+1. 将修改提交至版本库（包括svn add,svn delete等的内容)
+2. 如果不指定特殊的文件，则会提交全部修改的内容；
+3. 如果需要修改指定的文件则svn ci -m "comment"  filename
+### svn revert [--recursive 递归恢复]
+1. 撤销被add的文件
+2. 撤销被修改的文件
+### svn delete
+删除文件
+### svn update
+1. 更新
+2. 更新至某个版本： svn update -r 200 /path/file
+### svn switch : 代码库url变更
+1. svn switch url [path]: 将工作副本映射到一个新的地址，与svn update类似，但是会merge;
+2. svn switch --relocate from to [path]
+### svn resolved
+解决冲突
+### svn cleanup
+### svn log [file]; svn log -l 5 -v(看最近5次的log)
+### svn info(查看仓库信息)
+### svn diff --diff-cmd=meld可以查看差别
+### svn merge -r 版本1：版本2 filename ,用于将file从版本1回退到版本2，进行前用svn log查看
+## svn externals: 类似于git submodule
+添加: svn propset svn:externals "jni http://172.16.1.118/projects/KqGis_Android/sdk/KqGisAndroidJni"
+删除：svn propdel svn:externals

@@ -1,0 +1,31 @@
+QTabBar {
+    background-color: #0c0d14
+}
+
+QTabBar::tab {
+    font-size: 16px;
+    margin-bottom: 3px;
+    margin-left: 3px;
+    margin-right: 1px;
+    padding: 5px;
+    color: palette(text);
+    background-color: transparent;
+    border-radius: 4px;
+}
+
+QTabBar::tab:hover {
+    border-radius: 4px;
+    background-color: rgba(207, 214, 255, .1);
+    /*
+background-color: palette(window);
+border: 2px solid palette(window);
+*/
+}
+
+QTabBar::tab:selected {
+    color: #e9f3ff;
+    font-weight: 500;
+    border-radius: 4px;
+    /*Darker colors, Mixed terminal bg color with kde highlight color https://meyerweb.com/eric/tools/color-blend/#0C0D14:4E41C1:8:hex */
+    background-color: #1B193A;
+}

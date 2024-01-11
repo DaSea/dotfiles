@@ -1,0 +1,282 @@
+include c.snip
+
+snippet     cpp_template
+abbr        cpp_file_template
+    /*
+     * Copyright (C) `strftime("%Y-%m-%d")` Dasea
+     *
+     * Description: ${2}
+     */
+    #include "${1}"
+    ${0}
+
+snippet     hpp_template
+abbr        hpp_file_template
+    /*
+     * Copyright (C) `strftime("%Y-%m-%d")` Dasea
+     *
+     * Description: ${2}
+     */
+    #ifndef ${1}
+    #define $1
+
+    ${0}
+
+    #endif // $1
+
+snippet     pub_func_group
+abbr        comment
+    /*******************************************************************************
+     * public function group
+    *******************************************************************************/
+    ${0}
+
+snippet     pri_func_group
+abbr        comment
+    /*******************************************************************************
+     * private function group
+    ******************************************************************************/
+    ${0}
+
+snippet     s_line_comm
+abbr        comment
+    //!< brief ${1}
+    ${0}
+
+snippet     extern_c
+abbr        extern_c
+    #ifdef __cplusplus
+    extern "C" {
+    #endif
+
+    ${0}
+
+    #ifdef __cplusplus
+    }
+    #endif
+
+snippet     ret
+abbr        return ();
+    return (${1});${0}
+
+snippet     new_var
+abbr        new var;
+    ${1:#:type} ${2} = new $1(${3});
+    ${0}
+
+snippet     new_arr
+abbr        new arr[];
+    ${1:#:type} ${2} = new $1[${3}];
+    ${0}
+
+snippet     del_var
+abbr        delete var;
+    delete ${1};
+    $1 = NULL;
+    ${0}
+
+snippet     del_arr
+abbr        delete[] var;
+    delete[] ${1};
+    $1 = NULL;
+    ${0}
+
+snippet     template
+abbr        template <T>
+    template<typename ${1:T}>
+    ${0}
+
+snippet     class
+abbr        class template
+    class ${1:#:name} {
+    public:
+        $1(${2});
+        ~$1(void);
+
+        ${0}
+    };
+
+snippet     class_vir
+abbr        class_virtual {}
+    class ${1:#:name} {
+    public:
+        $1(${2});
+        ${3:#:virtual} ~$1(void);
+        ${0}
+    };
+
+snippet     class-without-constructor
+abbr        class {}
+    class ${1:#:name} {
+        ${2}
+    };
+
+snippet     class_inherit
+abbr        class_inherit {}
+    class ${1:#:name}: ${2:public} ${3:#:baseclass}{
+    public:
+        $1();
+        ${4:#:virtual} ~$1(void);
+        ${0:TARGET}
+    };
+
+snippet     class_constructor
+abbr        class::class{}
+        ${1:class}::$1(${2:param}){
+           // Constructor
+           ${0:TARGET}
+        }
+
+snippet     class_desturctor
+abbr        class::~class{}
+        ${1:class}::~$1(){
+           // Destructor
+           ${0:TARGET}
+        }
+
+# Implement class function
+snippet     func_class_ipt
+alias       func
+abbr        class::func() {}
+    ${1:void} ${2:#:class_name}::${3:#:func_name}(${4:void}) {
+        ${0:TARGET}
+    }
+
+# container
+snippet     vec_snippet
+abbr        std::vector<>
+    std::vector<${1:#:type}> ${2:#:var};${0}
+
+snippet     list_snippet
+abbr        std::list<>
+    std::list<${1:#:type}> ${2:#:var};${0}
+
+snippet     map_snippet
+abbr        std::map<>
+    std::map<${1:#:key}, ${2:#:val}> ${3:#:var};${0}
+
+snippet     try
+abbr        try catch
+    try {
+        ${1:#:TARGET}
+    } catch (${2:...}) {
+        ${3}
+    }
+
+# range based for ( C++11 feature )
+snippet     for_CPP11
+abbr        for(:) {}
+    for (${1:auto&& }${2:var} : ${3:container}) {
+        ${0:TARGET}
+    }
+
+snippet     for_inter
+abbr        for(it: != end;++it) {}
+    std::${1:#:vector}<${2:#:int}>::iterator ${4:#:it} = ${3:#:var}.begin();
+    for (; $4 != $3.end(); ++$4) {
+        ${0:TARGET}
+    }
+
+snippet     for_ainter
+abbr        for(auto it: != end;++it) {}
+    for (auto ${1:#:it} = ${2:#:var}.begin(); $1 != $2.end(); ++$1) {
+        ${0:TARGET}
+    }
+
+snippet     foreach
+abbr        foreach(:) {}
+    foreach (${1:auto} ${2:var} : ${3:container}) {
+        ${0:TARGET}
+    }
+
+snippet     qforeach
+abbr        foreach(,) {}
+    foreach (${1:auto} ${2:var} , ${3:container}) {
+        ${0:TARGET}
+    }
+
+# lambda expression ( C++11 feature )
+snippet     lambda
+abbr        [](){}
+    [${1}](${2})${3}{ ${4:TARGET} }${0:;}
+
+# scoped enumeration ( C++11 feature )
+    std::vector<_KqOfflineTileScale>::iterator it = m_serviceInfo->scales.begin();
+snippet     enum_scoped
+abbr        enum struct {};
+    enum struct ${1:#:name} { ${2:#:TARGET} };
+
+# static assert ( C++11 feature )
+snippet     static_assert
+abbr        static_assert(,"")
+    static_assert(${1}, "${2}");${0}
+
+delete      namespace
+snippet     namespace
+abbr        namespace {}
+options     head
+    namespace ${1:#:name} {
+    ${0:TARGET}
+    } // namespace $1
+
+snippet     cast_static
+abbr        static_cast<>()
+    static_cast<${1}>(${2})${0}
+
+snippet     cast_reinterpret
+abbr        reinterpret_cast<>()
+    reinterpret_cast<${1}>(${2})${0}
+
+snippet     cast_const
+abbr        const_cast<>()
+    const_cast<${1}>(${2})${0}
+
+snippet     cast_dynamic
+abbr        dynamic_cast<>()
+    dynamic_cast<${1}>(${2})${0}
+
+snippet     helloworld
+abbr        #include<iostream> int main...
+    #include <iostream>
+
+    int main(int argc, char const* argv[])
+    {
+        std::cout << "hello, world!" << std::endl;
+        return 0;
+    }
+
+snippet     mainus
+abbr        #include<iostream> int main...
+    int main(int argc, char const* argv[])
+    {
+        ${0}
+        return 0;
+    }
+
+snippet     cout
+options     head
+    std::cout
+
+snippet     coutend
+options     head
+    std::cout << ${0:TARGET} << std::endl;
+
+snippet     ncoutend
+options     head
+    cout << ${0:TARGET} << endl;
+
+snippet     str
+abbr     std::string
+    std::string ${1:str};${0}
+
+snippet     usename
+abbr     using namespace name;
+    using namespace ${1:std};${0}
+
+snippet     logd
+abbr     LOGD_S
+    LOGD_S("${1}"${2:,}${0});
+
+snippet     operator=
+options     head
+    ${1:type}& operator=(const $1 &other);

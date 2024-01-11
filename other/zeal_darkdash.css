@@ -1,0 +1,12 @@
+iframe {
+    -webkit-filter: invert()
+}
+html {
+    -webkit-filter: invert() contrast(80%) brightness(90%) contrast(85%);
+}
+html img[src*=\"jpg\"], html img[src*=\"jpeg\"], html img[src*=\"jpg\"], html img[src*=\"jpeg\"] { 
+    -webkit-filter: brightness(90%) contrast(90%); 
+}
+html { 
+    -webkit-filter: invert() hue-rotate(180deg) contrast(80%) brightness(90%) contrast(85%); 
+}

@@ -1,0 +1,274 @@
+---
+Language: Cpp
+# BasedOnStyle: Google
+# public等的偏移，与 IndentWidth 相关
+AccessModifierOffset: -4
+# 参数后怎么对齐
+AlignAfterOpenBracket: BlockIndent
+AlignArrayOfStructures: Right
+#None - Consecutive - AcrossEmptyLines - AcrossComments - AcrossEmptyLinesAndComments
+AlignConsecutiveMacros: Consecutive
+AlignConsecutiveAssignments: None
+AlignConsecutiveBitFields: Consecutive
+AlignConsecutiveDeclarations: None
+AlignEscapedNewlines: Left
+AlignOperands:   Align
+AlignTrailingComments: true
+# 参数一行放不下的情况
+AllowAllArgumentsOnNextLine: true
+# 声明的情况下一行放不下时
+AllowAllParametersOfDeclarationOnNextLine: true
+# 短枚举放在一行
+AllowShortEnumsOnASingleLine: false
+# 短的块放在一行
+AllowShortBlocksOnASingleLine: Empty
+AllowShortCaseLabelsOnASingleLine: true
+AllowShortFunctionsOnASingleLine: Empty
+AllowShortLambdasOnASingleLine: All
+AllowShortIfStatementsOnASingleLine: Never
+AllowShortLoopsOnASingleLine: false
+AlwaysBreakAfterDefinitionReturnType: None
+AlwaysBreakAfterReturnType: None
+AlwaysBreakBeforeMultilineStrings: false
+AlwaysBreakTemplateDeclarations: Yes
+AttributeMacros:
+  - __capability
+BinPackArguments: true
+BinPackParameters: true
+BreakBeforeBraces: Attach
+# 下面的情况只有在 BreakBeforeBraces为custom的时候生效
+# 括号的包裹情况
+BraceWrapping:
+  AfterCaseLabel:  false
+  AfterClass:      false
+  AfterControlStatement: Never
+  AfterEnum:       false
+  AfterFunction:   false
+  AfterNamespace:  false
+  AfterObjCDeclaration: false
+  AfterStruct:     false
+  AfterUnion:      false
+  AfterExternBlock: false
+  BeforeCatch:     false
+  BeforeElse:      false
+  BeforeLambdaBody: false
+  BeforeWhile:     false
+  IndentBraces:    false
+  SplitEmptyFunction: false
+  SplitEmptyRecord: false
+  SplitEmptyNamespace: true
+BreakBeforeBinaryOperators: None
+#BreakBeforeConceptDeclarations: Always
+BreakBeforeInheritanceComma: false
+BreakInheritanceList: AfterComma
+BreakBeforeTernaryOperators: false
+BreakConstructorInitializersBeforeComma: false
+BreakConstructorInitializers: AfterColon
+BreakAfterJavaFieldAnnotations: true
+BreakStringLiterals: false
+ColumnLimit:     100
+CommentPragmas:  '^ IWYU pragma:'
+QualifierAlignment: Left
+CompactNamespaces: false
+ConstructorInitializerIndentWidth: 4
+ContinuationIndentWidth: 4
+Cpp11BracedListStyle: true
+DeriveLineEnding: true
+DerivePointerAlignment: true
+DisableFormat:   false
+# public等后面是否放置空行
+EmptyLineAfterAccessModifier: Never
+# public等前面放置空行
+EmptyLineBeforeAccessModifier: LogicalBlock
+ExperimentalAutoDetectBinPacking: false
+PackConstructorInitializers: NextLine
+BasedOnStyle:    ''
+ConstructorInitializerAllOnOneLineOrOnePerLine: false
+AllowAllConstructorInitializersOnNextLine: true
+# namespace后面是否加个 comment
+FixNamespaceComments: true
+ForEachMacros:
+  - foreach
+  - Q_FOREACH
+  - BOOST_FOREACH
+IfMacros:
+  - KJ_IF_MAYBE
+# include是否进行分组
+IncludeBlocks: Preserve
+# 下面这个只有在 IncludeBlocks为 Regroup 的时候有用
+IncludeCategories:
+  - Regex:           '^<ext/.*\.h>'
+    Priority:        2
+    SortPriority:    0
+    CaseSensitive:   false
+  - Regex:           '^<.*\.h>'
+    Priority:        1
+    SortPriority:    0
+    CaseSensitive:   false
+  - Regex:           '^<.*'
+    Priority:        2
+    SortPriority:    0
+    CaseSensitive:   false
+  - Regex:           '.*'
+    Priority:        3
+    SortPriority:    0
+    CaseSensitive:   false
+IncludeIsMainRegex: '([-_](test|unittest))?$'
+IncludeIsMainSourceRegex: ''
+# public 等是否缩进
+IndentAccessModifiers: false
+IndentCaseLabels: true
+IndentCaseBlocks: false
+# goto label 是否缩进
+IndentGotoLabels: true
+# 预编译的是否缩进
+IndentPPDirectives: AfterHash
+IndentExternBlock: AfterExternBlock
+IndentRequires:  false
+IndentWidth:     4
+IndentWrappedFunctionNames: false
+InsertTrailingCommas: None
+JavaScriptWrapImports: true
+KeepEmptyLinesAtTheStartOfBlocks: false
+LambdaBodyIndentation: Signature
+# 自定义某个区域的块对齐
+MacroBlockBegin: ''
+MacroBlockEnd:   ''
+MaxEmptyLinesToKeep: 1
+# namespace里面是否对齐
+NamespaceIndentation: Inner
+ObjCBinPackProtocolList: Never
+ObjCBlockIndentWidth: 4
+ObjCBreakBeforeNestedBlockParam: true
+ObjCSpaceAfterProperty: false
+ObjCSpaceBeforeProtocolList: true
+PenaltyBreakAssignment: 2
+PenaltyBreakBeforeFirstCallParameter: 1
+PenaltyBreakComment: 300
+PenaltyBreakFirstLessLess: 120
+PenaltyBreakOpenParenthesis: 0
+PenaltyBreakString: 1000
+PenaltyBreakTemplateDeclaration: 10
+PenaltyExcessCharacter: 1000000
+PenaltyReturnTypeOnItsOwnLine: 200
+PenaltyIndentedWhitespace: 0
+# 指针的对齐
+PointerAlignment: Left
+PPIndentWidth:   1
+RawStringFormats:
+  - Language:        Cpp
+    Delimiters:
+      - cc
+      - CC
+      - cpp
+      - Cpp
+      - CPP
+      - 'c++'
+      - 'C++'
+    CanonicalDelimiter: ''
+    BasedOnStyle:    google
+  - Language:        TextProto
+    Delimiters:
+      - pb
+      - PB
+      - proto
+      - PROTO
+    EnclosingFunctions:
+      - EqualsProto
+      - EquivToProto
+      - PARSE_PARTIAL_TEXT_PROTO
+      - PARSE_TEST_PROTO
+      - PARSE_TEXT_PROTO
+      - ParseTextOrDie
+      - ParseTextProtoOrDie
+      - ParseTestProto
+      - ParsePartialTestProto
+    CanonicalDelimiter: pb
+    BasedOnStyle:    google
+# 引用的对齐
+ReferenceAlignment: Pointer
+# 允许重新排版注释
+ReflowComments:  true
+# 是否允许移除 大括号{}
+RemoveBracesLLVM: false
+# 移除分号
+#RemoveSemicolon: true
+SeparateDefinitionBlocks: Leave
+ShortNamespaceLines: 1
+SortIncludes:    CaseSensitive
+SortJavaStaticImport: Before
+# using namespace 排序
+SortUsingDeclarations: true
+# c转换是否加个括号
+SpaceAfterCStyleCast: false
+# 逻辑否是否加 !condition
+SpaceAfterLogicalNot: false
+# template <int>
+SpaceAfterTemplateKeyword: true
+SpaceBeforeAssignmentOperators: true
+SpaceBeforeCaseColon: false
+SpaceBeforeCpp11BracedList: false
+SpaceBeforeCtorInitializerColon: true
+# class Foo : Bar{}
+SpaceBeforeInheritanceColon: true
+# 圆括号前面是否加，下面为 if/for/while等前面加
+SpaceBeforeParens: ControlStatements
+# 下面的选项为前面的值为 Custom时有效
+SpaceBeforeParensOptions:
+  AfterControlStatements: true
+  AfterForeachMacros: true
+  AfterFunctionDefinitionName: false
+  AfterFunctionDeclarationName: false
+  AfterIfMacros:   true
+  AfterOverloadedOperator: false
+  BeforeNonEmptyParentheses: false
+SpaceAroundPointerQualifiers: Before
+# for(range based)
+SpaceBeforeRangeBasedForLoopColon: true
+# 空块是否加各空格
+SpaceInEmptyBlock: false
+# 无参时是否价格空格
+SpaceInEmptyParentheses: false
+SpacesBeforeTrailingComments: 2
+# vector<int> -> vector< int >
+SpacesInAngles:  Never
+# 条件
+SpacesInConditionalStatement: false
+# 容器常量中
+SpacesInContainerLiterals: false
+# x = ( int32 )y vs. x = (int32)y
+SpacesInCStyleCastParentheses: false
+SpacesInLineCommentPrefix:
+  Minimum:         1
+  Maximum:         -1
+# t f( Deleted & ) & = delete;   vs.     t f(Deleted &) & = delete;
+SpacesInParentheses: false
+# int [ a ] vs int [a]
+SpacesInSquareBrackets: false
+# int a[][]
+SpaceBeforeSquareBrackets: false
+BitFieldColonSpacing: Both
+# 根据某个标准初始化: c++03, c++14, c++17, c++20, Latest(c++11), Auto
+Standard:        Latest
+StatementAttributeLikeMacros:
+  - Q_EMIT
+  - emit
+StatementMacros:
+  - Q_UNUSED
+  - QT_REQUIRE_VERSION
+  - KQ_UNUSED
+TabWidth:        4
+UseCRLF:         false
+UseTab:          Never
+WhitespaceSensitiveMacros:
+  - STRINGIZE
+  - PP_STRINGIZE
+  - BOOST_PP_STRINGIZE
+  - NS_SWIFT_NAME
+  - CF_SWIFT_NAME
+---
+Language: Java
+JavaImportGroups: ['com.example', 'com', 'org']
+JavaScriptQuotes: Double
+...
+

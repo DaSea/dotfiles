@@ -1,0 +1,27 @@
+###########################################################################
+#                            CMAKE Snippets                            #
+###########################################################################
+
+priority -50
+
+snippet if "if(condition) endif"
+if (${1:true})
+	$0
+endif ()
+endsnippet
+
+snippet eli "elseif (eli)"
+elseif (${1:/* condition */})
+	$0
+endsnippet
+
+snippet else "else ()"
+else ()
+	$0
+endsnippet
+
+snippet fun "function definition" b
+function (${2:function_name} $3)
+	${VISUAL}$0
+endfunction()
+endsnippet
