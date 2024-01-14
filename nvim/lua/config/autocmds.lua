@@ -79,6 +79,17 @@ vim.api.nvim_create_autocmd('FileType', {
     end,
 })
 
+-- wrap and check for spell in text filetypes
+vim.api.nvim_create_autocmd('FileType', {
+    group = augroup('luagroup'),
+    pattern = { 'lua' },
+    callback = function()
+        vim.opt_local.tabstop = 2
+        vim.opt_local.shiftwidth = 2
+        vim.opt_local.foldmethod = 'indent'
+    end,
+})
+
 -- Create directories when needed, when saving a file (except for URIs "://").
 vim.api.nvim_create_autocmd('BufWritePre', {
     group = augroup('auto_create_dir'),

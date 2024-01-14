@@ -25,7 +25,7 @@ function M.get()
 
 		{ '<leader>wa', vim.lsp.buf.add_workspace_folder, desc = '[LSP]Show Workspace Folders' },
 		{ '<leader>wr', vim.lsp.buf.remove_workspace_folder, desc = '[LSP]Remove Workspace Folder' },
-		{ '<leader>wl', '<cmd>lua =vim.lsp.buf.list_workspace_folders()<CR>', desc = '[LSP]List Workspace Folders' },
+		{ '<leader>ww', '<cmd>lua =vim.lsp.buf.list_workspace_folders()<CR>', desc = '[LSP]List Workspace Folders' },
 
 		{ 'K', function()
 			-- Show hover documentation or folded lines.

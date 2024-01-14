@@ -105,11 +105,17 @@ return {
   -- See: https://github.com/nvim-neo-tree/neo-tree.nvim
   opts = {
     close_if_last_window = true,
-    sources = { 'filesystem', 'buffers', 'git_status', 'document_symbols' },
+    popup_border_style = "rounded",
+    enable_git_status = false,
+    enable_diagnostics = false,
+    -- sources = { 'filesystem', 'buffers', 'git_status', 'document_symbols' },
+    sources = { 'filesystem', 'buffers' },
+    -- sources = { 'filesystem'},
     open_files_do_not_replace_types = { 'terminal', 'Trouble', 'trouble', 'qf', 'Outline' },
 
     source_selector = {
-      winbar = false,
+      winbar = true,
+      statusline = true,
       show_scrolled_off_parent_node = true,
       padding = { left = 1, right = 0 },
       sources = {
@@ -203,6 +209,11 @@ return {
     filesystem = {
       window = {
         mappings = {
+          -- 在几个source 之间切换
+          ['e'] = function() vim.api.nvim_exec('Neotree focus filesystem left', true) end,
+          ['b'] = function() vim.api.nvim_exec('Neotree focus buffers left', true) end,
+          -- ['g'] = function() vim.api.nvim_exec('Neotree focus git_status left', true) end,
+
           ['d'] = 'noop',
           ['dd'] = 'delete',
           ['c'] = { 'copy', config = { show_path = 'relative' } },

@@ -1,0 +1,70 @@
+# 常用主题：everforest_dark github_dark_dimmed  nightfox papercolor_dark gruvbox_material_medium_dark
+# solarized_dark tokyo-night tokyo-night-storm seashells kanagawa_wave
+import = ["/home/dasea/.config/alacritty/colorschemes/themes/moonlight_ii_vscode.toml", "/home/dasea/.config/alacritty/fonts.toml"]
+live_config_reload = true
+
+[cursor]
+unfocused_hollow = false
+blink_interval = 1000
+
+[cursor.style]
+blinking = "On"
+shape = "Block"
+
+[env]
+TERM = "alacritty"
+WINIT_X11_SCALE_FACTOR = "1.0"
+
+[[keyboard.bindings]]
+action = "Copy"
+key = "C"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "Paste"
+key = "V"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "ToggleViMode"
+key = "V"
+mods = "Control|Alt"
+
+[[keyboard.bindings]]
+action = "FirstOccupied"
+key = "H"
+mode = "Vi"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "Last"
+key = "L"
+mode = "Vi"
+mods = "Shift"
+
+[mouse]
+hide_when_typing = true
+
+[scrolling]
+history = 3000
+multiplier = 8
+
+[selection]
+save_to_clipboard = true
+
+[shell]
+program = "/bin/zsh"
+
+[window]
+decorations = "none"
+dynamic_title = true
+startup_mode = "Windowed"
+opacity = 0.95
+
+[window.dimensions]
+columns = 82
+lines = 24
+
+[window.padding]
+x = 0
+y = 0

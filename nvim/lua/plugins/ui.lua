@@ -58,6 +58,11 @@ return {
         return vim.ui.input(...)
       end
     end,
+    opts = {
+      input = {
+        title_pos = 'center',
+      }
+    }
   },
 
   -----------------------------------------------------------------------------
@@ -486,6 +491,9 @@ return {
           },
           m = {
             name = '+Mode/Jump/Mark'
+          },
+          n = {
+            name = '+Translate'
           }
         },
       })
@@ -493,11 +501,26 @@ return {
   },
 
   -----------------------------------------------------------------------------
-  -- 提示并修正偏移的对齐
+  -- 提示并修正偏移的对齐, 感受没啥用, 还是规范自己的代码吧
   {
     'tenxsoydev/tabs-vs-spaces.nvim',
+    -- enabled = false,
     event = { 'BufReadPost', 'BufNewFile' },
-    config = true,
+    keys = {
+      {
+        '<Leader>te',
+        '<cmd>TabsVsSpacesConvert tabs_to_spaces<cr>',
+        desc = '[TabVsSpace]Tab to space',
+      },
+    },
+    config = function()
+      require("tabs-vs-spaces").setup {
+        -- Preferred indentation. Possible values: "auto"|"tabs"|"spaces".
+        -- "auto" detects the dominant indentation style in a buffer and highlights deviations.
+        indentation = "spaces",
+        standartize_on_save = true
+      }
+    end,
   },
 
   -----------------------------------------------------------------------------

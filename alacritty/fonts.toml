@@ -1,0 +1,23 @@
+[font]
+size = 18
+
+[font.bold]
+# family = "JetBrainsMono Nerd Font"
+# family = "FiraCode Nerd Font"
+family = "BlexMono Nerd Font"
+
+[font.bold_italic]
+# family = "JetBrainsMono Nerd Font"
+#family = "FiraCode Nerd Font"
+family = "BlexMono Nerd Font"
+
+[font.italic]
+# family = "JetBrainsMono Nerd Font"
+# family = "FiraCode Nerd Font"
+family = "BlexMono Nerd Font"
+
+[font.normal]
+# family = "JetBrainsMono Nerd Font"
+# family = "FiraCode Nerd Font"
+family = "BlexMono Nerd Font"
+style = "Book"

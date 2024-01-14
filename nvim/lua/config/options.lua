@@ -33,6 +33,8 @@ vim.g.root_spec = { 'lsp', { '.git', 'lua' }, 'cwd' }
 
 local opt = vim.opt
 
+opt.laststatus = 3 -- 单状态栏
+
 opt.title = true
 opt.titlestring = "%<%F%=%l/%L - nvim"
 opt.mouse = 'nv'               -- Disable mouse in command-line mode
@@ -41,6 +43,8 @@ opt.confirm = true             -- Confirm unsaved changes before exiting buffer
 opt.clipboard = 'unnamedplus'  -- Sync with system clipboard
 opt.conceallevel = 0           -- 0:normal; 1-3:Hide concealed text
 opt.signcolumn = 'yes'         -- Always show signcolumn
+-- spell
+opt.spell = false
 opt.spelllang = { 'en' }
 opt.spelloptions:append('camel')
 opt.timeoutlen = 300           -- Time out on mappings
@@ -65,20 +69,21 @@ opt.undofile = true
 opt.undolevels = 10000
 opt.writebackup = false
 
+
 -- If sudo, disable vim swap/backup/undo/shada writing
 local USER = vim.env.USER or ''
 local SUDO_USER = vim.env.SUDO_USER or ''
 if
-	SUDO_USER ~= '' and USER ~= SUDO_USER
-	and vim.env.HOME ~= vim.fn.expand('~' .. USER, true)
-	and vim.env.HOME == vim.fn.expand('~' .. SUDO_USER, true)
+  SUDO_USER ~= '' and USER ~= SUDO_USER
+  and vim.env.HOME ~= vim.fn.expand('~' .. USER, true)
+  and vim.env.HOME == vim.fn.expand('~' .. SUDO_USER, true)
 then
-	vim.opt_global.modeline = false
-	vim.opt_global.undofile = false
-	vim.opt_global.swapfile = false
-	vim.opt_global.backup = false
-	vim.opt_global.writebackup = false
-	vim.opt_global.shadafile = 'NONE'
+  vim.opt_global.modeline = false
+  vim.opt_global.undofile = false
+  vim.opt_global.swapfile = false
+  vim.opt_global.backup = false
+  vim.opt_global.writebackup = false
+  vim.opt_global.shadafile = 'NONE'
 end
 
 -- Searching
@@ -90,11 +95,11 @@ opt.grepformat = '%f:%l:%c:%m'
 -- opt.path:append('**') -- Find recursively
 
 if vim.fn.executable('rg') then
-	opt.grepprg = 'rg --vimgrep --no-heading'
-		.. (opt.smartcase and ' --smart-case' or '') .. ' --'
+  opt.grepprg = 'rg --vimgrep --no-heading'
+    .. (opt.smartcase and ' --smart-case' or '') .. ' --'
 elseif vim.fn.executable('ag') then
-	opt.grepprg = 'ag --vimgrep'
-		.. (opt.smartcase and ' --smart-case' or '') .. ' --'
+  opt.grepprg = 'ag --vimgrep'
+    .. (opt.smartcase and ' --smart-case' or '') .. ' --'
 end
 
 -- Formatting
@@ -104,15 +109,15 @@ opt.wrap = false                -- No wrap by default
 opt.linebreak = true            -- Break long lines at 'breakat'
 opt.breakindent = true
 opt.formatoptions = opt.formatoptions
-	- 'a' -- Auto formatting is BAD.
-	- 't' -- Don't auto format my code. I got linters for that.
-	+ 'c' -- In general, I like it when comments respect textwidth
-	+ 'q' -- Allow formatting comments w/ gq
-	- 'o' -- O and o, don't continue comments
-	+ 'r' -- But do continue when pressing enter.
-	+ 'n' -- Indent past the formatlistpat, not underneath it.
-	+ 'j' -- Auto-remove comments if possible.
-	- '2' -- I'm not in gradeschool anymore
+  - 'a' -- Auto formatting is BAD.
+  - 't' -- Don't auto format my code. I got linters for that.
+  + 'c' -- In general, I like it when comments respect textwidth
+  + 'q' -- Allow formatting comments w/ gq
+  - 'o' -- O and o, don't continue comments
+  + 'r' -- But do continue when pressing enter.
+  + 'n' -- Indent past the formatlistpat, not underneath it.
+  + 'j' -- Auto-remove comments if possible.
+  - '2' -- I'm not in gradeschool anymore
 
 -- Editor UI
 -- ===
@@ -145,31 +150,31 @@ opt.pumheight = 10        -- Maximum number of items to show in the popup menu
 
 opt.showbreak = '⤷  ' -- ↪	⤷
 opt.listchars = {
-	tab = '  ',
-	extends = '⟫',
-	precedes = '⟪',
-	conceal = '',
-	nbsp = '␣',
-	trail = '·'
+  tab = '  ',
+  extends = '⟫',
+  precedes = '⟪',
+  conceal = '',
+  nbsp = '␣',
+  trail = '·'
 }
 opt.fillchars = {
-	foldopen = '󰅀', -- 󰅀 
-	foldclose = '', -- 󰅂 
-	fold = ' ', -- ⸱
-	foldsep = ' ',
-	diff = '╱',
-	eob = ' ',
-	horiz = '━',
-	horizup = '┻',
-	horizdown = '┳',
-	vert = '┃',
-	vertleft = '┫',
-	vertright = '┣',
-	verthoriz = '╋',
+  foldopen = '󰅀', -- 󰅀 
+  foldclose = '', -- 󰅂 
+  fold = ' ', -- ⸱
+  foldsep = ' ',
+  diff = '╱',
+  eob = ' ',
+  horiz = '━',
+  horizup = '┻',
+  horizdown = '┳',
+  vert = '┃',
+  vertleft = '┫',
+  vertright = '┣',
+  verthoriz = '╋',
 }
 
 if vim.fn.has('nvim-0.10') == 1 then
-	opt.smoothscroll = true
+  opt.smoothscroll = true
 end
 
 -- Folds
@@ -181,15 +186,15 @@ opt.foldlevel = 99
 vim.opt.foldtext = "v:lua.require'lazyvim.util'.ui.foldtext()"
 
 if vim.fn.has('nvim-0.9.0') == 1 then
-	vim.opt.statuscolumn = [[%!v:lua.require'lazyvim.util'.ui.statuscolumn()]]
+  vim.opt.statuscolumn = [[%!v:lua.require'lazyvim.util'.ui.statuscolumn()]]
 end
 
 -- HACK: causes freezes on <= 0.9, so only enable on >= 0.10 for now
 if vim.fn.has('nvim-0.10') == 1 then
-	vim.opt.foldmethod = 'expr'
-	vim.opt.foldexpr = "v:lua.require'lazyvim.util'.ui.foldexpr()"
+  vim.opt.foldmethod = 'expr'
+  vim.opt.foldexpr = "v:lua.require'lazyvim.util'.ui.foldexpr()"
 else
-	vim.opt.foldmethod = 'indent'
+  vim.opt.foldmethod = 'indent'
 end
 
 vim.o.formatexpr = "v:lua.require'lazyvim.util'.format.formatexpr()"
@@ -214,37 +219,37 @@ vim.g.no_man_maps = 1       -- See share/nvim/runtime/ftplugin/man.vim
 
 ---@diagnostic disable-next-line: missing-fields
 vim.filetype.add({
-	filename = {
-		Brewfile = 'ruby',
-		justfile = 'just',
-		Justfile = 'just',
-		Tmuxfile = 'tmux',
-		['yarn.lock'] = 'yaml',
-		['.buckconfig'] = 'toml',
-		['.flowconfig'] = 'ini',
-		['.jsbeautifyrc'] = 'json',
-		['.jscsrc'] = 'json',
-		['.watchmanconfig'] = 'json',
-		['dev-requirements.txt'] = 'requirements',
-		['helmfile.yaml'] = 'yaml',
-	},
-	pattern = {
-		['.*%.js%.map'] = 'json',
-		['.*%.postman_collection'] = 'json',
-		['Jenkinsfile.*'] = 'groovy',
-		['%.kube/config'] = 'yaml',
-		['%.config/git/users/.*'] = 'gitconfig',
-		['requirements-.*%.txt'] = 'requirements',
-		['.*/templates/.*%.ya?ml'] = 'helm',
-		['.*/templates/.*%.tpl'] = 'helm',
-		['.*/playbooks/.*%.ya?ml'] = 'yaml.ansible',
-		['.*/roles/.*/tasks/.*%.ya?ml'] = 'yaml.ansible',
-		['.*/roles/.*/handlers/.*%.ya?ml'] = 'yaml.ansible',
-		['.*/inventory/.*%.ini'] = 'ansible_hosts',
-	},
+  filename = {
+    Brewfile = 'ruby',
+    justfile = 'just',
+    Justfile = 'just',
+    Tmuxfile = 'tmux',
+    ['yarn.lock'] = 'yaml',
+    ['.buckconfig'] = 'toml',
+    ['.flowconfig'] = 'ini',
+    ['.jsbeautifyrc'] = 'json',
+    ['.jscsrc'] = 'json',
+    ['.watchmanconfig'] = 'json',
+    ['dev-requirements.txt'] = 'requirements',
+    ['helmfile.yaml'] = 'yaml',
+  },
+  pattern = {
+    ['.*%.js%.map'] = 'json',
+    ['.*%.postman_collection'] = 'json',
+    ['Jenkinsfile.*'] = 'groovy',
+    ['%.kube/config'] = 'yaml',
+    ['%.config/git/users/.*'] = 'gitconfig',
+    ['requirements-.*%.txt'] = 'requirements',
+    ['.*/templates/.*%.ya?ml'] = 'helm',
+    ['.*/templates/.*%.tpl'] = 'helm',
+    ['.*/playbooks/.*%.ya?ml'] = 'yaml.ansible',
+    ['.*/roles/.*/tasks/.*%.ya?ml'] = 'yaml.ansible',
+    ['.*/roles/.*/handlers/.*%.ya?ml'] = 'yaml.ansible',
+    ['.*/inventory/.*%.ini'] = 'ansible_hosts',
+  },
 })
 
 -- lsp 模式不可diagnostic
-vim.diagnostic.disable()
+-- vim.diagnostic.disable()
 
 -- vim: set ts=2 sw=0 tw=80 noet :

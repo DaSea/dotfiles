@@ -104,6 +104,10 @@ nvim:.config/nvim
 # conky设置
 # conky
 # conkyrc
+# kd 设置，一个命令行查询翻译的工具
+other/kd.toml:.config/kd.toml
+# alacritty配置
+alacritty:.config/alacritty
 [endfiles]
 
 ## hostname                     type=masterhost, ANY or NONE    files=dotfile:tolink,another:tolink

@@ -39,7 +39,7 @@ map('n', 'gl', 'g$')
 -- Toggle fold or select option from popup menu
 ---@return string
 map('n', '<CR>', function()
-	return vim.fn.pumvisible() == 1 and '<CR>' or 'za'
+  return vim.fn.pumvisible() == 1 and '<CR>' or 'za'
 end, { expr = true, desc = 'Toggle Fold' })
 
 -- Focus the current fold by closing all others
@@ -53,11 +53,11 @@ map('n', '[a', '<cmd>lprev<CR>', { desc = '[Loclist]Previous Item' })
 
 -- Diagnostic movement
 local diagnostic_goto = function(next, severity)
-	local go = next and vim.diagnostic.goto_next or vim.diagnostic.goto_prev
-	local severity_int = severity and vim.diagnostic.severity[severity] or nil
-	return function()
-		go({ severity = severity_int })
-	end
+  local go = next and vim.diagnostic.goto_next or vim.diagnostic.goto_prev
+  local severity_int = severity and vim.diagnostic.severity[severity] or nil
+  return function()
+    go({ severity = severity_int })
+  end
 end
 
 map('n', ']d', diagnostic_goto(true), { desc = '[Diagnostic]Next' })
@@ -69,7 +69,7 @@ map('n', '[w', diagnostic_goto(false, 'WARN'), { desc = '[Diagnostic]Prev Warnin
 
 -- Formatting: file format
 map({ 'n', 'v' }, '<leader>ff', function()
-	Util.format({ force = true })
+  Util.format({ force = true })
 end, { desc = 'Format' })
 
 -- Whitespace jump (see plugin/whitespace.vim)
@@ -91,16 +91,16 @@ map('n', 'zh', 'z4h')
 
 -- Yank buffer's relative path to clipboard
 map('n', '<Leader>y', function()
-	local path = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(0), ':~:.') or ''
-	vim.fn.setreg('+', path)
-	vim.notify(path, vim.log.levels.INFO, { title = 'Yanked relative path' })
+  local path = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(0), ':~:.') or ''
+  vim.fn.setreg('+', path)
+  vim.notify(path, vim.log.levels.INFO, { title = 'Yanked relative path' })
 end, { silent = true, desc = 'Yank relative path' })
 
 -- Yank absolute path
 map('n', '<Leader>Y', function()
-	local path = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(0), ':p') or ''
-	vim.fn.setreg('+', path)
-	vim.notify(path, vim.log.levels.INFO, { title = 'Yanked absolute path' })
+  local path = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(0), ':p') or ''
+  vim.fn.setreg('+', path)
+  vim.notify(path, vim.log.levels.INFO, { title = 'Yanked absolute path' })
 end, { silent = true, desc = 'Yank absolute path' })
 
 -- Paste in visual-mode without pushing to register
@@ -122,15 +122,15 @@ map('x', '>', '>gv|', { desc = 'Indent Left and Re-select' })
 
 -- Better blockwise operations on selected area
 local blockwise_force = function(key)
-	local c_v = vim.api.nvim_replace_termcodes('<C-v>', true, false, true)
-	local keyseq = {
-		I  = { v = '<C-v>I',  V = '<C-v>^o^I', [c_v] = 'I' },
-		A  = { v = '<C-v>A',  V = '<C-v>0o$A', [c_v] = 'A' },
-		gI = { v = '<C-v>0I', V = '<C-v>0o$I', [c_v] = '0I' },
-	}
-	return function()
-		return keyseq[key][vim.fn.mode()]
-	end
+  local c_v = vim.api.nvim_replace_termcodes('<C-v>', true, false, true)
+  local keyseq = {
+    I  = { v = '<C-v>I',  V = '<C-v>^o^I', [c_v] = 'I' },
+    A  = { v = '<C-v>A',  V = '<C-v>0o$A', [c_v] = 'A' },
+    gI = { v = '<C-v>0I', V = '<C-v>0o$I', [c_v] = '0I' },
+  }
+  return function()
+    return keyseq[key][vim.fn.mode()]
+  end
 end
 map('x', 'I',  blockwise_force('I'),  { expr = true, noremap = true, desc = '[Blockwise]Insert' })
 map('x', 'gI', blockwise_force('gI'), { expr = true, noremap = true, desc = '[Blockwise]Insert' })
@@ -170,8 +170,8 @@ map('n', '<Esc>', '<cmd>noh<CR>', { desc = '[查询]Clear Search Highlight' })
 
 -- Clear search, diff update and redraw taken from runtime/lua/_editor.lua
 map( 'n', '<leader>ur',
-	'<cmd>nohlsearch<bar>diffupdate<bar>normal! <C-L><CR>',
-	{ desc = 'Redraw / clear hlsearch / diff update' }
+  '<cmd>nohlsearch<bar>diffupdate<bar>normal! <C-L><CR>',
+  { desc = 'Redraw / clear hlsearch / diff update' }
 )
 
 -- Use backspace key for matching parens
@@ -185,11 +185,11 @@ map('x', 'sg', ':s//gc<Left><Left><Left>', { desc = '[替换]Substitute Within S
 
 -- C-r: Easier search and replace visual/select mode
 map(
-	'x',
-	'<C-r>',
-	":<C-u>%s/\\V<C-R>=v:lua.require'util.edit'.get_visual_selection()<CR>"
-		.. '//gc<Left><Left><Left>',
-	{ desc = 'Replace Selection' }
+  'x',
+  '<C-r>',
+  ":<C-u>%s/\\V<C-R>=v:lua.require'util.edit'.get_visual_selection()<CR>"
+    .. '//gc<Left><Left><Left>',
+  { desc = 'Replace Selection' }
 )
 
 -- Command & History
@@ -204,11 +204,11 @@ map('n', 'g!', ":put=execute('')<Left><Left>", { desc = 'Paste Command' })
 -- Switch history search pairs, matching my bash shell
 ---@return string
 map('c', '<C-p>', function()
-	return vim.fn.pumvisible() == 1 and '<C-p>' or '<Up>'
+  return vim.fn.pumvisible() == 1 and '<C-p>' or '<Up>'
 end, { expr = true })
 
 map('c', '<C-n>', function()
-	return vim.fn.pumvisible() == 1 and '<C-n>' or '<Down>'
+  return vim.fn.pumvisible() == 1 and '<C-n>' or '<Down>'
 end, { expr = true })
 
 map('c', '<Up>', '<C-p>')
@@ -227,11 +227,11 @@ vim.cmd.cnoreabbrev('bD', 'bd')
 
 -- Switch (window) to the directory of the current opened buffer
 map('n', '<Leader>cd', function()
-	local bufdir = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(0), ':p:h')
-	if bufdir ~= nil and vim.loop.fs_stat(bufdir) then
-		vim.cmd.tcd(bufdir)
-		vim.notify(bufdir)
-	end
+  local bufdir = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(0), ':p:h')
+  if bufdir ~= nil and vim.loop.fs_stat(bufdir) then
+    vim.cmd.tcd(bufdir)
+    vim.notify(bufdir)
+  end
 end, { desc = 'Change Local Directory' })
 
 -- Fast saving from all modes
@@ -253,7 +253,7 @@ map('n', '<Leader>tk', '<cmd>setlocal nolist!<CR>', { desc = '[Toggle]Whitespace
 map('n', '<Leader>tu', '<cmd>nohlsearch<CR>', { desc = '[Toggle]Hide Search Highlight' })
 
 if vim.lsp.buf.inlay_hint or vim.lsp.inlay_hint then
-	map( "n", "<leader>uh", function() Util.toggle.inlay_hints() end, { desc = "Toggle Inlay Hints" })
+  map( "n", "<leader>uh", function() Util.toggle.inlay_hints() end, { desc = "Toggle Inlay Hints" })
 end
 
 -- Show treesitter nodes under cursor
@@ -261,14 +261,14 @@ map('n', '<Leader>ui', vim.show_pos, { desc = '[UI]Show Treesitter Node' })
 
 -- Smart wrap toggle (breakindent and colorcolumn toggle as-well)
 map('n', '<Leader>uw', function()
-	vim.opt_local.wrap = not vim.wo.wrap
-	vim.opt_local.breakindent = not vim.wo.breakindent
+  vim.opt_local.wrap = not vim.wo.wrap
+  vim.opt_local.breakindent = not vim.wo.breakindent
 
-	if vim.wo.colorcolumn == '' then
-		vim.opt_local.colorcolumn = tostring(vim.bo.textwidth)
-	else
-		vim.opt_local.colorcolumn = ''
-	end
+  if vim.wo.colorcolumn == '' then
+    vim.opt_local.colorcolumn = tostring(vim.bo.textwidth)
+  else
+    vim.opt_local.colorcolumn = ''
+  end
 end, { desc = '[Toggle]Wrap(换行)' })
 
 -- Tabs: Many ways to navigate them
@@ -311,21 +311,21 @@ map('n', '<leader>tt', lazyterm, { desc = '[Terminal]Root dir(用户目录)' })
 map('n', '<leader>tT', function() Util.terminal() end, { desc = '[Terminal]Cwd(当前目录)' })
 
 if vim.fn.has('mac') then
-	-- Open the macOS dictionary on current word
-	map('n', '<Leader>?', '<cmd>silent !open dict://<cword><CR>', { desc = 'Dictionary' })
+  -- Open the macOS dictionary on current word
+  map('n', '<Leader>?', '<cmd>silent !open dict://<cword><CR>', { desc = 'Dictionary' })
 
-	-- Use Marked for real-time Markdown preview
-	-- See: https://marked2app.com/
-	if vim.fn.executable('/Applications/Marked 2.app') then
-		vim.api.nvim_create_autocmd('FileType', {
-			group = vim.api.nvim_create_augroup('rafi_marked_preview', {}),
-			pattern = 'markdown',
-			callback = function()
-				local cmd = "<cmd>silent !open -a Marked\\ 2.app '%:p'<CR>"
-				map('n', '<Leader>P', cmd, { desc = 'Markdown Preview' })
-			end,
-		})
-	end
+  -- Use Marked for real-time Markdown preview
+  -- See: https://marked2app.com/
+  if vim.fn.executable('/Applications/Marked 2.app') then
+    vim.api.nvim_create_autocmd('FileType', {
+      group = vim.api.nvim_create_augroup('rafi_marked_preview', {}),
+      pattern = 'markdown',
+      callback = function()
+        local cmd = "<cmd>silent !open -a Marked\\ 2.app '%:p'<CR>"
+        map('n', '<Leader>P', cmd, { desc = 'Markdown Preview' })
+      end,
+    })
+  end
 end
 
 -- Windows, buffers and tabs
@@ -333,42 +333,43 @@ end
 
 -- Ultimatus Quitos
 if vim.F.if_nil(vim.g.window_q_mapping, true) then
-	map('n', 'q', function()
-		local plugins = {
-			'blame',
-			'checkhealth',
-			'fugitive',
-			'fugitiveblame',
-			'help',
-			'httpResult',
-			'lspinfo',
-			'notify',
-			'PlenaryTestPopup',
-			'qf',
-			'query',
-			'spectre_panel',
-			'startuptime',
-			'tsplayground',
-		}
-		local buf = vim.api.nvim_get_current_buf()
-		if vim.tbl_contains(plugins, vim.bo[buf].filetype) then
-			vim.bo[buf].buflisted = false
-			vim.api.nvim_win_close(0, false)
-		else
-			-- if last window, quit
-			local wins = vim.fn.filter(vim.api.nvim_list_wins(), function(_, win)
-				if vim.api.nvim_win_get_config(win).zindex then
-					return nil
-				end
-				return win
-			end)
-			if #wins > 1 then
-				vim.api.nvim_win_close(0, false)
-			else
-				vim.cmd[[quit]]
-			end
-		end
-	end, { desc = 'Close window' })
+  map('n', 'q', function()
+    local plugins = {
+      'blame',
+      'checkhealth',
+      'fugitive',
+      'fugitiveblame',
+      'help',
+      'httpResult',
+      'lspinfo',
+      'notify',
+      'PlenaryTestPopup',
+      'qf',
+      'query',
+      'spectre_panel',
+      'startuptime',
+      'tsplayground',
+    }
+    local buf = vim.api.nvim_get_current_buf()
+    if vim.tbl_contains(plugins, vim.bo[buf].filetype) then
+      vim.bo[buf].buflisted = false
+      vim.api.nvim_win_close(0, false)
+    else
+      -- if last window, quit
+      local wins = vim.fn.filter(vim.api.nvim_list_wins(), function(_, win)
+        if vim.api.nvim_win_get_config(win).zindex then
+          return nil
+        end
+        return win
+      end)
+      if #wins > 1 then
+        vim.api.nvim_win_close(0, false)
+      else
+        -- 不关闭 vim窗口
+        -- vim.cmd[[quit]]
+      end
+    end
+  end, { desc = 'Close window' })
 end
 
 -- Toggle quickfix window
@@ -376,10 +377,10 @@ map('n', '<Leader>q', function() RafiUtil.edit.toggle_list('quickfix') end, { de
 
 -- Set locations with diagnostics and open the list.
 map('n', '<Leader>ul', function()
-	if vim.bo.filetype ~= 'qf' then
-		vim.diagnostic.setloclist({ open = false })
-	end
-	RafiUtil.edit.toggle_list('loclist')
+  if vim.bo.filetype ~= 'qf' then
+    vim.diagnostic.setloclist({ open = false })
+  end
+  RafiUtil.edit.toggle_list('loclist')
 end, { desc = '[Open]Location List' })
 
 -- Switch with adjacent window
@@ -394,52 +395,54 @@ map('n', 'st', '<cmd>tabnew<CR>', { desc = '[Tab]New' })
 map('n', 'so', '<cmd>only<CR>', { desc = '[Window]Close others' })
 map('n', 'sq', '<cmd>quit<CR>', { desc = 'Quit' })
 map('n', 'sz', '<cmd>vertical resize | resize | normal! ze<CR>', { desc = '[Window]Maximize' })
-map('n', 'sx', function()
-	require('mini.bufremove').delete(0, false)
-	vim.cmd.enew()
-end, { desc = '[Buffer]Delete and open new' })
+-- sd会将窗口关闭
+map('n', 'sx', '<cmd>bdelete<CR>', { desc = '[Buffer]Delete and close win' })
+map('n', 'sd', function()
+  require('mini.bufremove').delete(0, false)
+  -- vim.cmd.enew() -- 会创建一个新的buffer,没啥必要
+end, { desc = '[Buffer]Delete' })
 
 -- Background dark/light toggle
 map('n', 'sh', function()
-	if vim.o.background == 'dark' then
-		vim.o.background = 'light'
-	else
-		vim.o.background = 'dark'
-	end
+  if vim.o.background == 'dark' then
+    vim.o.background = 'light'
+  else
+    vim.o.background = 'dark'
+  end
 end, { desc = 'Toggle background dark/light' })
 
 -- 我自己定义的快捷键
 map("i", "<M-j>", '<Down>',
-	{ desc = "Cursor:光标下移", })
+  { desc = "Cursor:光标下移", })
 map("i", "<M-k>", '<Up>',
-	{ desc = "Cursor:光标上移"})
+  { desc = "Cursor:光标上移"})
 map("i", "<M-n>", '<Left>',
-	{ desc = "Cursor:光标左移" })
+  { desc = "Cursor:光标左移" })
 map("i", "<M-m>", '<Right>',
-	{ desc = "Cursor:光标右移"} )
+  { desc = "Cursor:光标右移"} )
 -- 折叠
 map("n", "<space>", 'za',
-	{ desc = "Fold:切换" })
+  { desc = "Fold:切换" })
 -- [[@=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>]],
 
 -- 窗口焦点切换
 map("n", "<leader>wj", '<c-w><c-j>',
-	{ desc = "Window:聚焦下方窗口"})
+  { desc = "Window:聚焦下方窗口"})
 map("n", "<leader>wk",'<c-w><c-k>',
-	{ desc = "Window:聚焦上方窗口"})
+  { desc = "Window:聚焦上方窗口"})
 map("n", "<leader>wh", '<c-w><c-h>',
-	{ desc = "Window:聚焦左方窗口", })
+  { desc = "Window:聚焦左方窗口", })
 map( "n", "<leader>wl", '<c-w><c-l>',
-	{ desc = "Window:聚焦右方窗口", })
+  { desc = "Window:聚焦右方窗口", })
 
 map( "n", "<leader>wJ", '<c-w><c-J>',
-	{ desc = "Window:聚焦最下方", })
+  { desc = "Window:聚焦最下方", })
 map( "n", "<leader>wK", '<c-w><c-K>',
-	{ desc = "Window:聚焦最上方", })
+  { desc = "Window:聚焦最上方", })
 map( "n", "<leader>wH", '<c-w><c-H>',
-	{ desc = "Window:聚焦最左边"})
+  { desc = "Window:聚焦最左边"})
 map( "n", "<leader>wL", '<c-w><c-L>',
-	{ desc = "Window:聚焦最右边"})
+  { desc = "Window:聚焦最右边"})
 
 -- nnoremap U <c-r>
 map( "n", "U", "<c-r>",
@@ -471,6 +474,10 @@ map( "n", "<leader>ep", ':echo expand("%:p:h")<CR>',
     { desc =  "Buffer:输出当前文件路径", })
 map( "n", "<leader>fo", ":lua require('util.global').quick_browfile_inexpolorer()<cr>",
     { desc =  "File:文件管理器中显示", silent = true, })
+
+-- 翻译
+map( "n", "<leader>nw", ":lua require('util.global').kd_search()<cr>",
+    { desc =  "[翻译]输入单词(kd)", silent = true, })
 
 -- 替换当前文档当前光标下单词
 map({ "n", "v"} , "<leader>cw", ":lua require('util.global').replace_current_word()<cr>",

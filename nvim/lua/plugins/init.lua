@@ -8,6 +8,9 @@ if vim.fn.has('nvim-0.9.0') == 0 then
   return {}
 end
 
+-- 自定义的一些全局变量
+require('config.users')
+-- 其他初始化
 require('config').init()
 
 return {

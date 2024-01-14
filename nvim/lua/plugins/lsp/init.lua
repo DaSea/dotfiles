@@ -7,6 +7,8 @@
 return {
 
   -----------------------------------------------------------------------------
+  -- neodev.nvim 显示帮助文档： https://github.com/folke/neodev.nvim
+  -- neoconf.nvim 
   {
     'neovim/nvim-lspconfig',
     event = 'LazyFile',

@@ -1,18 +1,6 @@
 [submodule "dotsync"]
-	path = dotsync
-	url = https://github.com/dotphiles/dotsync.git
-[submodule "oh-my-zsh"]
-	path = oh-my-zsh
-	url = https://github.com/robbyrussell/oh-my-zsh.git
-[submodule "mshell/zsh/plugins/fast-syntax-highlighting"]
-	path = mshell/zsh/plugins/fast-syntax-highlighting
-	url = https://github.com/zdharma/fast-syntax-highlighting.git
-[submodule "mshell/zsh/themes/powerlevel9k"]
-	path = mshell/zsh/themes/powerlevel9k
-	url = https://github.com/bhilburn/powerlevel9k.git
-[submodule "vim"]
-	path = vim
-	url = git@github.com:DaSea/vimrc.git
-[submodule "conky/Harmattan"]
-	path = conky/Harmattan
-	url = https://github.com/zagortenay333/Harmattan.git
+    path = dotsync
+    url = https://github.com/dotphiles/dotsync.git
+[submodule "alacritty/colorschemes"]
+	path = alacritty/colorschemes
+	url = https://github.com/alacritty/alacritty-theme.git

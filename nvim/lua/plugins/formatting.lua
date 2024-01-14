@@ -5,67 +5,60 @@ local M = {}
 
 ---@param opts ConformOpts
 function M.setup(_, opts)
-  local Util = require('lazyvim.util')
+  local Util = require("lazyvim.util")
   for name, formatter in pairs(opts.formatters or {}) do
-    if type(formatter) == 'table' then
+    if type(formatter) == "table" then
       ---@diagnostic disable-next-line: undefined-field
       if formatter.extra_args then
         ---@diagnostic disable-next-line: undefined-field
         formatter.prepend_args = formatter.extra_args
-        Util.deprecate(
-          ('opts.formatters.%s.extra_args'):format(name),
-          ('opts.formatters.%s.prepend_args'):format(name)
-        )
+        Util.deprecate(("opts.formatters.%s.extra_args"):format(name), ("opts.formatters.%s.prepend_args"):format(name))
       end
     end
   end
 
-  for _, key in ipairs({ 'format_on_save', 'format_after_save' }) do
+  for _, key in ipairs({ "format_on_save", "format_after_save" }) do
     if opts[key] then
-      Util.warn(
-        ("Don't set `opts.%s` for `conform.nvim`,\nit is configured automatically."):format(
-          key
-        )
-      )
+      Util.warn(("Don't set `opts.%s` for `conform.nvim`,\nit is configured automatically."):format(key))
       opts[key] = nil
     end
   end
-  require('conform').setup(opts)
+  require("conform").setup(opts)
 end
 
 return {
- -- 轻量级的格式化插件
+  -- 轻量级的格式化插件
   {
-    'stevearc/conform.nvim',
-    dependencies = { 'mason.nvim' },
+    "stevearc/conform.nvim",
+    dependencies = { "mason.nvim" },
     lazy = true,
-    cmd = 'ConformInfo',
+    cmd = "ConformInfo",
     keys = {
       {
-        '<leader>fF',
+        "<leader>fF",
         function()
-          require('conform').format({ formatters = { 'injected' } })
+          require("conform").format({ formatters = { "injected" } })
         end,
-        mode = { 'n', 'v' },
-        desc = 'Format Injected Langs',
+        mode = { "n", "v" },
+        desc = "Format Injected Langs",
       },
     },
     init = function()
       -- Install the conform formatter on VeryLazy
-      local Util = require('lazyvim.util')
+      local Util = require("lazyvim.util")
       Util.on_very_lazy(function()
         Util.format.register({
-          name = 'conform.nvim',
+          name = "conform.nvim",
           priority = 100,
           primary = true,
           format = function(buf)
-            local plugin = require('lazy.core.config').plugins['conform.nvim']
-            local Plugin = require('lazy.core.plugin')
-            local opts = Plugin.values(plugin, 'opts', false)
-            require('conform').format(Util.merge(opts.format, { bufnr = buf }))
+            local plugin = require("lazy.core.config").plugins["conform.nvim"]
+            local Plugin = require("lazy.core.plugin")
+            local opts = Plugin.values(plugin, "opts", false)
+            require("conform").format(Util.merge(opts.format, { bufnr = buf }))
           end,
           sources = function(buf)
-            local ret = require('conform').list_formatters(buf)
+            local ret = require("conform").list_formatters(buf)
             ---@param v conform.FormatterInfo
             return vim.tbl_map(function(v)
               return v.name
@@ -75,12 +68,12 @@ return {
       end)
     end,
     opts = function()
-      local plugin = require('lazy.core.config').plugins['conform.nvim']
+      local plugin = require("lazy.core.config").plugins["conform.nvim"]
       if plugin.config ~= M.setup then
-        require('lazyvim.util').error({
+        require("lazyvim.util").error({
           "Don't set `plugin.config` for `conform.nvim`.\n",
-          'This will break formatting.',
-        }, { title = 'Formatter' })
+          "This will break formatting.",
+        }, { title = "Formatter" })
       end
       ---@class ConformOpts
       local opts = {
@@ -92,9 +85,11 @@ return {
         },
         ---@type table<string, conform.FormatterUnit[]>
         formatters_by_ft = {
-          lua = { 'stylua' },
-          fish = { 'fish_indent' },
-          sh = { 'shfmt' },
+          lua = { "stylua" },
+          fish = { "fish_indent" },
+          sh = { "shfmt" },
+          c = { "clang_format"},
+          cpp = { "clang_format"}
         },
         -- The options you set here will be merged with the builtin formatters.
         -- You can also define any custom formatters here.
@@ -109,9 +104,15 @@ return {
           -- },
           --
           -- # Example of using shfmt with extra args
-          -- shfmt = {
-          --   prepend_args = { "-i", "2", "-ci" },
-          -- },
+          shfmt = {
+            prepend_args = { "-i", "2", "-ci" },
+          },
+          clang_format = {
+            command = "clang-format",
+            args = function(self, ctx)
+              return {"--assume-filename="..ctx.filename, "--style=file:"..vim.g.clangformat_cfg}
+            end
+          },
         },
       }
       return opts
