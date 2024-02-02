@@ -22,6 +22,14 @@ local user_path = stdconfig .. '/lua'
 local has_user_plugins = vim.loop.fs_stat(user_path .. '/plugins') ~= nil
   or vim.loop.fs_stat(user_path .. '/plugins.lua') ~= nil
 
+
+-- hack to deal with bug in telescope-cheat.nvim
+--- https://github.com/nvim-telescope/telescope-cheat.nvim/issues/7
+local cheat_dbdir = vim.fn.stdpath "data" .. "/databases"
+if not vim.loop.fs_stat(cheat_dbdir) then
+  vim.loop.fs_mkdir(cheat_dbdir, 493)
+end
+
 -- Start lazy.nvim plugin manager.
 require('lazy').setup(vim.tbl_extend('keep', user_lazy_opts, {
   spec = {
@@ -73,5 +81,18 @@ require('lazy').setup(vim.tbl_extend('keep', user_lazy_opts, {
     },
   },
 }))
+
+-- 颜色加载
+-- vim.cmd([[colorscheme kanagawa]])
+-- Set colorscheme to NeoSolarized
+-- vim.cmd([[ colorscheme NeoSolarized ]])
+vim.cmd([[ colorscheme neosolarized ]])
+-- require("kanagawa").load("wave")
+-- require("kanagawa").load("lotus")
+-- require("kanagawa").load("dragon")
+
+-- 有些配置开启不爽
+vim.cmd([[set nospell]])
+vim.cmd([[set wrap]])
 
 -- Enjoy!

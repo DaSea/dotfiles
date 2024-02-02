@@ -48,10 +48,6 @@ return {
         return vim.fn.winwidth(0) > min
       end
 
-      local function hide_bound_in_width()
-        return vim.fn.winwidth(vim.fn.winnr()) > 20
-      end
-
       local active = {
         bg = RafiUtil.ui.bg("StatusLine"),
         fg = RafiUtil.ui.fg("StatusLine"),
@@ -61,40 +57,14 @@ return {
         fg = RafiUtil.ui.fg("StatusLineNC"),
       }
 
-      local theme = {
-        normal = {
-          a = active,
-          b = active,
-          c = active,
-          x = {
-            fg = RafiUtil.color.brightness_modifier(active.bg, -80),
-            bg = active.bg,
-          },
-          y = {
-            fg = active.fg,
-            bg = RafiUtil.color.brightness_modifier(active.bg, -20),
-          },
-          z = {
-            fg = active.fg,
-            bg = RafiUtil.color.brightness_modifier(active.bg, 63),
-          },
-        },
-        inactive = {
-          a = inactive,
-          b = inactive,
-          c = inactive,
-          x = inactive,
-          y = inactive,
-          z = inactive,
-        },
-      }
 
       vim.o.laststatus = vim.g.lualine_laststatus
-
       return {
         options = {
-          theme = "auto",
+          -- theme = "auto",
           -- theme = 'solarized_light',
+          -- palenight, onedark, horizon, everforest, dracula
+          theme = 'horizon',
           globalstatus = true,
           disabled_filetypes = {
             statusline = { "dashboard", "alpha", "starter" },
@@ -172,15 +142,31 @@ return {
               cond = is_plugin_window,
             },
             {
-              "filetype",
-              icon_only = true,
+              function()
+                local mbomb = ''
+                if vim.bo.bomb then
+                  mbomb = '[B]'
+                end
+
+                --encod = vim.cmd('echo &enc')
+                local encod =  vim.opt.fileencoding:get()
+                return encod..mbomb
+              end,
+              fmt = string.upper,
+              color = { fg = '#dd66dd', gui = 'bold' },
               padding = { left = 1, right = 1 },
               cond = is_file_window,
             },
+            -- {
+            --   "filetype",
+            --   icon_only = true,
+            --   padding = { left = 1, right = 1 },
+            --   cond = is_file_window,
+            -- },
           },
           lualine_c = {
             {
-              Util.lualine.pretty_path(),
+              Util.lualine.pretty_path({relative = "root"}),
               color = { fg = "#D7D7BC" },
               cond = is_file_window,
               on_click = function()
@@ -367,7 +353,7 @@ return {
               colored = false,
               padding = { left = 1, right = 0 },
             },
-            { Util.lualine.pretty_path(), padding = { left = 1, right = 0 } },
+            { Util.lualine.pretty_path({relative = "root"}), padding = { left = 1, right = 0 } },
             {
               function()
                 return vim.bo.modified and vim.bo.buftype == "" and icons.status.filename.modified or ""
@@ -453,7 +439,7 @@ return {
           { get_diagnostic_label() },
           -- { get_git_diff() },
           -- { ft_icon, guifg = ft_color, guibg = "none" },
-          { filename, guibg = "none", guifg = "#c3e47c" },
+          { filename, guibg = "none", guifg = "#c35e7c" },
           -- { filename, guifg = ft_color,gui = modified },
           -- { " " .. vim.api.nvim_win_get_number(props.win), group = "Special" },
         }

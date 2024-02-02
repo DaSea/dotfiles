@@ -77,11 +77,19 @@ return {
       { '<leader>bo', '<Cmd>BufferLineCloseOthers<CR>', desc = '[Buffer]Delete other' },
       { '<leader>br', '<Cmd>BufferLineCloseRight<CR>', desc = '[Buffer]Delete to the right' },
       { '<leader>bl', '<Cmd>BufferLineCloseLeft<CR>', desc = '[Buffer]Delete to the left' },
-      { '<leader>bj', '<Cmd>BufferLinePick<CR>', desc = '[Buffer]Pick' },
+      -- { '<leader>bj', '<Cmd>BufferLinePick<CR>', desc = '[Buffer]Pick' },
+      { 'gb', '<Cmd>BufferLinePick<CR>', desc = '[BufferLine]Pick(Quick go)' },
       -- { '<S-h>', '<cmd>BufferLineCyclePrev<cr>', desc = 'Prev buffer' },
       -- { '<S-l>', '<cmd>BufferLineCycleNext<cr>', desc = 'Next buffer' },
       { '[b', '<cmd>BufferLineCyclePrev<cr>', desc = '[Buffer]Prev' },
       { ']b', '<cmd>BufferLineCycleNext<cr>', desc = '[Buffer]Next' },
+      { '<leader>1', '<Cmd>BufferLineGoToBuffer 1<CR>', desc = '[Buffer]Go buffer 1'},
+      { '<leader>2', '<Cmd>BufferLineGoToBuffer 2<CR>', desc = '[Buffer]Go buffer 2'},
+      { '<leader>3', '<Cmd>BufferLineGoToBuffer 3<CR>', desc = '[Buffer]Go buffer 3'},
+      { '<leader>4', '<Cmd>BufferLineGoToBuffer 4<CR>', desc = '[Buffer]Go buffer 4'},
+      { '<leader>5', '<Cmd>BufferLineGoToBuffer 5<CR>', desc = '[Buffer]Go buffer 5'},
+      { '<leader>6', '<Cmd>BufferLineGoToBuffer 6<CR>', desc = '[Buffer]Go buffer 6'},
+      { '<leader>7', '<Cmd>BufferLineGoToBuffer 7<CR>', desc = '[Buffer]Go buffer 7'},
     },
     opts = {
       -- 颜色设置
@@ -120,12 +128,24 @@ return {
       },
       options = {
         -- mode = 'tabs',
+        -- style_preset = require("bufferline").style_preset.minimal,
         --separator_style = "slant" | "thick" | "thin" | "padded_slant" { 'focused', 'unfocused' },
         separator_style = "thick",
         -- numbers = "none" | "ordinal" | "buffer_id" | "both" | function({ ordinal, id, lower, raise }): string,
         numbers = function(opts)
           return string.format('%s', opts.raise(opts.ordinal))
           --return string.format('%s·%s', opts.raise(opts.id), opts.lower(opts.ordinal))
+        end,
+        --- name_formatter can be used to change the buffer's label in the bufferline.
+        --- Please note some names can/will break the
+        --- bufferline so use this at your discretion knowing that it has
+        --- some limitations that will *NOT* be fixed.
+        name_formatter = function(buf) -- buf contains a "name", "path" and "bufnr"
+          -- remove extension from markdown files for example
+          return buf.name
+          --if buf.name:match('%.md') then
+          --    return vim.fn.fnamemodify(buf.name, ':t:r')
+          --end
         end,
         --separator_style = { "\u{e0b4}", "\u{e0b7}"},
         --"⎟⎜⎢⎜▏▊▋▉▎▍▋▍"
@@ -144,6 +164,11 @@ return {
           style = 'icon'
 
         },
+        -- buffer_close_icon = '',
+        buffer_close_icon = '',
+        modified_icon = '*',
+        -- close_icon = ' ⊠',
+        close_icon = '',
         diagnostics_indicator = function(_, _, diag)
           local icons = require('lazyvim.config').icons.diagnostics
           local ret = (diag.error and icons.Error .. diag.error .. ' ' or '')
@@ -359,7 +384,7 @@ return {
     main = 'ibl',
     event = 'LazyFile',
     keys = {
-      { '<Leader>ue', '<cmd>IBLToggle<CR>', desc = "[Blankline]Toggle"},
+      { '<Leader>ti', '<cmd>IBLToggle<CR>', desc = "[Blankline]Toggle"},
     },
     opts = {
       indent = {
@@ -462,6 +487,9 @@ return {
           w = {
             name = "+Window"
           },
+          r = {
+            name = "+Replace(查找替换)/Cursor(multi)"
+          },
           c = {
             name = "+Code/Comment/CWD"
           },
@@ -490,7 +518,7 @@ return {
             name = '+Out/Notice/Line diff'
           },
           m = {
-            name = '+Mode/Jump/Mark'
+            name = '+Color/Move/Jump/Mark/Menu'
           },
           n = {
             name = '+Translate'
@@ -508,9 +536,9 @@ return {
     event = { 'BufReadPost', 'BufNewFile' },
     keys = {
       {
-        '<Leader>te',
+        '<Leader>rt',
         '<cmd>TabsVsSpacesConvert tabs_to_spaces<cr>',
-        desc = '[TabVsSpace]Tab to space',
+        desc = '[TabVsSpace]tab转空格',
       },
     },
     config = function()

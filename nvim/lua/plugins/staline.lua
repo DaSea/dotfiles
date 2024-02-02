@@ -82,7 +82,7 @@ return {
           i = "#986fec",
           c = "#e27d60",
           v = "#4799eb",
-          ic = "#fbb652"
+          ic = "#fbb652",
         },
       })
     end,

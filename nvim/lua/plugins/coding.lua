@@ -16,10 +16,9 @@ return {
         require("luasnip.loaders.from_lua").load({ paths = { "./snippets" } })
       end,
     },
-        -- stylua: ignore
-        keys = {
-            { '<C-l>', function() require('luasnip').expand_or_jump() end, mode = { 'i', 's' } },
-        },
+    keys = {
+      { '<C-l>', function() require('luasnip').expand_or_jump() end, mode = { 'i', 's' } },
+    },
     opts = {
       -- Don't store snippet history for less overhead
       history = true,
@@ -63,8 +62,8 @@ return {
           return false
         end
         local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-                -- stylua: ignore
-                return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match('%s') == nil
+        -- stylua: ignore
+        return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match('%s') == nil
       end
 
       return {

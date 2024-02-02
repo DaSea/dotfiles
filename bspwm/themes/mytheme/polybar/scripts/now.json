@@ -1,0 +1,30 @@
+{
+  "code": "200",
+  "updateTime": "2024-01-18T20:29+08:00",
+  "fxLink": "https://www.qweather.com/weather/jiangxia-101200105.html",
+  "now": {
+    "obsTime": "2024-01-18T20:25+08:00",
+    "temp": "5",
+    "feelsLike": "1",
+    "icon": "104",
+    "text": "阴",
+    "wind360": "7",
+    "windDir": "北风",
+    "windScale": "3",
+    "windSpeed": "12",
+    "humidity": "94",
+    "precip": "1.7",
+    "pressure": "1014",
+    "vis": "3",
+    "cloud": "100",
+    "dew": "3"
+  },
+  "refer": {
+    "sources": [
+      "QWeather"
+    ],
+    "license": [
+      "CC BY-SA 4.0"
+    ]
+  }
+}

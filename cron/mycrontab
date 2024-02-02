@@ -1,1 +1,1 @@
-0 1 * * * bash switchbg.sh
+0,30 8-22 * * * /bin/bash /home/dasea/.dotfiles/cron/feh_changebg.sh

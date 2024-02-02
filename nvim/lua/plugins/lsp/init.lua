@@ -245,7 +245,7 @@ return {
     'williamboman/mason.nvim',
     cmd = 'Mason',
     build = ':MasonUpdate',
-    keys = { { '<leader>mm', '<cmd>Mason<cr>', desc = 'Mason' } },
+    keys = { { '<leader>um', '<cmd>Mason<cr>', desc = '[UI]Mason' } },
     opts = {
       ensure_installed = {
           'lua-language-server',  -- lua: sudo pacman -S lua-language-server

@@ -1,0 +1,28 @@
+{
+  "code": "200",
+  "location": [
+    {
+      "name": "江夏",
+      "id": "101200105",
+      "lat": "30.34905",
+      "lon": "114.31396",
+      "adm2": "武汉",
+      "adm1": "湖北省",
+      "country": "中国",
+      "tz": "Asia/Shanghai",
+      "utcOffset": "+08:00",
+      "isDst": "0",
+      "type": "city",
+      "rank": "35",
+      "fxLink": "https://www.qweather.com/weather/jiangxia-101200105.html"
+    }
+  ],
+  "refer": {
+    "sources": [
+      "QWeather"
+    ],
+    "license": [
+      "QWeather Developers License"
+    ]
+  }
+}

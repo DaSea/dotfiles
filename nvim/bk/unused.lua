@@ -254,16 +254,16 @@ return {
       local ai = require("mini.ai")
       return {
         n_lines = 500,
-				-- stylua: ignore
-				custom_textobjects = {
-					o = ai.gen_spec.treesitter({
-						a = { '@block.outer', '@conditional.outer', '@loop.outer' },
-						i = { '@block.inner', '@conditional.inner', '@loop.inner' },
-					}, {}),
-					f = ai.gen_spec.treesitter({ a = '@function.outer', i = '@function.inner' }, {}),
-					c = ai.gen_spec.treesitter({ a = '@class.outer', i = '@class.inner' }, {}),
-					t = { '<([%p%w]-)%f[^<%w][^<>]->.-</%1>', '^<.->().*()</[^/]->$' },
-				},
+        -- stylua: ignore
+        custom_textobjects = {
+          o = ai.gen_spec.treesitter({
+            a = { '@block.outer', '@conditional.outer', '@loop.outer' },
+            i = { '@block.inner', '@conditional.inner', '@loop.inner' },
+          }, {}),
+          f = ai.gen_spec.treesitter({ a = '@function.outer', i = '@function.inner' }, {}),
+          c = ai.gen_spec.treesitter({ a = '@class.outer', i = '@class.inner' }, {}),
+          t = { '<([%p%w]-)%f[^<%w][^<>]->.-</%1>', '^<.->().*()</[^/]->$' },
+        },
       }
     end,
     config = function(_, opts)
@@ -316,11 +316,11 @@ return {
   -----------------------------------------------------------------------------
   {
     "AndrewRadev/dsf.vim",
-		-- stylua: ignore
-		keys = {
-			{ 'dsf', '<Plug>DsfDelete', noremap = true, desc = 'Delete Surrounding Function' },
-			{ 'csf', '<Plug>DsfChange', noremap = true, desc = 'Change Surrounding Function' },
-		},
+    -- stylua: ignore
+    keys = {
+      { 'dsf', '<Plug>DsfDelete', noremap = true, desc = 'Delete Surrounding Function' },
+      { 'csf', '<Plug>DsfChange', noremap = true, desc = 'Change Surrounding Function' },
+    },
     init = function()
       vim.g.dsf_no_mappings = 1
     end,
@@ -351,22 +351,81 @@ return {
     },
   },
 
+  -- thems
+  -- kanagawa
+  {
+    "rebelot/kanagawa.nvim",
+    lazy = true,
+    opts = {
+      undercurl = true, -- enable undercurls
+      commentStyle = { italic = true },
+      functionStyle = {},
+      keywordStyle = { italic = true },
+      statementStyle = { bold = true },
+      typeStyle = {},
+      variablebuiltinStyle = { italic = true },
+      specialReturn = true, -- special highlight for the return keyword
+      specialException = false, -- special highlight for exception handling keywords
+      transparent = true, -- do not set background color
+      dimInactive = false, -- dim inactive window `:h hl-NormalNC`
+      globalStatus = true, -- adjust window separators highlight for laststatus=3
+      terminalColors = true, -- define vim.g.terminal_color_{0,17}
+      colors = {
+        -- 换下前景色，太亮了
+        palette = {
+          fujiWhite = "#93a1a1",
+          sumiInk0 = "#151820",
+          sumiInk1 = "#242b39",
+        },
+      },
+      --overrides = {},
+      --theme = "default"           -- Load "default" theme or the experimental "light" theme
+      theme = "wave",
+    },
+    config = function()
+      require('kanagawa').setup({
+        theme = "wave",
+        undercurl = true, -- enable undercurls
+        commentStyle = { italic = true },
+        functionStyle = {},
+        keywordStyle = { italic = true },
+        statementStyle = { bold = true },
+        typeStyle = {},
+        variablebuiltinStyle = { italic = true },
+        specialReturn = true, -- special highlight for the return keyword
+        specialException = false, -- special highlight for exception handling keywords
+        transparent = true, -- do not set background color
+        dimInactive = false, -- dim inactive window `:h hl-NormalNC`
+        globalStatus = true, -- adjust window separators highlight for laststatus=3
+        terminalColors = true, -- define vim.g.terminal_color_{0,17}
+        colors = {
+          palette = {
+            -- change all usages of these colors
+            fujiWhite = "#93a1a1",
+            sumiInk0 = "#151820",
+            sumiInk1 = "#242b39",
+          },
+        }
+      })
+    end
+  },
+
   -----------------------------------------------------------------------------
   {
     "mickael-menu/zk-nvim",
     main = "zk",
     ft = "markdown",
     cmd = { "ZkNew", "ZkNotes", "ZkTags", "ZkMatch" },
-		-- stylua: ignore
-		keys = {
-			{ '<leader>zn', "<Cmd>ZkNew { title = vim.fn.input('Title: ') }<CR>", desc = 'Zk New' },
-			{ '<leader>zo', "<Cmd>ZkNotes { sort = { 'modified' } }<CR>", desc = 'Zk Notes' },
-			{ '<leader>zt', '<Cmd>ZkTags<CR>', desc = 'Zk Tags' },
-			{ '<leader>zf', "<Cmd>ZkNotes { sort = { 'modified' }, match = { vim.fn.input('Search: ') } }<CR>", desc = 'Zk Search' },
-			{ '<leader>zf', ":'<,'>ZkMatch<CR>", mode = 'x', desc = 'Zk Match' },
-			{ '<leader>zb', '<Cmd>ZkBacklinks<CR>', desc = 'Zk Backlinks' },
-			{ '<leader>zl', '<Cmd>ZkLinks<CR>', desc = 'Zk Links' },
-		},
+    -- stylua: ignore
+    keys = {
+      { '<leader>zn', "<Cmd>ZkNew { title = vim.fn.input('Title: ') }<CR>", desc = 'Zk New' },
+      { '<leader>zo', "<Cmd>ZkNotes { sort = { 'modified' } }<CR>", desc = 'Zk Notes' },
+      { '<leader>zt', '<Cmd>ZkTags<CR>', desc = 'Zk Tags' },
+      { '<leader>zf', "<Cmd>ZkNotes { sort = { 'modified' }, match = { vim.fn.input('Search: ') } }<CR>", desc = 'Zk Search' },
+      { '<leader>zf', ":'<,'>ZkMatch<CR>", mode = 'x', desc = 'Zk Match' },
+      { '<leader>zb', '<Cmd>ZkBacklinks<CR>', desc = 'Zk Backlinks' },
+      { '<leader>zl', '<Cmd>ZkLinks<CR>', desc = 'Zk Links' },
+    },
     opts = { picker = "telescope" },
   },
 }

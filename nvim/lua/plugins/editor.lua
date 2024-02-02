@@ -123,7 +123,7 @@ return {
     "mbbill/undotree",
     cmd = "UndotreeToggle",
     keys = {
-      { "<Leader>gu", "<cmd>UndotreeToggle<CR>", desc = "[Undo Tree]撤销树" },
+      { "<Leader>uu", "<cmd>UndotreeToggle<CR>", desc = "[Undo Tree]撤销树" },
     },
   },
 
@@ -134,10 +134,30 @@ return {
     event = "VeryLazy",
     vscode = true,
     opts = {
-      -- f, t, F, T with labels
+      search = {
+        multi_window = false,
+      },
       modes = {
+        -- options used when flash is activated through
+        -- a regular search with `/` or `?`
+        search = {
+          -- when `true`, flash will be activated during regular search by default.
+          -- You can always toggle when searching with `require("flash").toggle()`
+          enabled = false,
+          highlight = { backdrop = false },
+          jump = { history = true, register = true, nohlsearch = true },
+          search = {
+            -- `forward` will be automatically set to the search direction
+            -- `mode` is always set to `search`
+            -- `incremental` is set to `true` when `incsearch` is enabled
+          },
+        },
+        -- f, t, F, T with labels
         char = {
+          enabled = true,
           jump_labels = true,
+          -- keys = { "F", "T" }
+          keys = { "f", "F", "t", "T", [";"] = "L", [","] = "H" },
         },
       },
     },
@@ -321,11 +341,16 @@ return {
       filter_rules = {
         include_current_win = false,
         bo = {
-          filetype = { "notify", "noice" },
-          buftype = { "prompt", "nofile" },
+          filetype = { "notify", "noice", "notify" },
+          buftype = { "prompt", "nofile", "terminal" },
         },
       },
     },
+    config = function(_, opts)
+      -- Setup and override options with user config at lua/config/setup.lua
+      local PickerCfg = require("window-picker")
+      PickerCfg.setup(opts)
+    end,
   },
 
   -----------------------------------------------------------------------------
@@ -372,19 +397,19 @@ return {
     "nvim-pack/nvim-spectre",
     keys = {
       {
-        "<Leader>sp",
+        "<Leader>rr",
         function()
           require("spectre").toggle()
         end,
-        desc = "[Search]Spectre-in multi file",
+        desc = "[查找替换]多个文件下(Spectre)",
       },
       {
-        "<Leader>sp",
+        "<Leader>rr",
         function()
           require("spectre").open_visual({ select_word = true })
         end,
         mode = "x",
-        desc = "[Search]Spectre Word",
+        desc = "[查找替换]多个文件下(Spectre)",
       },
     },
     opts = {
@@ -464,4 +489,4 @@ return {
     end,
   },
 }
--- vim: set ts=4 sw=4 tw=120 et :
+-- vim: set ts=2 sw=2 tw=120 et :

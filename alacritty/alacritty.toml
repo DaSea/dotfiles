@@ -1,6 +1,10 @@
 # 常用主题：everforest_dark github_dark_dimmed  nightfox papercolor_dark gruvbox_material_medium_dark
 # solarized_dark tokyo-night tokyo-night-storm seashells kanagawa_wave
-import = ["/home/dasea/.config/alacritty/colorschemes/themes/moonlight_ii_vscode.toml", "/home/dasea/.config/alacritty/fonts.toml"]
+# import = ["/home/dasea/.config/alacritty/colorschemes/themes/moonlight_ii_vscode.toml", "/home/dasea/.config/alacritty/fonts.toml"]
+import = ["/home/dasea/.config/alacritty/colorschemes/themes/solarized_dark.toml", "/home/dasea/.config/alacritty/fonts.toml"]
+# 浅色主题
+# import = ["/home/dasea/.config/alacritty/colorschemes/themes/solarized_light.toml", "/home/dasea/.config/alacritty/fonts.toml"]
+
 live_config_reload = true
 
 [cursor]
@@ -59,7 +63,7 @@ program = "/bin/zsh"
 decorations = "none"
 dynamic_title = true
 startup_mode = "Windowed"
-opacity = 0.95
+opacity = 1.0
 
 [window.dimensions]
 columns = 82

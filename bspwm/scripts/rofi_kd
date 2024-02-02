@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+
+## Copyright (C) 2020-2024 Aditya Shakya <adi1090x@gmail.com>
+# Import Current Theme
+DIR="$HOME/.config/bspwm"
+STYLE="mytheme"
+RASI="$DIR/themes/$STYLE/rofi/music.rasi"
+
+case "$*" in
+  "poweroff")
+    dunstify -u low -h string:x-dunst-stack-tag:Self "Shutting down"
+    echo yes
+    echo no
+    ;;
+  "reboot")
+    dunstify -u low -h string:x-dunst-stack-tag:Self "reboot"
+    ;;
+  "lock")
+    dunstify -u low -h string:x-dunst-stack-tag:Self "lock"
+    ;;
+  "yes")
+    dunstify -u low -h string:x-dunst-stack-tag:Self "已触发关机"
+    ;;
+  "")
+    echo poweroff
+    echo reboot
+    echo lock
+    ;;
+esac
+
+# rofi -show powermenu -modi "powermenu:~/rofi.sh"

@@ -154,7 +154,7 @@ map('x', '<Leader>d', '""Y""Pgv', { desc = 'Duplicate selection' })
 map('n', '<Leader>p', 'yap<S-}>p', { desc = 'Duplicate Paragraph' })
 
 -- Remove spaces at the end of lines
-map('n', '<Leader>cw', '<cmd>lua MiniTrailspace.trim()<CR>', { desc = '[Whitespace]Erase in end' })
+map('n', '<Leader>rs', '<cmd>lua MiniTrailspace.trim()<CR>', { desc = '[Whitespace]Erase in end' })
 
 -- Search & Replace
 -- ===
@@ -235,22 +235,24 @@ map('n', '<Leader>cd', function()
 end, { desc = 'Change Local Directory' })
 
 -- Fast saving from all modes
-map('n', '<Leader>w', '<cmd>write<CR>', { desc = 'Save' })
+map('n', '<Leader>wf', '<cmd>write<CR>', { desc = 'Save' })
 map({ 'n', 'i', 'v' }, '<C-s>', '<cmd>write<CR>', { desc = 'Save' })
 
 -- Editor UI
 -- ===
 
+-- 这里的选项使用 hydra.nvim 插件进行快捷操作 <leader>tz
+-- map('n', '<leader>ts', function() Util.toggle('spell') end, { desc = '[Toggle]Spelling' })
+-- map('n', '<leader>tw', function() Util.toggle('wrap') end, { desc = '[Toggle]Word Wrap' })
+-- map('n', '<leader>tL', function() Util.toggle('relativenumber') end, { desc = '[Toggle]Relative Line Numbers' })
+-- map('n', '<leader>tl', function() Util.toggle.number() end, { desc = '[Toggle]Line Numbers' })
+-- nohlsearch 直接关联到了 esc
+-- map('n', '<Leader>tu', '<cmd>nohlsearch<CR>', { desc = '[Toggle]Hide Search Highlight' })
 -- Toggle editor's visual effects
 map('n', '<leader>tf', function() Util.format.toggle() end, { desc = '[Toggle]Auto format (global)' })
 map('n', '<leader>tF', function() Util.format.toggle(true) end, { desc = '[Toggle]Auto format (buffer)' })
-map('n', '<leader>ts', function() Util.toggle('spell') end, { desc = '[Toggle]Spelling' })
-map('n', '<leader>tw', function() Util.toggle('wrap') end, { desc = '[Toggle]Word Wrap' })
-map('n', '<leader>tL', function() Util.toggle('relativenumber') end, { desc = '[Toggle]Relative Line Numbers' })
-map('n', '<leader>tl', function() Util.toggle.number() end, { desc = '[Toggle]Line Numbers' })
 map("n", "<leader>td", function() Util.toggle.diagnostics() end, { desc = "[Toggle]Diagnostics" })
 map('n', '<Leader>tk', '<cmd>setlocal nolist!<CR>', { desc = '[Toggle]Whitespace Symbols' })
-map('n', '<Leader>tu', '<cmd>nohlsearch<CR>', { desc = '[Toggle]Hide Search Highlight' })
 
 if vim.lsp.buf.inlay_hint or vim.lsp.inlay_hint then
   map( "n", "<leader>uh", function() Util.toggle.inlay_hints() end, { desc = "Toggle Inlay Hints" })
@@ -260,7 +262,7 @@ end
 map('n', '<Leader>ui', vim.show_pos, { desc = '[UI]Show Treesitter Node' })
 
 -- Smart wrap toggle (breakindent and colorcolumn toggle as-well)
-map('n', '<Leader>uw', function()
+map('n', '<Leader>tw', function()
   vim.opt_local.wrap = not vim.wo.wrap
   vim.opt_local.breakindent = not vim.wo.breakindent
 
@@ -269,7 +271,7 @@ map('n', '<Leader>uw', function()
   else
     vim.opt_local.colorcolumn = ''
   end
-end, { desc = '[Toggle]Wrap(换行)' })
+end, { desc = '[Toggle]Smart wrap toggle(换行)' })
 
 -- Tabs: Many ways to navigate them
 -- map('n', '<A-j>', '<cmd>tabnext<CR>', { desc = 'Next Tab' })
@@ -298,7 +300,7 @@ map('n', '<Leader>bk', function() RafiUtil.edit.jump_buffer(-1) end, { desc = '[
 
 -- Context aware menu. See lua/lib/contextmenu.lua
 -- map('n', '<RightMouse>', function() RafiUtil.contextmenu.show() end)
-map('n', '<leader>c', function() RafiUtil.contextmenu.show() end, { desc = 'Content-aware menu' })
+map('n', '<leader>ma', function() RafiUtil.contextmenu.show() end, { desc = '[Menu]Content-aware' })
 
 -- Lazygit
 -- map('n', '<leader>tg', function() require('lazy.util').float_term({ 'lazygit' }, { cwd = Util.root(), esc_esc = false }) end, { desc = 'Lazygit (root dir)' })
@@ -388,42 +390,41 @@ map('n', '<C-x>', '<C-w>x', { remap = true, desc = 'Swap windows' })
 
 map('n', 'sb', '<cmd>buffer#<CR>', { desc = '[Buffer]Alternate' })
 map('n', 'sc', '<cmd>close<CR>', { desc = '[Window]Close' })
-map('n', 'sd', '<cmd>bdelete<CR>', { desc = '[Buffer]Delete' })
 map('n', 'sv', '<cmd>split<CR>', { desc = '[Window]Split horizontally(水平)' })
 map('n', 'sg', '<cmd>vsplit<CR>', { desc = '[Window]Split vertically(竖向)' })
 map('n', 'st', '<cmd>tabnew<CR>', { desc = '[Tab]New' })
 map('n', 'so', '<cmd>only<CR>', { desc = '[Window]Close others' })
 map('n', 'sq', '<cmd>quit<CR>', { desc = 'Quit' })
 map('n', 'sz', '<cmd>vertical resize | resize | normal! ze<CR>', { desc = '[Window]Maximize' })
--- sd会将窗口关闭
+-- sd 只关闭buffer
 map('n', 'sx', '<cmd>bdelete<CR>', { desc = '[Buffer]Delete and close win' })
+-- 采用下面bufremove的
+-- map('n', 'sd', '<cmd>bdelete<CR>', { desc = '[Buffer]Delete' })
 map('n', 'sd', function()
   require('mini.bufremove').delete(0, false)
   -- vim.cmd.enew() -- 会创建一个新的buffer,没啥必要
 end, { desc = '[Buffer]Delete' })
 
--- Background dark/light toggle
-map('n', 'sh', function()
-  if vim.o.background == 'dark' then
-    vim.o.background = 'light'
-  else
-    vim.o.background = 'dark'
-  end
-end, { desc = 'Toggle background dark/light' })
+-- Background dark/light toggle, 使用 hydra.nvim 里面的toggle代替
+-- map('n', 'sh', function()
+--   if vim.o.background == 'dark' then
+--     vim.o.background = 'light'
+--   else
+--     vim.o.background = 'dark'
+--   end
+-- end, { desc = 'Toggle background dark/light' })
 
+--------------------------------------------------------------------
 -- 我自己定义的快捷键
-map("i", "<M-j>", '<Down>',
-  { desc = "Cursor:光标下移", })
-map("i", "<M-k>", '<Up>',
-  { desc = "Cursor:光标上移"})
-map("i", "<M-n>", '<Left>',
-  { desc = "Cursor:光标左移" })
-map("i", "<M-m>", '<Right>',
-  { desc = "Cursor:光标右移"} )
+map("i", "<M-j>", '<Down>', { desc = "Cursor:光标下移", })
+map("i", "<M-k>", '<Up>', { desc = "Cursor:光标上移"})
+map("i", "<M-n>", '<Left>', { desc = "Cursor:光标左移" })
+map("i", "<M-m>", '<Right>', { desc = "Cursor:光标右移"} )
 -- 折叠
-map("n", "<space>", 'za',
-  { desc = "Fold:切换" })
+map("n", "<space>", 'za', { desc = "Fold:切换" })
 -- [[@=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>]],
+
+-- 快速的窗口： vs sp
 
 -- 窗口焦点切换
 map("n", "<leader>wj", '<c-w><c-j>',
@@ -445,11 +446,10 @@ map( "n", "<leader>wL", '<c-w><c-L>',
   { desc = "Window:聚焦最右边"})
 
 -- nnoremap U <c-r>
-map( "n", "U", "<c-r>",
-    { desc =  "redo(重做)", })
+map( "n", "U", "<c-r>", { desc =  "redo(重做)", })
 -- 调用一个vim.ui.select包装的接口
-map( "n", "<leader>go", ":lua require('util.global').general_operator()<cr>",
-    { desc =  "Operator:常用右键", silent = true, })
+map( "n", "<leader>mo", ":lua require('util.global').general_operator()<cr>",
+    { desc =  "[Menu]常用右键", silent = true, })
 
 -- 行号切换
 -- map( "n", "<leader>nc", ":lua require('util.global').toggle_line_number()<cr>",
@@ -467,21 +467,21 @@ map( "n", "dl", [["_dd]],
 --    { desc =  "Del char and no to Clipboard"
 --})
 --nnoremap dc "_dw
-map( "n", "dc", [["_dw]],
-    { desc =  "DelWord:不到寄存器", })
+map( "n", "dc", [["_dw]], { desc =  "DelWord:不到寄存器", })
 --" 快速查看当前文件目录:nnoremap <Leader>ep :echo expand("%:p:h")<CR>
 map( "n", "<leader>ep", ':echo expand("%:p:h")<CR>',
     { desc =  "Buffer:输出当前文件路径", })
-map( "n", "<leader>fo", ":lua require('util.global').quick_browfile_inexpolorer()<cr>",
-    { desc =  "File:文件管理器中显示", silent = true, })
+-- bspwm thunar 中无法正常使用
+-- map( "n", "<leader>fo", ":lua require('util.global').quick_browfile_inexpolorer()<cr>",
+--     { desc =  "[File]文件管理器中显示", silent = true, })
 
 -- 翻译
 map( "n", "<leader>nw", ":lua require('util.global').kd_search()<cr>",
     { desc =  "[翻译]输入单词(kd)", silent = true, })
 
 -- 替换当前文档当前光标下单词
-map({ "n", "v"} , "<leader>cw", ":lua require('util.global').replace_current_word()<cr>",
-    { desc =  "Buffer:替换当前单词", silent = true, })
+map({ "n", "v"} , "<leader>rw", ":lua require('util.global').replace_current_word()<cr>",
+    { desc =  "[Replace]查找替换当前单词", silent = true, })
 
 --nmap <Leader>pa %: 跳转到匹配括号
 map( "n", "<leader>gb", "%",
@@ -502,5 +502,5 @@ map( "n", "<leader>f9", ":set fileencoding=cp936<cr>",
 --"===================================================
 --" 当前文件中搜索光标下单词
 --nnoremap <Leader>lv :lv /<C-r>=expand("<cword>")<CR>/ %<CR>:lw<CR>
-map( "n", "<leader>sv", ':lv /<C-r>=expand("<cword>")<CR>/ %<CR>:lw<CR>',
+map( "n", "<leader>rl", ':lv /<C-r>=expand("<cword>")<CR>/ %<CR>:lw<CR>',
     { desc =  "Buffer:搜索当前单词显示于locallist"})

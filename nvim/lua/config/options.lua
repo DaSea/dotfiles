@@ -9,8 +9,7 @@
 vim.g.mapleader = ','
 -- vim.g.maplocalleader = ';'
 vim.g.maplocalleader = "\\"
--- 设置mapleader
--- vim.cmd("nnoremap ; :")
+vim.cmd("nnoremap ; :")
 
 -- Enable LazyVim auto format
 vim.g.autoformat = false
@@ -55,9 +54,10 @@ opt.wildmode = 'longest:full,full'  -- Command-line completion mode
 opt.diffopt:append({ 'iwhite', 'indent-heuristic', 'algorithm:patience' })
 
 opt.textwidth = 120             -- Text width maximum chars before wrapping
-opt.tabstop = 4                -- The number of spaces a tab is
+opt.tabstop = 2                -- The number of spaces a tab is
 opt.smartindent = true         -- Smart autoindenting on new lines
-opt.shiftwidth = 4             -- Number of spaces to use in auto(indent)
+opt.autoindent = true
+opt.shiftwidth = 2             -- Number of spaces to use in auto(indent)
 opt.shiftround = true          -- Round indent to multiple of 'shiftwidth'
 
 -- What to save for views and sessions
@@ -129,7 +129,7 @@ opt.showmode = false      -- Don't show mode in cmd window
 opt.scrolloff = 4         -- Keep at least 2 lines above/below
 opt.sidescrolloff = 8     -- Keep at least 5 lines left/right
 opt.numberwidth = 2       -- Minimum number of columns to use for the line number
-opt.number = true        -- Don't show line numbers
+opt.number = false        -- Don't show line numbers
 opt.ruler = false         -- Disable default status ruler
 opt.list = true           -- Show hidden characters
 opt.cursorline = true     -- Highlight the text line under the cursor
@@ -196,6 +196,8 @@ if vim.fn.has('nvim-0.10') == 1 then
 else
   vim.opt.foldmethod = 'indent'
 end
+-- 使用expr感觉不准
+vim.opt.foldmethod = 'indent'
 
 vim.o.formatexpr = "v:lua.require'lazyvim.util'.format.formatexpr()"
 

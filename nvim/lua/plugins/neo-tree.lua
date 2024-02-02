@@ -179,8 +179,7 @@ return {
       mappings = {
         ['q'] = 'close_window',
         ['?'] = 'noop',
-        ['<Space>'] = 'noop',
-
+        -- ['<Space>'] = 'noop',
         ['g?'] = 'show_help',
         ['<2-LeftMouse>'] = 'open',
         ['<CR>'] = 'open_with_window_picker',

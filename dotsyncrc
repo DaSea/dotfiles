@@ -18,7 +18,8 @@
 [files]
 dotsyncrc
 #cheat:.cheat
-dotsync/bin:bin
+# dotsync/bin:bin
+mbin:bin
 #ack/ackrc
 #aptitude
 #bin:bin
@@ -87,11 +88,8 @@ nvim:.config/nvim
 #awesome:.config/awesome
 #starship/starship.toml:.config/starship.toml
 #bash/bashrc
-#zsh/zcompdump
-#zsh/zsh-update
-#zsh/zsh_history
-#zsh/zshrc
-#zsh/powerlevel9k.zshrc
+zsh/zshrc
+zsh/p10k.zsh
 #oh-my-zsh
 #mshell
 # fish setting

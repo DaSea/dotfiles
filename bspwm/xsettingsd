@@ -1,0 +1,12 @@
+## Copyright (C) 2020-2024 Aditya Shakya <adi1090x@gmail.com>
+
+Net/ThemeName "Juno-palenight"
+Net/IconThemeName "Hack"
+Gtk/CursorThemeName "Layan"
+Net/EnableEventSounds "0"
+Net/EnableInputFeedbackSounds "0"
+Xft/DPI "-1"
+Xft/Hinting 1
+Xft/HintStyle "hintsmedium"
+Xft/Antialias 1
+Xft/RGBA "rgb"
