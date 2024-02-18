@@ -1,0 +1,10 @@
+background "#F4F5F8"
+vertical true
+geometry 1x1-160+50
+grow_gravity NE
+icon_gravity NE
+icon_size 18
+slot_size 27
+kludges force_icons_size
+skip_taskbar true
+window_type utility

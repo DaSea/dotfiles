@@ -4,7 +4,7 @@
 # Import Current Theme
 DIR="$HOME/.config/bspwm"
 STYLE="mytheme"
-RASI="$DIR/themes/$STYLE/rofi/music.rasi"
+RASI="$DIR/rofi/music.rasi"
 
 case "$*" in
   "poweroff")

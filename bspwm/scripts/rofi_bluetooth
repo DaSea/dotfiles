@@ -19,7 +19,7 @@
 # Import Current Theme
 DIR="$HOME/.config/bspwm"
 STYLE="mytheme"
-RASI="$DIR/themes/$STYLE/rofi/bluetooth.rasi"
+RASI="$DIR/rofi/bluetooth.rasi"
 
 # Constants
 divider="---------"

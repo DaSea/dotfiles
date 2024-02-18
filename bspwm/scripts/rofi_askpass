@@ -5,7 +5,7 @@
 # Import Current Theme
 DIR="$HOME/.config/bspwm"
 STYLE="mytheme"
-RASI="$DIR/themes/$STYLE/rofi/askpass.rasi"
+RASI="$DIR/rofi/askpass.rasi"
 
 # Rofi text dialog to get password
 rofi -dmenu \

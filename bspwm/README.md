@@ -1,7 +1,6 @@
-# BSPWM 桌面配置
+# bspwm
 
-主要基于 `Archcraft` 修改而来。
-
-1. `picom.conf` 主要是绘制服务器，配置桌面透明，高斯模糊等效果；
-2. `dunstrc` 是通知程序配置；
-3. `fonts.conf` 字体配置；
+> 一个缝合怪, 使用了下面的相关配置：
+> 1. 使用 `ArchCraft` 的配置，基于此系统修改而来;
+> 2. 使用 https://github.com/gh0stzk/dotfiles 中里面的内容；
+> 3. 使用  https://github.com/adi1090x/rofi.git 中rofi 的相关样式；

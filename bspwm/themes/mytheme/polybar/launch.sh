@@ -39,5 +39,5 @@ launch_bar() {
 if [[ ! -f "$RFILE" ]]; then
   fix_modules
   touch "$RFILE"
-fi	
+fi
 launch_bar

@@ -5,7 +5,7 @@
 # Import Current Theme
 DIR="$HOME/.config/bspwm"
 STYLE="mytheme"
-RASI="$DIR/themes/$STYLE/rofi/screenshot.rasi"
+RASI="$DIR/rofi/screenshot.rasi"
 
 # Theme Elements
 prompt='Screenshot'

@@ -11,6 +11,7 @@ BSPDIR="$HOME/.config/bspwm"
 
 ## Export bspwm/bin dir to PATH
 export PATH="${PATH}:$BSPDIR/scripts"
+export XDG_CURRENT_DESKTOP='bspwm'
 
 ## Run java applications without issues
 export _JAVA_AWT_WM_NONREPARENTING=1
@@ -116,7 +117,7 @@ for i in ${code[@]}; do
    bspc rule -a $i desktop='^4' follow=on focus=on; done
 
 ## 5 > office and docs (always open office/doc apps on workspace-5)
-declare -a office=(Zeal zeal Obsdian Gucharmap Atril Evince \
+declare -a office=(Zeal zeal Obsidian Gucharmap Atril Evince \
 libreoffice-writer libreoffice-calc libreoffice-impress \
 libreoffice-startcenter libreoffice Soffice *:libreofficedev *:soffice)
 for i in ${office[@]}; do
@@ -145,7 +146,7 @@ for i in ${settings[@]}; do
 # 这里我改变了 Thunar 的方式，将其可以按各自放置
 # declare -a floating=(alacritty-float Pcmanfm Thunar Onboard Yad 'Firefox:Places' \
 declare -a floating=(alacritty-float Pcmanfm Onboard Yad 'Firefox:Places' \
-Viewnior feh Nm-connection-editor calamares Calamares)
+Viewnior feh Nm-connection-editor calamares Calamares galculator)
 for i in ${floating[@]}; do
    bspc rule -a $i state=floating follow=on focus=on; done
 
@@ -168,6 +169,9 @@ fi
 # Lauch keybindings daemon
 sxhkd -c "$BSPDIR"/sxhkdrc &
 
+# Launch stalonetray
+# [[ "$RICETHEME" != "z0mbi3" ]] && stalonetray -c "$HOME"/.config/bspwm/stalonetrayrc & sleep 0.1 && xdo hide -N stalonetray && touch "/tmp/syshide.lock"
+
 # Enable Super Keys For Menu
 ksuperkey -e 'Super_L=Alt_L|F1' &
 ksuperkey -e 'Super_R=Alt_L|F1' &
@@ -181,6 +185,9 @@ xsetroot -cursor_name left_ptr
 # Restore wallpaper
 bash ~/.fehbg
 
+# Launch eww daemon
+pidof -q eww || { eww -c "$HOME"/.config/bspwm/eww daemon & }
+
 # Start mpd
 exec mpd &
 
@@ -188,8 +195,12 @@ exec mpd &
 fcitx5 &
 
 # Start bspwm scripts
+
+# polybar
 bspbar
+# picom
 bspcomp
+# dunst 通知
 bspdunst
 bspfloat &
 

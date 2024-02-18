@@ -84,6 +84,7 @@ vim/tools:.vim/tools
 vim/autoload:.vim/autoload
 vim/snippets:.vim/snippets
 nvim:.config/nvim
+bspwm:.config/bspwm
 #wezterm:.config/wezterm
 #awesome:.config/awesome
 #starship/starship.toml:.config/starship.toml

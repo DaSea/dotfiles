@@ -4,8 +4,8 @@
 
 # Import Current Theme
 DIR="$HOME/.config/bspwm"
-STYLE="mytheme"
-RASI="$DIR/themes/$STYLE/rofi/themes.rasi"
+STYLE="melissa"
+RASI="$DIR/rofi/themes.rasi"
 
 # List Available Themes
 THEMES=(`cd $DIR/themes && ls -d */ | cut -d '/' -f1`)
@@ -16,32 +16,32 @@ mesg="<b>Available Themes</b> : `cd $DIR/themes && ls -d */ | cut -d '/' -f1 | w
 
 # Rofi CMD
 rofi_cmd() {
-	rofi -dmenu \
-		-p "$prompt" \
-		-mesg "$mesg" \
-		-sep '|' \
-		-markup-rows \
-		-theme ${RASI}
+    rofi -dmenu \
+        -p "$prompt" \
+        -mesg "$mesg" \
+        -sep '|' \
+        -markup-rows \
+        -theme ${RASI}
 }
 
 # Pass variables to rofi dmenu
 run_rofi() {
-	echo ${THEMES[@]} | sed 's/ /|/g' | sed 's/$/|/' | rofi_cmd
+    echo ${THEMES[@]} | sed 's/ /|/g' | sed 's/$/|/' | rofi_cmd
 }
 
 # Apply Theme
 apply_theme() {
-	selected="`run_rofi`"
-	current="`cat $DIR/themes/.current`"
+    selected="`run_rofi`"
+    # current="`cat $DIR/themes/.current`"
 
-	for theme in "${THEMES[@]}"; do
-		if [[ -z "$selected" ]]; then
-			break
-		elif [[ "$selected" == "$theme" ]]; then
-			"$DIR"/themes/"$theme"/apply.sh
-			break
-		fi
-	done
+    for theme in "${THEMES[@]}"; do
+        if [[ -z "$selected" ]]; then
+            break
+        elif [[ "$selected" == "$theme" ]]; then
+            "$DIR"/themes/"$theme"/apply.sh
+            break
+        fi
+    done
 }
 
 apply_theme && exit 0

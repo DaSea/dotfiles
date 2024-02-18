@@ -5,9 +5,9 @@
 # Import Current Theme
 DIR="$HOME/.config/bspwm"
 STYLE="mytheme"
-RASI="$DIR/themes/$STYLE/rofi/runner.rasi"
+RASI="$DIR/rofi/runner.rasi"
 
 # Run
 rofi \
     -show run \
-	-theme ${RASI}
+    -theme ${RASI}

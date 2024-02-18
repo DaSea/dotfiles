@@ -5,8 +5,8 @@
 # Import Current Theme
 DIR="$HOME/.config/bspwm"
 STYLE="mytheme"
-RASI="$DIR/themes/$STYLE/rofi/powermenu.rasi"
-CNFR="$DIR/themes/$STYLE/rofi/confirm.rasi"
+RASI="$DIR/rofi/powermenu.rasi"
+CNFR="$DIR/rofi/confirm.rasi"
 
 # Theme Elements
 prompt="`hostname` (`echo $DESKTOP_SESSION`)"

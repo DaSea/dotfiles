@@ -27,8 +27,11 @@ alt + F2
     rofi_runner
 
 # Rofi Menus/Applets
-super + {b,m,n,r,s,t,w,x}
-    {rofi_bluetooth,rofi_music,nmd,rofi_asroot,rofi_screenshot,rofi_themes,rofi_windows,rofi_powermenu}
+# super + {b,m,n,r,s,t,w,x}
+#     {rofi_bluetooth,rofi_music,nmd,rofi_asroot,rofi_screenshot,rofi_themes,rofi_windows,rofi_powermenu}
+# 主题不随便改变了，使用自己定制的主题
+super + {b,m,n,r,s,t,w,x,k}
+    {bspflameshot,rofi_music,nmd,rofi_asroot,rofi_screenshot,rofi_themes,rofi_windows,rofi_powermenu,rofi_wallselect}
 
 ##---------- Applications ----------##
 
@@ -39,6 +42,7 @@ super + shift + {f,w,e}
 # Terminal Apps
 # ctrl + alt + {v,r,h}
 # alacritty --config-file ~/.config/bspwm/alacritty/alacritty.toml -e {vim,ranger,htop}
+# 上面是使用Archcraft的配置的，这里使用自己的配置
 ctrl + alt + {v,r,h}
     alacritty --config-file ~/.config/alacritty/alacritty.toml -e {vim,ranger,htop}
 
@@ -53,6 +57,11 @@ ctrl + alt + m
 # Lockscreen
 ctrl + alt + l
     betterlockscreen --lock
+
+# 自定义一些启动：
+# 启用闪电截图
+super + shift + s
+    flameshot &
 
 ##---------- System Keys ----------##
 

@@ -21,17 +21,17 @@ indicate_hidden = yes
 # The transparency of the window.  Range: [0; 100].
 # This option will only work if a compositing window manager is
 # present (e.g. xcompmgr, compiz, etc.). (X11 only)
-transparency = 5
+transparency = 0
 separator_height = 2
 padding = 15
 horizontal_padding = 15
 text_icon_padding = 4
 frame_width = 2
 gap_size = 0
-# separator_color = frame
+# separator_color = "#ea6f91"
 sort = yes
 idle_threshold = 120
-font = 思源黑体 CN Medium 16
+font = JetBrainsMono NF Medium 9
 line_height = 2
 markup = full
 # allow a small subset of html markup:
@@ -75,72 +75,20 @@ mouse_right_click = close_all
 title = Dunst
 class = Dunst
 # [global] 下面为 catppuccin frappe
-frame_color = "#2bd5f7"
+frame_color = "#1f1d29"
 separator_color= frame
 
-[urgency_low]
-background = "#303446"
-foreground = "#C6D0F5"
+            [urgency_low]
+            timeout = 3
+            background = "#1f1d29"
+            foreground = "#eaeaea"
 
-[urgency_normal]
-background = "#303446"
-foreground = "#C6D0F5"
+            [urgency_normal]
+            timeout = 6
+            background = "#1f1d29"
+            foreground = "#eaeaea"
 
-[urgency_critical]
-background = "#303446"
-foreground = "#C6D0F5"
-frame_color = "#EF9F76"
-
-# [global] -- 下面为 catppuccin light
-# frame_color = "#1E66F5"
-# separator_color= frame
-#
-# [urgency_low]
-# background = "#EFF1F5"
-# foreground = "#4C4F69"
-#
-# [urgency_normal]
-# background = "#EFF1F5"
-# foreground = "#4C4F69"
-#
-# [urgency_critical]
-# background = "#EFF1F5"
-# foreground = "#4C4F69"
-# frame_color = "#FE640B"
-
-# [global]  下面是一个 catppuccin dark
-# frame_color = "#8AADF4"
-# separator_color= frame
-#
-# [urgency_low]
-# background = "#24273A"
-# foreground = "#CAD3F5"
-#
-# [urgency_normal]
-# background = "#24273A"
-# foreground = "#CAD3F5"
-#
-# [urgency_critical]
-# background = "#24273A"
-# foreground = "#CAD3F5"
-# frame_color = "#F5A97F"
-
-# 下面是一个onedark的配色
-# [urgency_low]
-# timeout = 2
-# background = "#1E2128"
-# foreground = "#ABB2BF"
-# frame_color = "#292d37"
-#
-# [urgency_normal]
-# timeout = 5
-# background = "#1E2128"
-# foreground = "#ABB2BF"
-# frame_color = "#292d37"
-#
-# [urgency_critical]
-# timeout = 0
-# background = "#1E2128"
-# foreground = "#E06B74"
-# frame_color = "#E06B74"
-
+            [urgency_critical]
+            timeout = 0
+            background = "#1f1d29"
+            foreground = "#eaeaea"
